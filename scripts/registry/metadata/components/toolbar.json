@@ -1,0 +1,8 @@
+{
+  "components:toolbar": {
+    "title": "Toolbar Group",
+    "description": "A token-styled toolbar for icon, text, and counted actions with selected, disabled, grouped, and horizontal or vertical states.",
+    "category": "Toolbar",
+    "tags": ["toolbar", "group", "actions", "controls"]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "layouts:bento": {
+    "title": "Bento",
+    "description": "Responsive grid that can reserve a larger featured area beside a supporting item stack, or fall back to equal columns.",
+    "category": "Grid",
+    "tags": ["grid", "bento", "featured", "slots"]
+  }
+}

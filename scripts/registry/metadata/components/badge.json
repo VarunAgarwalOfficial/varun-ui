@@ -1,0 +1,8 @@
+{
+  "components:rotating-text-seal": {
+    "title": "Rotating Text Seal",
+    "description": "A rare editorial seal for welcome, invitation, completion, and launch moments; static by default and animated only when the moment earns it.",
+    "category": "Signature",
+    "tags": ["seal", "editorial", "welcome", "launch"]
+  }
+}

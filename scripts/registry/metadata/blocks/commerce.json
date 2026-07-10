@@ -1,0 +1,74 @@
+{
+  "blocks:product-collection": {
+    "title": "Product Collection",
+    "description": "A focused commerce collection with one pastel art field, restrained status label, price, and add action per product.",
+    "category": "Commerce",
+    "tags": ["commerce", "product", "grid"]
+  },
+  "blocks:product-options": {
+    "title": "Product Options",
+    "description": "A split product decision Block composed from Story Scene, Option Selector, Quantity Stepper, and a short ruled feature list.",
+    "category": "Commerce",
+    "tags": ["commerce", "product", "detail", "variants"]
+  },
+  "blocks:product-reviews-section": {
+    "title": "Product Reviews Section",
+    "description": "Customer reviews with star ratings, verified badges, helpful voting, and load more functionality. Displays average rating summary.",
+    "category": "Commerce",
+    "tags": ["commerce", "product", "reviews"]
+  },
+  "blocks:size-guide": {
+    "title": "Size Guide",
+    "description": "Measurement chart table with chest, waist, hips, and length columns.",
+    "category": "Commerce",
+    "tags": ["commerce", "size", "guide", "table"]
+  },
+  "blocks:order-history-list": {
+    "title": "Order History List",
+    "description": "Order cards with status badges, dates, and item counts with view details links.",
+    "category": "Commerce",
+    "tags": ["commerce", "order", "history", "list"]
+  },
+  "blocks:gift-card-redemption-form": {
+    "title": "Gift Card Redemption",
+    "description": "A focused pastel redemption field composed from the shared section header, input field, button loading state, validation, and balance feedback.",
+    "category": "Commerce",
+    "tags": ["commerce", "gift", "redemption", "form"]
+  },
+  "blocks:back-in-stock-notification": {
+    "title": "Back-in-Stock Signup",
+    "description": "A calm product-availability signup with one story field, concrete product facts, email or SMS choice, and no invented urgency.",
+    "category": "Commerce",
+    "tags": ["commerce", "back", "stock", "notification"]
+  },
+  "blocks:gift-card-balance-checker": {
+    "title": "Gift Card Balance Checker",
+    "description": "Gift card management interface with balance lookup, transaction history display, and quick reload functionality.",
+    "category": "Commerce",
+    "tags": ["commerce", "gift", "balance", "checker"]
+  },
+  "blocks:plan-usage-summary": {
+    "title": "Plan Usage Summary",
+    "description": "A factual billing region with current plan, accessible usage limits, included capabilities, unavailable features, and one management route.",
+    "category": "Billing",
+    "tags": ["billing", "plan", "usage", "limits", "progress"]
+  },
+  "blocks:pricing-plans": {
+    "title": "Pricing Plans",
+    "description": "A concise three-plan comparison with one billing control, one recommended plan, sentence-case actions, and no decorative pricing variants.",
+    "category": "Pricing",
+    "tags": ["pricing", "billing", "toggle"]
+  },
+  "blocks:build-your-own-plan": {
+    "title": "Build Your Own Plan",
+    "description": "Customizable pricing with base plan and selectable add-ons that update total dynamically.",
+    "category": "Pricing",
+    "tags": ["pricing", "build", "own", "plan"]
+  },
+  "blocks:plan-comparison": {
+    "title": "Plan Comparison",
+    "description": "The detailed Solo, Team, and Company feature matrix with a flat recommended column, aligned actions, real inclusion states, and square responsive plan objects on mobile.",
+    "category": "Pricing",
+    "tags": ["pricing", "plan", "comparison", "matrix"]
+  }
+}

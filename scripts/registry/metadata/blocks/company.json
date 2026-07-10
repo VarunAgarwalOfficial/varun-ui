@@ -1,0 +1,104 @@
+{
+  "blocks:team-and-mission": {
+    "title": "Team and Mission",
+    "description": "A left-led about section pairing a plain mission, useful facts, and a compact people grid on the system's pink human-context field.",
+    "category": "About",
+    "tags": ["about", "team", "mission"]
+  },
+  "blocks:job-listings-list": {
+    "title": "Job Listings",
+    "description": "The canonical hiring list: one ruled group of scannable role rows with department, location, employment type, and full-row navigation composed inside the Block.",
+    "category": "Careers",
+    "tags": ["careers", "job", "listings", "list"]
+  },
+  "blocks:employee-benefits": {
+    "title": "Employee Benefits",
+    "description": "A green Marker-led benefits region using a ruled two-column list for concrete health, leave, remote, learning, parent, and ownership support without card or icon decoration.",
+    "category": "Careers",
+    "tags": ["careers", "employee", "benefits", "grid"]
+  },
+  "blocks:hiring-process": {
+    "title": "Hiring Process",
+    "description": "A plain four-part candidate flow with named actions, useful timing, one contact promise, and no decorative stage labels or numbered timeline furniture.",
+    "category": "Careers",
+    "tags": ["careers", "hiring", "process", "timeline"]
+  },
+  "blocks:culture-and-values": {
+    "title": "Culture and Values",
+    "description": "Four concrete working principles on flat pink human-context fields, led by one Marker and plain explanation without icon cards or testimonial theatre.",
+    "category": "Careers",
+    "tags": ["careers", "culture", "values"]
+  },
+  "blocks:job-application-form": {
+    "title": "Job Application Form",
+    "description": "A canonical hiring application flow using the shared field and upload Components, a measured form, and a sticky role-summary Rail.",
+    "category": "Careers",
+    "tags": ["careers", "job", "application", "form"]
+  },
+  "blocks:internship-program": {
+    "title": "Internship Program",
+    "description": "A pink Marker-led early-career program with four concrete learning principles, a plain fact rail, and no more than two application actions.",
+    "category": "Careers",
+    "tags": ["careers", "internship", "program"]
+  },
+  "blocks:diversity-and-inclusion": {
+    "title": "Diversity & Inclusion",
+    "description": "A pink Marker-led inclusion section made of four observable hiring practices, without invented representation statistics or promise cards.",
+    "category": "Careers",
+    "tags": ["careers", "diversity", "inclusion"]
+  },
+  "blocks:remote-work-setup": {
+    "title": "Remote Work Setup",
+    "description": "A green Marker-led remote-work agreement separating what the company provides from how the team agrees to collaborate.",
+    "category": "Careers",
+    "tags": ["careers", "remote", "work", "setup"]
+  },
+  "blocks:salary-bands": {
+    "title": "Salary Bands",
+    "description": "A green Marker-led pay transparency table with formatted base ranges, ownership context, a visible caption, and a ruled mobile list.",
+    "category": "Careers",
+    "tags": ["careers", "salary", "bands", "table"]
+  },
+  "blocks:job-alerts-signup": {
+    "title": "Job Alerts",
+    "description": "A compact pink job-alert region composed from Section Header and the shared Email Capture Form, with one consent line and no invented subscriber proof.",
+    "category": "Careers",
+    "tags": ["careers", "job", "alerts", "signup"]
+  },
+  "blocks:profile-summary": {
+    "title": "Profile Summary",
+    "description": "User profile card with cover photo, avatar, bio, location, website, followers/following stats, and follow button.",
+    "category": "Social",
+    "tags": ["social", "profile", "cover"]
+  },
+  "blocks:notification-feed": {
+    "title": "Notification Feed",
+    "description": "Notification list with activity types (likes, comments, follows, mentions), unread indicators, and mark-as-read actions.",
+    "category": "Social",
+    "tags": ["social", "notification", "feed"]
+  },
+  "blocks:profile-header": {
+    "title": "Profile Header",
+    "description": "Compact profile card with cover image, avatar, verified badge, bio, location, website, join date, and post/follower stats.",
+    "category": "Social",
+    "tags": ["social", "compact", "profile", "header"]
+  },
+  "blocks:testimonials": {
+    "title": "Testimonial Grid",
+    "description": "Grid of testimonial cards with category tags like Performance, Support, or Pricing.",
+    "category": "Testimonial",
+    "tags": ["testimonial", "tagged", "testimonials", "grid"]
+  },
+  "blocks:testimonial-quote": {
+    "title": "Testimonial Quote",
+    "description": "A green character-led split testimonial pairing one Marker, short quote, named author, and one concrete proof fact without a fake trust cluster or stock avatar.",
+    "category": "Testimonial",
+    "tags": ["testimonial", "editorial", "quote"]
+  },
+  "blocks:rated-testimonial": {
+    "title": "Rated Testimonial",
+    "description": "A verified-review split pairing a large quote and author with one named-pastel rating field; no decorative image or nested card.",
+    "category": "Testimonial",
+    "tags": ["testimonial", "quote", "rating"]
+  }
+}

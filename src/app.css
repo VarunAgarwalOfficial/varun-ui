@@ -1,0 +1,11 @@
+@import "./lib/styles.css";
+
+@source "./routes/**/*.{svelte,ts}";
+@source "./showcase/**/*.{svelte,ts}";
+
+:root {
+  --showcase-nav-height: 3.5rem;
+  --layout-sticky-offset: calc(
+    var(--showcase-nav-height) + var(--layout-gap-lg)
+  );
+}

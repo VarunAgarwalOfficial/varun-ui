@@ -1,0 +1,80 @@
+{
+  "blocks:article-grid": {
+    "title": "Article Grid",
+    "description": "A three-item editorial browse region with real image cards, one category, concise summaries, author and date context, and a plain latest-writing introduction.",
+    "category": "Blog",
+    "tags": ["blog", "article", "grid", "editorial"]
+  },
+  "blocks:release-highlight": {
+    "title": "Release Highlight",
+    "description": "The complete changelog Block: one yellow Marker-led release thesis, a featured release note, and a visible-caption history table.",
+    "category": "Changelog",
+    "tags": ["changelog", "featured", "release"]
+  },
+  "blocks:developer-changelog": {
+    "title": "Developer Changelog",
+    "description": "Technical changelog with code blocks showing API changes, migration examples, and usage snippets alongside release notes.",
+    "category": "Changelog",
+    "tags": ["changelog", "developer", "code"]
+  },
+  "blocks:product-roadmap": {
+    "title": "Product Roadmap",
+    "description": "Hybrid roadmap and changelog with shipped, in-progress, and planned items. Includes status dots, tags, and optional feature images.",
+    "category": "Changelog",
+    "tags": ["changelog", "roadmap", "status"]
+  },
+  "blocks:launch-countdown": {
+    "title": "Launch Countdown",
+    "description": "Coming soon section with a live countdown timer showing days, hours, minutes, and seconds until launch.",
+    "category": "Coming Soon",
+    "tags": ["coming-soon", "countdown", "timer", "launch"]
+  },
+  "blocks:launch-roadmap": {
+    "title": "Launch Roadmap",
+    "description": "Coming soon section with a vertical timeline showing launch phases, dates, and status indicators.",
+    "category": "Coming Soon",
+    "tags": ["coming-soon", "launch", "roadmap", "timeline"]
+  },
+  "blocks:newsletter-signup": {
+    "title": "Newsletter Signup",
+    "description": "The canonical newsletter capture: one monthly promise, one generic Email Capture Form, and one pink storyteller field without fake subscriber proof.",
+    "category": "CTA",
+    "tags": ["cta", "split", "newsletter"]
+  },
+  "blocks:closing-cta": {
+    "title": "Closing CTA",
+    "description": "A centered call to action with a Marker kicker, large heading, short paragraph, and one primary action with an outline alternative.",
+    "category": "CTA",
+    "tags": ["cta", "centered", "closing"]
+  },
+  "blocks:faq-with-support": {
+    "title": "FAQ with Support",
+    "description": "The considered-purchase FAQ: a familiar accordion beside one pink character and direct human support field, with one conversation action and no nested support card.",
+    "category": "FAQ",
+    "tags": ["faq", "support", "contact", "page"]
+  },
+  "blocks:newsletter-footer": {
+    "title": "Newsletter Footer",
+    "description": "The newsletter-specific footer: one Marker-led email capture, useful varunUI catalog routes, restrained social links, and plain brand metadata.",
+    "category": "Footer",
+    "tags": ["footer", "newsletter"]
+  },
+  "blocks:site-footer": {
+    "title": "Site Footer",
+    "description": "The one complete site footer: a Marker-led closing statement and primary action, plain catalog navigation, optional email, social links, and legal meta composed through the generic Footer Piece.",
+    "category": "Footer",
+    "tags": ["footer", "site", "navigation", "cta", "meta"]
+  },
+  "blocks:testimonial-hero": {
+    "title": "Testimonial Hero",
+    "description": "A green character-led proof hero with one promise, one attributed result, and no more than two actions.",
+    "category": "Hero",
+    "tags": ["hero", "reverse", "split", "testimonial"]
+  },
+  "blocks:feature-hero": {
+    "title": "Feature Hero",
+    "description": "The default character-led product hero: one marked promise, no more than two actions, and one local storyteller on a named pastel field.",
+    "category": "Hero",
+    "tags": ["hero", "split", "character", "feature", "promise"]
+  }
+}

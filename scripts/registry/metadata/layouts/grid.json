@@ -1,0 +1,8 @@
+{
+  "layouts:grid": {
+    "title": "Grid",
+    "description": "A geometry-only responsive grid for repeated content, grounded in International Typographic Style and Vignelli-style grid discipline.",
+    "category": "Grid",
+    "tags": ["grid", "responsive", "collection"]
+  }
+}

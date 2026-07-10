@@ -1,0 +1,159 @@
+{
+  "pages:changelog": {
+    "title": "Changelog",
+    "description": "A complete release route with shared site navigation, one Marker-led featured release, a captioned version history, and the shared footer.",
+    "category": "Changelog",
+    "tags": ["changelog", "release", "history", "table", "complete"]
+  },
+  "pages:integrations": {
+    "title": "Integrations",
+    "description": "A complete ecosystem route with blue character-led orientation, a flat connector directory, one contextual closing action, and the shared varunUI footer.",
+    "category": "Marketing",
+    "tags": ["marketing", "integrations", "directory", "character", "complete"]
+  },
+  "pages:about": {
+    "title": "About",
+    "description": "A complete varunUI about route with a blue product premise, pink mission and team, working principles, yellow system facts, one closing action, and the shared site footer without invented company history.",
+    "category": "Marketing",
+    "tags": ["marketing", "about", "mission", "team", "principles", "complete"]
+  },
+  "pages:pricing": {
+    "title": "Pricing",
+    "description": "A complete buying route with yellow character-led orientation, a three-plan billing choice, a detailed responsive comparison, pink human support, one trial action, and the shared varunUI site footer.",
+    "category": "Marketing",
+    "tags": [
+      "marketing",
+      "pricing",
+      "plans",
+      "comparison",
+      "character",
+      "complete"
+    ]
+  },
+  "pages:product-home": {
+    "title": "Product Home",
+    "description": "The canonical varunUI product site flow: site navigation, one blue character-led promise, system facts, a real component-composed product preview, green customer proof, pink human support, one closing action, and the complete site footer.",
+    "category": "Marketing",
+    "tags": ["marketing", "home", "product", "character", "complete"]
+  },
+  "pages:categorized-faq": {
+    "title": "Categorized FAQ",
+    "description": "Use only when questions form stable, meaningful groups. A category control changes one shared accordion rather than multiplying panels.",
+    "category": "FAQ",
+    "tags": ["faq", "categories", "tabs", "categorized"]
+  },
+  "pages:help-center": {
+    "title": "Help Centre",
+    "description": "The canonical support flow: orient, search, narrow by topic, read the answer, then escalate to a person or system status when needed.",
+    "category": "FAQ",
+    "tags": ["faq", "support", "help", "search", "centre"]
+  },
+  "pages:searchable-faq": {
+    "title": "Searchable FAQ",
+    "description": "Use when the answer set is long enough that visitors arrive with a specific question. Search narrows a single familiar accordion.",
+    "category": "FAQ",
+    "tags": ["faq", "search", "support", "searchable"]
+  },
+  "pages:standard-faq": {
+    "title": "Standard FAQ",
+    "description": "The default FAQ recipe: a clear marker-led introduction and one readable accordion column. Start here unless the content proves it needs more.",
+    "category": "FAQ",
+    "tags": ["faq", "default", "accordion", "standard"]
+  },
+  "pages:waitlist": {
+    "title": "Join the Waitlist",
+    "description": "Full-height waitlist capture with an email field, a join button, a social-proof line, and a sign-in link for existing users.",
+    "category": "Coming Soon",
+    "tags": ["coming-soon", "auth", "join", "waitlist"]
+  },
+  "pages:article-hub": {
+    "title": "Article Hub",
+    "description": "Blog hub with a featured story, alternating feature stack, article-card grid, compact rail, and text archive.",
+    "category": "Blog",
+    "tags": ["blog", "article", "hub", "featured", "archive"]
+  },
+  "pages:article-with-comments": {
+    "title": "Article with Comments",
+    "description": "Article with full comment system, replies, likes, and featured comments.",
+    "category": "Post",
+    "tags": ["post", "article", "comments"]
+  },
+  "pages:case-study-with-metrics": {
+    "title": "Case Study with Metrics",
+    "description": "A focused case-study page with one thesis, client context, outcome metrics, three evidence sections, and one attributed quote without a generic article prop schema.",
+    "category": "Post",
+    "tags": ["post", "case", "study", "metrics"]
+  },
+  "pages:diy-how-to-tutorial": {
+    "title": "DIY How-To Tutorial",
+    "description": "Step-by-step tutorial with tools needed, learning outcomes, and tips per step.",
+    "category": "Post",
+    "tags": ["post", "diy", "how-to", "tutorial"]
+  },
+  "pages:interactive-checklist-article": {
+    "title": "Interactive Checklist Article",
+    "description": "Article with checkable items, progress tracking, and print/download options.",
+    "category": "Post",
+    "tags": ["post", "interactive", "checklist", "article"]
+  },
+  "pages:interactive-poll-article": {
+    "title": "Interactive Poll Article",
+    "description": "Article with embedded poll, vote tracking, and results display.",
+    "category": "Post",
+    "tags": ["post", "interactive", "poll", "article"]
+  },
+  "pages:interactive-quiz-article": {
+    "title": "Interactive Quiz Article",
+    "description": "Quiz format with multiple choice questions, scoring, and results.",
+    "category": "Post",
+    "tags": ["post", "interactive", "quiz", "article"]
+  },
+  "pages:knowledge-base-article": {
+    "title": "Knowledge Base Article",
+    "description": "Searchable FAQ with category filters, helpful votes, and related questions.",
+    "category": "Post",
+    "tags": ["post", "knowledge", "base", "article"]
+  },
+  "pages:live-blog-updates": {
+    "title": "Live Blog Updates",
+    "description": "Live blog format with timestamped updates, breaking news badges, and auto-refresh.",
+    "category": "Post",
+    "tags": ["post", "live", "blog", "updates"]
+  },
+  "pages:long-form-article-system": {
+    "title": "Long-Form Article",
+    "description": "Long-form article recipe with sticky section navigation, hero media, author context, topic tags, article actions, related reading, and composed article prose.",
+    "category": "Post",
+    "tags": ["post", "long-form", "article", "system"]
+  },
+  "pages:multi-part-series-article": {
+    "title": "Multi-Part Series Article",
+    "description": "Series article with part navigation, progress bar, and previous/next links.",
+    "category": "Post",
+    "tags": ["post", "multi-part", "series", "article"]
+  },
+  "pages:product-comparison-article": {
+    "title": "Product Comparison Article",
+    "description": "Head-to-head comparison with feature matrix, pros/cons, and winner verdict.",
+    "category": "Post",
+    "tags": ["post", "product", "comparison", "article"]
+  },
+  "pages:readiness-status-dashboard": {
+    "title": "Readiness Dashboard",
+    "description": "Coming soon section with a status dashboard showing service readiness with color-coded indicators for ready, in-progress, and planned states.",
+    "category": "Coming Soon",
+    "tags": ["coming-soon", "readiness", "status", "dashboard"]
+  },
+  "pages:technical-article-playbook": {
+    "title": "Technical Article",
+    "description": "Consolidated recipe for technical posts with named intro, prerequisites, implementation notes, copyable code, workflow steps, and completion sections.",
+    "category": "Post",
+    "tags": ["post", "technical", "article", "playbook"]
+  },
+  "pages:year-and-month-archive": {
+    "title": "Year and Month Archive",
+    "description": "Blog archive organized by year and month, with compact dated rows that can include image, category, author, and read time.",
+    "category": "Blog",
+    "tags": ["blog", "archive", "year", "month", "rows"]
+  }
+}

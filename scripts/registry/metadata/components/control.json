@@ -1,0 +1,140 @@
+{
+  "components:combobox-field": {
+    "title": "Combobox Field",
+    "description": "The searchable single-select field for long option lists, with shared Field anatomy, form submission, keyboard navigation, filtering, empty and invalid states, and anchored paper-menu motion.",
+    "category": "Control",
+    "tags": ["control", "combobox", "search", "select", "field", "form"]
+  },
+  "components:search-field": {
+    "title": "Search Input",
+    "description": "Accessible search input with optional visible label and description, form-friendly name and required props, shortcut hint, clear action, sm/md/lg sizing, and bindable value.",
+    "category": "Control",
+    "tags": ["control", "search", "input", "field", "form", "filter"]
+  },
+  "components:command-palette": {
+    "title": "Command Palette",
+    "description": "Keyboard-accessible command palette with search, grouped results, empty state, shortcut trigger, and keyboard navigation.",
+    "category": "Control",
+    "tags": ["control", "command", "palette", "search", "dialog"]
+  },
+  "components:carousel-nav": {
+    "title": "Carousel Navigation",
+    "description": "Accessible previous, next, position, and direct-slide controls for any caller-composed carousel, with bindable position and a composable completion action.",
+    "category": "Control",
+    "tags": ["control", "carousel", "navigation", "pagination"]
+  },
+  "components:select-menu": {
+    "title": "Select Menu",
+    "description": "Generic select menu with an explicit flat or grouped option source, optional visible label, inline or stacked trigger value, descriptions, preview adornments, bindable open state, and trigger/list motion.",
+    "category": "Control",
+    "tags": ["control", "select", "menu", "filter", "theme", "options"]
+  },
+  "components:select-field": {
+    "title": "Select Field",
+    "description": "Plain labeled select field with optional description, simple options, bindable value and open state, and form-friendly name, required, disabled, and autocomplete props.",
+    "category": "Control",
+    "tags": ["control", "select", "field", "dropdown", "form"]
+  },
+  "components:dropdown-menu": {
+    "title": "Dropdown Menu",
+    "description": "Button-triggered dropdown menu with option descriptions, shortcut badges, disabled rows, and danger-toned actions.",
+    "category": "Control",
+    "tags": ["control", "dropdown", "menu", "options", "shortcut"]
+  },
+  "components:tooltip": {
+    "title": "Tooltip",
+    "description": "Accessible hover and focus tooltip with caller-owned label text, optional shortcut hint, bindable open state, and semantic side and alignment options.",
+    "category": "Control",
+    "tags": ["control", "tooltip", "hover", "focus", "overlay"]
+  },
+  "components:input-field": {
+    "title": "Input Field",
+    "description": "Generic labeled text input field with generated or caller-supplied IDs, optional description, validation message, bindable value, text-like input types, and form-friendly required, disabled, and readonly states.",
+    "category": "Control",
+    "tags": ["control", "input", "field", "form", "text"]
+  },
+  "components:email-capture-form": {
+    "title": "Email Capture Form",
+    "description": "Small email capture form with an accessible label, optional description or consent text, bindable value, and explicit submit button label.",
+    "category": "Control",
+    "tags": ["control", "email", "capture", "form", "newsletter"]
+  },
+  "components:color-field": {
+    "title": "Color Field",
+    "description": "Labeled color picker field with bindable value, optional description and validation message, disabled and required states, and focus styling.",
+    "category": "Control",
+    "tags": ["control", "color", "field", "picker", "theme"]
+  },
+  "components:textarea-field": {
+    "title": "Textarea Field",
+    "description": "Generic labeled textarea field with optional description, validation message, bindable value, rows, resize behavior, and form-friendly required, disabled, and readonly states.",
+    "category": "Control",
+    "tags": ["control", "textarea", "field", "form", "message"]
+  },
+  "components:range-field": {
+    "title": "Range Field",
+    "description": "The canonical labeled slider field with one paper-styled track and thumb, bindable value, output, limits, validation, and disabled state.",
+    "category": "Control",
+    "tags": ["control", "range", "field", "slider", "form"]
+  },
+  "components:segmented-control": {
+    "title": "Segmented Control",
+    "description": "One canonical segmented control with bindable value, typed options, disabled items, and shared focus and motion styling.",
+    "category": "Control",
+    "tags": ["control", "segmented", "tabs", "toggle"]
+  },
+  "components:category-filter": {
+    "title": "Category Filter",
+    "description": "Reusable category tablist with horizontal, vertical, or responsive orientation, disabled categories, bindable active value, and focus/motion styling.",
+    "category": "Control",
+    "tags": ["control", "category", "filter", "tabs"]
+  },
+  "components:checkbox-field": {
+    "title": "Checkbox Field",
+    "description": "Labeled checkbox field with stable control IDs, optional description, invalid message, indeterminate state, and checked/focus treatment.",
+    "category": "Control",
+    "tags": ["control", "checkbox", "field", "form", "selection"]
+  },
+  "components:switch-field": {
+    "title": "Switch Field",
+    "description": "Labeled switch field with stable control IDs, optional description and validation message, bindable checked state, and tokenized toggle motion for binary settings.",
+    "category": "Control",
+    "tags": ["control", "switch", "field", "toggle", "settings"]
+  },
+  "components:option-selector": {
+    "title": "Option Selector",
+    "description": "Radio-style option selector with bindable value, labels, disabled options, callbacks, and focus/motion styling.",
+    "category": "Control",
+    "tags": ["control", "option", "selector", "radio", "choice"]
+  },
+  "components:radio-group-field": {
+    "title": "Radio Group Field",
+    "description": "Generic labeled radio group field with option descriptions, disabled options, bindable value, vertical or responsive grid layout, and tokenized selected/focus states.",
+    "category": "Control",
+    "tags": ["control", "radio", "group", "field", "choice"]
+  },
+  "components:quantity-stepper": {
+    "title": "Quantity Stepper",
+    "description": "Bounded quantity stepper with accessible labels, disabled min/max states, stable numeric output, and value-change callbacks.",
+    "category": "Control",
+    "tags": ["control", "quantity", "stepper", "number"]
+  },
+  "components:pin-pad": {
+    "title": "PIN Pad",
+    "description": "Accessible numeric PIN entry with token-sized keypad controls, masked progress, bounded length, deletion, and completion callbacks.",
+    "category": "Control",
+    "tags": ["control", "pin", "keypad", "security", "auth"]
+  },
+  "components:pattern-input": {
+    "title": "Pattern Input",
+    "description": "Accessible three-by-three pattern input with direct dot selection, connected path feedback, a bindable value, and one canonical clear action.",
+    "category": "Control",
+    "tags": ["control", "pattern", "security", "auth", "gesture"]
+  },
+  "components:verification-code-field": {
+    "title": "Verification Code Field",
+    "description": "A single opinionated one-time-code field with bindable value, accessible labeling, fixed token sizing, and completion feedback.",
+    "category": "Control",
+    "tags": ["control", "verification", "code", "otp", "auth"]
+  }
+}

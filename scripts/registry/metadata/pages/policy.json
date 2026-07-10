@@ -1,0 +1,38 @@
+{
+  "pages:acceptable-use-policy": {
+    "title": "Acceptable Use Policy",
+    "description": "Lists allowed and prohibited usage of a service or platform with check and cross icons. Includes a violation reporting section. Suitable for SaaS, hosting, and community platforms.",
+    "category": "Legal",
+    "tags": ["legal", "acceptable", "use", "policy"]
+  },
+  "pages:accessibility-statement": {
+    "title": "Accessibility Statement",
+    "description": "Shows WCAG conformance level, accessibility features, and issue reporting options.",
+    "category": "Legal",
+    "tags": ["legal", "accessibility", "statement"]
+  },
+  "pages:cookie-policy": {
+    "title": "Cookie Policy",
+    "description": "A complete cookie policy explaining each cookie type, its purpose, and whether it is required or optional.",
+    "category": "Legal",
+    "tags": ["legal", "cookie", "policy"]
+  },
+  "pages:end-user-license-agreement": {
+    "title": "End User License Agreement",
+    "description": "A complete end-user license agreement with numbered clauses for license grant, restrictions, intellectual property, warranties, and liability.",
+    "category": "Legal",
+    "tags": ["legal", "end", "user", "license", "agreement"]
+  },
+  "pages:privacy-policy": {
+    "title": "Privacy Policy",
+    "description": "A complete privacy policy covering data collection, usage, sharing, retention, rights, and security in a readable legal flow.",
+    "category": "Legal",
+    "tags": ["legal", "privacy", "policy"]
+  },
+  "pages:terms-of-service": {
+    "title": "Terms of Service",
+    "description": "A complete terms-of-service document with numbered sections, clear headings, effective date, and readable legal text.",
+    "category": "Legal",
+    "tags": ["legal", "terms", "service"]
+  }
+}

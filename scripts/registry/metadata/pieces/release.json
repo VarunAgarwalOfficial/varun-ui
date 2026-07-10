@@ -1,0 +1,8 @@
+{
+  "pieces:release-note": {
+    "title": "Release Note",
+    "description": "A release article with version metadata, status, concise changes, a composable detail region, and one linked next step. It is not a card by default.",
+    "category": "Changelog",
+    "tags": ["changelog", "release", "note", "version", "changes"]
+  }
+}

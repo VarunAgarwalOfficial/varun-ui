@@ -1,0 +1,8 @@
+{
+  "components:marker": {
+    "title": "Marker",
+    "description": "The system signature for page and section kickers: a token-colored marker stroke with optional underline, emphasis, and draw motion.",
+    "category": "Highlight",
+    "tags": ["highlight", "marker", "text", "motion"]
+  }
+}

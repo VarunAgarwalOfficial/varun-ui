@@ -1,0 +1,50 @@
+{
+  "blocks:cookie-consent-banner": {
+    "title": "Cookie Consent Banner",
+    "description": "Displays a cookie notification with accept, reject, and customize buttons.",
+    "category": "Legal",
+    "tags": ["legal", "cookie", "consent", "banner"]
+  },
+  "blocks:privacy-policy-summary": {
+    "title": "Privacy Policy Summary",
+    "description": "Simple privacy policy overview card listing key data practices.",
+    "category": "Legal",
+    "tags": ["legal", "privacy", "policy", "summary"]
+  },
+  "blocks:privacy-faq-accordion": {
+    "title": "Privacy FAQ Accordion",
+    "description": "Expandable privacy FAQ using accordion pattern. Each question reveals a detailed answer on click.",
+    "category": "Legal",
+    "tags": ["legal", "privacy", "faq", "accordion"]
+  },
+  "blocks:data-retention": {
+    "title": "Data Retention",
+    "description": "Table-based data retention schedule showing category, retention period, and legal basis per row.",
+    "category": "Legal",
+    "tags": ["legal", "data", "retention", "table"]
+  },
+  "blocks:data-request-process": {
+    "title": "Data Request Process Timeline",
+    "description": "Vertical timeline showing the step-by-step process for handling data requests. Numbered steps with connecting lines guide the user through the workflow.",
+    "category": "Legal",
+    "tags": ["legal", "data", "request", "process", "timeline"]
+  },
+  "blocks:regulatory-notice-blocks": {
+    "title": "Regulatory Notice Blocks",
+    "description": "Color-coded regulatory notices with info, warning, and critical severity levels. Each notice has a colored left border, icon, and detailed content.",
+    "category": "Legal",
+    "tags": ["legal", "regulatory", "notice", "blocks"]
+  },
+  "blocks:policy-tabs": {
+    "title": "Policy Tabs",
+    "description": "Multi-section policy card using tabs to switch between data use, security, cookies, and user rights content. Compact way to present multiple policies.",
+    "category": "Legal",
+    "tags": ["legal", "tabbed", "platform", "policies"]
+  },
+  "blocks:privacy-rights": {
+    "title": "Privacy Rights",
+    "description": "Two-column comparison table showing data rights and privacy features by plan tier. Badge-styled values for Free vs Pro plans.",
+    "category": "Legal",
+    "tags": ["legal", "rights", "comparison", "table"]
+  }
+}

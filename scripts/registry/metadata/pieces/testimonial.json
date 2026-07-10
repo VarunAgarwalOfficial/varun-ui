@@ -1,0 +1,8 @@
+{
+  "pieces:testimonial-quote-card": {
+    "title": "Testimonial Quote Card",
+    "description": "The one testimonial card: a quoted statement, optional audience tags, and person attribution with fixed type and spacing.",
+    "category": "Testimonial",
+    "tags": ["testimonial", "quote", "person", "card"]
+  }
+}

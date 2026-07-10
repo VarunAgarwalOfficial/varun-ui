@@ -1,0 +1,26 @@
+{
+  "components:data-caption": {
+    "title": "Data Caption",
+    "description": "The one visible caption for charts and tables: a static marker label, concise interpretation, and optional source or freshness note with correct figure or table semantics.",
+    "category": "Data",
+    "tags": ["data", "caption", "figure", "table", "source", "metadata"]
+  },
+  "components:data-table": {
+    "title": "Data Table",
+    "description": "An advanced data table with caller-owned columns and cells, sorting, search, filters, visibility, selection, pagination, export, fullscreen, and resizing, backed by a separate typed query and formatting model.",
+    "category": "Data",
+    "tags": ["data", "table", "sorting", "filtering", "pagination", "selection"]
+  },
+  "components:qr-code": {
+    "title": "QR Code",
+    "description": "A locally generated, machine-readable QR code with fixed quiet zone, invariant ink and paper, accessible labeling, three earned sizes, and real error-correction levels.",
+    "category": "Machine Code",
+    "tags": ["qr", "code", "scan", "ticket", "invite"]
+  },
+  "components:barcode": {
+    "title": "Barcode",
+    "description": "A locally generated linear code limited to Code 128, EAN-13, and UPC-A, with invariant ink and paper, a human-readable value, accessible labeling, and two print-ready sizes.",
+    "category": "Machine Code",
+    "tags": ["barcode", "code128", "ean", "upc", "label"]
+  }
+}

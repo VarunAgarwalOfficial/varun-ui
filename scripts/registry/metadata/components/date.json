@@ -1,0 +1,14 @@
+{
+  "components:date-picker-field": {
+    "title": "Date Picker Field",
+    "description": "The canonical segmented date input and calendar popover with form submission, typed limits, keyboard editing and navigation, validation, paper styling, and tokenized open and close motion.",
+    "category": "Date",
+    "tags": ["date", "picker", "calendar", "field", "form", "popover"]
+  },
+  "components:calendar-day": {
+    "title": "Calendar Day",
+    "description": "An accessible calendar day with today, selected, range, disabled, and event-dot states.",
+    "category": "Date",
+    "tags": ["date", "cell", "calendar", "event"]
+  }
+}

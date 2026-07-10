@@ -1,0 +1,8 @@
+{
+  "components:app-shell": {
+    "title": "Application Shell",
+    "description": "The familiar application shell: persistent desktop navigation, mobile drawer, stable header, fluid content, and optional collapsed rail.",
+    "category": "Navigation",
+    "tags": ["shell", "sidebar", "app", "navigation", "drawer"]
+  }
+}

@@ -1,0 +1,17 @@
+.gcloudignore
+.git
+.gitignore
+.cache
+.codex
+.interface-design
+.varunui
+.vscode
+.svelte-kit
+build
+dist
+node_modules
+package-lock.json~
+src/showcase/catalog.generated.ts
+static/registry
+tmp
+bun.lock

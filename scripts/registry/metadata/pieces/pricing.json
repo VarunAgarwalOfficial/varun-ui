@@ -1,0 +1,8 @@
+{
+  "pieces:cost-summary": {
+    "title": "Cost Summary",
+    "description": "A ruled line-item and total summary for plans, carts, checkout, and invoices, with a composed footer region.",
+    "category": "Pricing",
+    "tags": ["pricing", "billing", "summary", "receipt"]
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "pieces:code-block": {
+    "title": "Code Block",
+    "description": "A stateless numbered code figure with an optional filename and one readable dark media treatment.",
+    "category": "Code",
+    "tags": ["code", "snippet", "figure", "developer"]
+  },
+  "pieces:logo-cloud": {
+    "title": "Logo Cloud",
+    "description": "One quiet responsive logo arrangement with an optional Marker introduction and no cosmetic display variants.",
+    "category": "Logos",
+    "tags": ["logos", "cloud", "clients", "proof"]
+  },
+  "pieces:notification-feed-item": {
+    "title": "Notification Feed Item",
+    "description": "A flat activity row with optional icon, supporting metadata, time, and semantic tone for a caller-owned feed.",
+    "category": "Data Display",
+    "tags": ["notification", "feed", "item", "activity"]
+  },
+  "pieces:pricing-plan-grid": {
+    "title": "Pricing Plan Grid",
+    "description": "The one square repeated-plan arrangement with caller-composed actions, a single optional highlight, and automatic responsive columns.",
+    "category": "Pricing",
+    "tags": ["pricing", "plan", "grid", "comparison"]
+  },
+  "pieces:release-table": {
+    "title": "Release Table",
+    "description": "Release history that automatically uses a table on wide screens and a ruled list on small screens, with no representation prop.",
+    "category": "Changelog",
+    "tags": ["changelog", "release", "table", "list"]
+  },
+  "pieces:schedule-list": {
+    "title": "Schedule List",
+    "description": "One ruled agenda arrangement with a time gutter, status dot, optional description, and plain empty state.",
+    "category": "Calendar",
+    "tags": ["calendar", "schedule", "agenda", "time"]
+  },
+  "pieces:state-message": {
+    "title": "State Message",
+    "description": "The shared plain-language message arrangement for empty, error, offline, permission, and maintenance states.",
+    "category": "Data Display",
+    "tags": ["state", "empty", "error", "message"]
+  },
+  "pieces:status-history-strip": {
+    "title": "Status History Strip",
+    "description": "One ruled uptime history display with operational, degraded, outage, and no-data states plus an accessible text summary.",
+    "category": "Data Display",
+    "tags": ["status", "history", "uptime", "monitoring"]
+  },
+  "pieces:terminal-window": {
+    "title": "Terminal Window",
+    "description": "A stateless command and output figure with one dark media treatment and restrained terminal chrome.",
+    "category": "Terminal",
+    "tags": ["terminal", "cli", "command", "output"]
+  },
+  "pieces:upload-file-row": {
+    "title": "Upload File Row",
+    "description": "A square file-status row that composes the shared progress Component and caller-owned actions without inventing upload behavior.",
+    "category": "Upload",
+    "tags": ["upload", "file", "row", "progress"]
+  }
+}

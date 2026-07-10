@@ -1,0 +1,8 @@
+{
+  "layouts:email-frame": {
+    "title": "Email Frame",
+    "description": "The canonical 600px message measure for static email documents, with no content, decoration, or client behavior of its own.",
+    "category": "Output",
+    "tags": ["output", "email", "message", "measure", "600px"]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "components:rating-stars": {
+    "title": "Rating Stars",
+    "description": "Token-colored rating stars with fractional fill and staggered one-by-one pop-in motion.",
+    "category": "Rating",
+    "tags": ["rating", "stars", "motion"]
+  }
+}

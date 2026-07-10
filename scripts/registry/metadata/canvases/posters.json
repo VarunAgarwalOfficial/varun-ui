@@ -1,0 +1,50 @@
+{
+  "canvases:welcome-poster": {
+    "title": "Welcome Poster",
+    "description": "A square introduction poster with a yellow Marker orientation, direct welcome line, pink character stage, and small publication folio.",
+    "category": "Posters",
+    "tags": ["poster", "square", "welcome", "character"]
+  },
+  "canvases:launch-poster": {
+    "title": "Launch Poster",
+    "description": "A square release announcement with a blue product field, green celebration scene, visible date, and the collection's single text seal.",
+    "category": "Posters",
+    "tags": ["poster", "square", "launch", "release", "character"]
+  },
+  "canvases:event-poster": {
+    "title": "Event Poster",
+    "description": "A square event post that gives the invitation, date, time, and location separate reading zones around a green character scene.",
+    "category": "Posters",
+    "tags": ["poster", "square", "event", "workshop", "character"]
+  },
+  "canvases:editorial-poster": {
+    "title": "Editorial Poster",
+    "description": "A square opinion poster with a type-led statement, useful supporting deck, editorial folio, and pink presenter panel.",
+    "category": "Posters",
+    "tags": ["poster", "square", "editorial", "statement", "character"]
+  },
+  "canvases:data-poster": {
+    "title": "Data Poster",
+    "description": "A square weekly-signal post with one dominant measure, honest comparison, three supporting facts, and a small green narrator field.",
+    "category": "Posters",
+    "tags": ["poster", "square", "data", "metric", "report"]
+  },
+  "canvases:hiring-poster": {
+    "title": "Hiring Poster",
+    "description": "A square open-role post with a large job title, three practical constraints, deadline, and a pink people-led character panel.",
+    "category": "Posters",
+    "tags": ["poster", "square", "hiring", "careers", "character"]
+  },
+  "canvases:release-poster": {
+    "title": "Release Poster",
+    "description": "A square changelog post with a dominant version, three concrete changes, blue release detail, and a yellow sign-off scene.",
+    "category": "Posters",
+    "tags": ["poster", "square", "release", "changelog", "character"]
+  },
+  "canvases:quote-poster": {
+    "title": "Quote Poster",
+    "description": "A square field-note poster with an editorial proof quote, named speaker, green evidence field, and pink character portrait.",
+    "category": "Posters",
+    "tags": ["poster", "square", "quote", "proof", "character"]
+  }
+}

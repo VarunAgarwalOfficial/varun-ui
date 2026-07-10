@@ -1,0 +1,14 @@
+{
+  "components:sidebar-nav": {
+    "title": "Sidebar Navigation",
+    "description": "Grouped app navigation for sidebar shells with active state, optional icons, badges, nested items, collapsed labels, and menu motion.",
+    "category": "Navigation",
+    "tags": ["navigation", "sidebar", "app", "menu", "nested"]
+  },
+  "components:sidebar-profile": {
+    "title": "Sidebar Profile",
+    "description": "One compact account or workspace identity row for sidebar footers with a 32px avatar, collapsed state, optional link, and quiet hover/focus styling.",
+    "category": "Navigation",
+    "tags": ["navigation", "sidebar", "profile", "account", "footer", "avatar"]
+  }
+}

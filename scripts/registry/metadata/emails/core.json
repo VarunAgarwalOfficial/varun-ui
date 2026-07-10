@@ -1,0 +1,50 @@
+{
+  "emails:welcome": {
+    "title": "Welcome Email",
+    "description": "A green character-led welcome that names the workspace, explains the first three useful actions, and ends with one route back to the product.",
+    "category": "Lifecycle",
+    "tags": ["lifecycle", "welcome", "onboarding", "workspace", "character"]
+  },
+  "emails:verify-email": {
+    "title": "Verify Email",
+    "description": "A purple security message with a readable verification code, matching confirmation action, expiry, and a plain no-action-needed fallback.",
+    "category": "Security",
+    "tags": ["security", "verify", "email", "code", "auth"]
+  },
+  "emails:password-reset": {
+    "title": "Password Reset",
+    "description": "A focused password-reset message with request context, expiry, one protected action, and guidance for an unrecognized request.",
+    "category": "Security",
+    "tags": ["security", "password", "reset", "auth", "account"]
+  },
+  "emails:workspace-invitation": {
+    "title": "Workspace Invitation",
+    "description": "A pink people-led invitation that identifies the inviter, workspace, role, expiry, and single join action.",
+    "category": "Collaboration",
+    "tags": ["collaboration", "invitation", "workspace", "team", "character"]
+  },
+  "emails:weekly-digest": {
+    "title": "Weekly Digest",
+    "description": "A yellow orientation email that keeps only the decisions most likely to block next week, with owners, state, and one queue action.",
+    "category": "Digest",
+    "tags": ["digest", "weekly", "decisions", "review", "summary"]
+  },
+  "emails:comment-mention": {
+    "title": "Comment Mention",
+    "description": "A pink collaboration notification that preserves the quoted question, its brief context, and one reply route.",
+    "category": "Collaboration",
+    "tags": ["collaboration", "mention", "comment", "notification", "reply"]
+  },
+  "emails:order-receipt": {
+    "title": "Order Receipt",
+    "description": "A complete receipt with order facts, readable line items, shipping, total, fulfillment expectation, and one order route.",
+    "category": "Commerce",
+    "tags": ["commerce", "order", "receipt", "line-items", "total"]
+  },
+  "emails:incident-update": {
+    "title": "Incident Update",
+    "description": "A red system message that leads with current status, names the affected area, keeps a timestamped update trail, and links to live status.",
+    "category": "System",
+    "tags": ["system", "incident", "status", "timeline", "operations"]
+  }
+}

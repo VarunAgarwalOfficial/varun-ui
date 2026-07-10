@@ -1,0 +1,8 @@
+{
+  "components:upload-dropzone": {
+    "title": "Upload Dropzone",
+    "description": "Accessible file picker and drag target with bindable files, native form attributes, accept filtering, and composable copy, helper, and action regions.",
+    "category": "Upload",
+    "tags": ["upload", "dropzone", "file-input", "drag-and-drop"]
+  }
+}

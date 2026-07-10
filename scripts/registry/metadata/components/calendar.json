@@ -1,0 +1,8 @@
+{
+  "components:calendar-grid": {
+    "title": "Calendar Grid",
+    "description": "Reusable month grid with offset days, today and selected states, range bands, event dots, and accessible date labels.",
+    "category": "Calendar",
+    "tags": ["calendar", "grid", "month", "date"]
+  }
+}

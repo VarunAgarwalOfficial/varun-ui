@@ -1,0 +1,8 @@
+{
+  "components:stat-value": {
+    "title": "Stat Value",
+    "description": "The semantic value treatment for statistics: four earned emphasis sizes, semantic tones, tabular figures, and the shared Animated Number motion.",
+    "category": "Data Display",
+    "tags": ["data-display", "stat", "value", "number", "count", "motion"]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "components:progress-meter": {
+    "title": "Progress Meter",
+    "description": "Token-colored progressbar or meter primitive with safe clamping, accessible value semantics, and transform-based fill motion.",
+    "category": "Progress",
+    "tags": ["progress", "meter", "status", "motion"]
+  },
+  "components:radial-progress": {
+    "title": "Radial Progress",
+    "description": "Circular SVG progress primitive with semantic tones, accessible value semantics, and reveal motion for centered metric displays.",
+    "category": "Progress",
+    "tags": ["progress", "radial", "chart", "meter"]
+  }
+}

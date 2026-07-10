@@ -1,0 +1,56 @@
+{
+  "layouts:stack": {
+    "title": "Stack",
+    "description": "The default vertical flow primitive: one semantic gap and one alignment for a sequence of children. Inspired by the Every Layout Stack pattern.",
+    "category": "Flow",
+    "tags": ["flow", "vertical", "stack", "rhythm"]
+  },
+  "layouts:cluster": {
+    "title": "Cluster",
+    "description": "The default horizontal flow for actions, tags, metadata, and navigation that should wrap naturally instead of inventing breakpoints.",
+    "category": "Flow",
+    "tags": ["flow", "horizontal", "cluster", "wrap"]
+  },
+  "layouts:switcher": {
+    "title": "Switcher",
+    "description": "An intrinsic layout that stays horizontal while children remain useful, then switches the whole group into a vertical flow.",
+    "category": "Flow",
+    "tags": ["flow", "responsive", "switcher", "intrinsic"]
+  },
+  "layouts:reel": {
+    "title": "Reel",
+    "description": "One intentional horizontal overflow pattern for related items and media, with a fixed readable item measure and snap behavior.",
+    "category": "Flow",
+    "tags": ["flow", "horizontal", "scroll", "reel"]
+  },
+  "layouts:cover": {
+    "title": "Cover",
+    "description": "A vertically centered full-page or section composition with optional header and footer slots, following the classic Every Layout Cover pattern.",
+    "category": "Flow",
+    "tags": ["flow", "cover", "center", "page", "state"]
+  },
+  "layouts:center": {
+    "title": "Center",
+    "description": "A readable maximum measure with optional shared gutters, following the Every Layout Center pattern.",
+    "category": "Flow",
+    "tags": ["flow", "center", "measure", "every-layout"]
+  },
+  "layouts:frame": {
+    "title": "Frame",
+    "description": "A predictable aspect-ratio frame for media and visual fields, based on the Every Layout Frame pattern.",
+    "category": "Flow",
+    "tags": ["flow", "frame", "media", "aspect-ratio"]
+  },
+  "layouts:imposter": {
+    "title": "Imposter",
+    "description": "A bounded centered overlay for dialogs, spotlights, and previews, following the Every Layout Imposter pattern.",
+    "category": "Flow",
+    "tags": ["flow", "overlay", "center", "imposter"]
+  },
+  "layouts:pancake": {
+    "title": "Pancake",
+    "description": "The classic auto, flexible, auto shell for a header, growing main region, and footer.",
+    "category": "Shell",
+    "tags": ["flow", "shell", "header", "footer", "pancake"]
+  }
+}

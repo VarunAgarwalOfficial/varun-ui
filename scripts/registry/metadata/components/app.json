@@ -1,0 +1,26 @@
+{
+  "components:breadcrumb-nav": {
+    "title": "Breadcrumb Navigation",
+    "description": "The one semantic breadcrumb treatment with real links, an optional home link, restrained hover motion, and an unambiguous current page.",
+    "category": "Navigation",
+    "tags": ["navigation", "breadcrumb", "trail", "links"]
+  },
+  "components:navbar": {
+    "title": "Navbar",
+    "description": "The one responsive site navigation shell: composable brand, utilities, and actions regions, an accessible link collection, and a bindable mobile menu.",
+    "category": "Navigation",
+    "tags": ["navigation", "navbar", "shell", "mobile"]
+  },
+  "components:nav-menu-list": {
+    "title": "Navigation Menu List",
+    "description": "Reusable menu list for mega panels with optional heading, icons, descriptions, real links or button actions, and arrow motion.",
+    "category": "Navigation",
+    "tags": ["navigation", "menu", "list", "mega", "links"]
+  },
+  "components:pagination-nav": {
+    "title": "Pagination Navigation",
+    "description": "Accessible pagination navigation with page-window calculation, prev and next controls, optional href generation, and primary or neutral active tone.",
+    "category": "Navigation",
+    "tags": ["navigation", "pagination", "pages", "links"]
+  }
+}

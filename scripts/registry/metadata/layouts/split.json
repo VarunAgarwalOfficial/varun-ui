@@ -1,0 +1,20 @@
+{
+  "layouts:split": {
+    "title": "Split",
+    "description": "The canonical responsive two-column composition with one equal desktop split, semantic alignment, and caller-owned content, influenced by Bauhaus and Swiss editorial layouts.",
+    "category": "Section",
+    "tags": ["split", "columns", "media"]
+  },
+  "layouts:media-split": {
+    "title": "Media Split",
+    "description": "One full-bleed media and focused-copy split with a fixed reading measure, fixed media height, and only meaningful side and mobile-order controls.",
+    "category": "Split",
+    "tags": ["split", "media", "overlay"]
+  },
+  "layouts:overlap": {
+    "title": "Overlap",
+    "description": "A controlled twelve-column overlap for connected image and copy compositions, echoing magazine art direction without absolute-position chaos.",
+    "category": "Split",
+    "tags": ["overlap", "layered", "media", "editorial"]
+  }
+}

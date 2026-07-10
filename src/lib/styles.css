@@ -1,0 +1,904 @@
+@import "tailwindcss";
+@import "./styles/tokens.css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@source "./**/*.{svelte,ts}";
+
+@theme {
+  --color-background: oklch(0.985 0.018 88);
+  --color-foreground: oklch(0.205 0.018 60);
+  --font-sans:
+    Geist, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono:
+    "Geist Mono", ui-monospace, SFMono-Regular, "SF Mono", Consolas, monospace;
+  --animate-accordion-down: accordion-down var(--motion-duration-medium)
+    var(--motion-ease-emphasized);
+  --animate-accordion-up: accordion-up var(--motion-duration-medium)
+    var(--motion-ease-emphasized);
+  --color-surface: var(--color-background);
+  --color-primary: oklch(0.68 0.16 54);
+  --color-red: oklch(0.62 0.18 25);
+  --color-pink: oklch(0.68 0.16 350);
+  --color-yellow: oklch(0.78 0.15 85);
+  --color-green: oklch(0.58 0.13 150);
+  --color-blue: oklch(0.58 0.15 245);
+  --color-purple: oklch(0.58 0.17 295);
+  --color-muted: oklch(0.946 0.022 88);
+  --color-muted-foreground: oklch(0.52 0.026 64);
+  --color-danger: oklch(0.58 0.19 28);
+  --color-success: oklch(0.58 0.12 142);
+  --color-warning: oklch(0.78 0.16 78);
+  --color-info: oklch(0.58 0.12 245);
+  --color-data-purple: oklch(0.74 0.13 294);
+  --color-data-blue: oklch(0.62 0.12 245);
+  --color-data-green: oklch(0.68 0.09 132);
+  --color-data-yellow: oklch(0.74 0.15 78);
+  --color-data-red: oklch(0.66 0.16 35);
+  --color-data-pink: oklch(0.68 0.15 350);
+  --color-data-cyan: oklch(0.62 0.12 185);
+  --color-data-gray: oklch(0.52 0.08 64);
+  --color-border: oklch(0.88 0.02 82);
+}
+
+:root {
+  --surface-pastel-base: var(--color-background);
+}
+
+.dark {
+  --border-width: 1px;
+  --color-background: oklch(0.18 0.018 60);
+  --color-foreground: oklch(0.965 0.016 88);
+  --color-surface: var(--color-background);
+  --color-primary: oklch(0.82 0.14 78);
+  --color-red: oklch(0.74 0.15 25);
+  --color-pink: oklch(0.75 0.14 350);
+  --color-yellow: oklch(0.84 0.13 85);
+  --color-green: oklch(0.72 0.11 150);
+  --color-blue: oklch(0.72 0.13 245);
+  --color-purple: oklch(0.72 0.14 295);
+  --color-muted: oklch(0.285 0.021 60);
+  --color-muted-foreground: oklch(0.74 0.026 78);
+  --color-danger: oklch(0.72 0.16 28);
+  --color-success: oklch(0.74 0.13 142);
+  --color-warning: oklch(0.86 0.14 78);
+  --color-info: oklch(0.76 0.12 245);
+  --color-data-purple: oklch(0.8 0.12 294);
+  --color-data-blue: oklch(0.74 0.12 245);
+  --color-data-green: oklch(0.76 0.1 132);
+  --color-data-yellow: oklch(0.84 0.13 78);
+  --color-data-red: oklch(0.78 0.15 35);
+  --color-data-pink: oklch(0.78 0.14 350);
+  --color-data-cyan: oklch(0.74 0.11 185);
+  --color-data-gray: oklch(0.76 0.06 64);
+  --color-border: oklch(0.36 0.025 60);
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--bits-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--bits-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+@keyframes caret-blink {
+  0%,
+  70%,
+  100% {
+    opacity: 1;
+  }
+  20%,
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes varunui-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+
+@keyframes varunui-ping {
+  75%,
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+@keyframes varunui-draw-left {
+  from {
+    opacity: var(--motion-draw-opacity-start, 0);
+    transform: scaleX(0.001) var(--motion-draw-transform, translateZ(0));
+  }
+  12% {
+    opacity: var(--motion-draw-opacity, 1);
+  }
+  to {
+    opacity: var(--motion-draw-opacity, 1);
+    transform: scaleX(1) var(--motion-draw-transform, translateZ(0));
+  }
+}
+
+@keyframes varunui-spin-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.0625rem) rotate(-12deg) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+@keyframes varunui-pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.125rem) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes varunui-popover-in {
+  from {
+    opacity: 0;
+    transform: translateY(-0.25rem) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes varunui-popover-out {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-0.25rem) scale(0.98);
+  }
+}
+
+@keyframes varunui-dialog-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% + 0.5rem)) scale(0.98);
+  }
+}
+
+@keyframes varunui-dialog-out {
+  to {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% + 0.25rem)) scale(0.98);
+  }
+}
+
+@keyframes varunui-dialog-overlay-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes varunui-dialog-overlay-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes varunui-chart-bar-reveal {
+  from {
+    opacity: 0;
+    transform: scaleX(0.001);
+  }
+}
+
+@keyframes varunui-chart-column-reveal {
+  from {
+    opacity: 0;
+    transform: scaleY(0.001);
+  }
+}
+
+@keyframes varunui-chart-line-reveal {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes varunui-chart-area-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(0.25rem);
+  }
+}
+
+@keyframes varunui-chart-tooltip-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes varunui-chart-arc-reveal {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+}
+
+@keyframes varunui-character-ready {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem) rotate(-1.25deg) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-primary/50;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+    isolation: isolate;
+  }
+
+  body::before,
+  body::after {
+    content: "";
+    inset: 0;
+    mix-blend-mode: var(--paper-texture-blend);
+    pointer-events: none;
+    position: fixed;
+    z-index: 9999;
+  }
+
+  body::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E");
+    background-size: var(--paper-grain-size) var(--paper-grain-size);
+    opacity: var(--paper-grain-opacity);
+  }
+
+  body::after {
+    background-image:
+      repeating-linear-gradient(
+        1deg,
+        transparent 0,
+        transparent 3px,
+        var(--paper-fiber-color) 4px
+      ),
+      repeating-linear-gradient(
+        91deg,
+        transparent 0,
+        transparent 47px,
+        var(--paper-fiber-color) 48px
+      );
+    background-size:
+      100% 4px,
+      48px 100%;
+    opacity: var(--paper-fiber-opacity);
+  }
+
+  ::selection {
+    background: color-mix(in oklch, var(--color-yellow) 32%, transparent);
+    color: var(--color-foreground);
+  }
+
+  @media (prefers-contrast: more) {
+    body::before,
+    body::after {
+      opacity: 0.025;
+    }
+  }
+}
+
+@layer utilities {
+  .surface-pastel {
+    --surface-pastel-color: var(--color-yellow);
+    --surface-pastel-strength: 15%;
+    background-color: color-mix(
+      in oklab,
+      var(--surface-pastel-color) var(--surface-pastel-strength),
+      var(--surface-pastel-base)
+    );
+  }
+
+  .surface-pastel[data-tone="red"] {
+    --surface-pastel-color: var(--color-red);
+  }
+
+  .surface-pastel[data-tone="pink"] {
+    --surface-pastel-color: var(--color-pink);
+  }
+
+  .surface-pastel[data-tone="yellow"] {
+    --surface-pastel-color: var(--color-yellow);
+  }
+
+  .surface-pastel[data-tone="green"] {
+    --surface-pastel-color: var(--color-green);
+  }
+
+  .surface-pastel[data-tone="blue"] {
+    --surface-pastel-color: var(--color-blue);
+  }
+
+  .surface-pastel[data-tone="purple"] {
+    --surface-pastel-color: var(--color-purple);
+  }
+
+  .surface-pastel-art {
+    --surface-pastel-strength: 25%;
+  }
+
+  .surface-pastel-interactive {
+    transition:
+      background-color var(--motion-duration-base) var(--motion-ease-emphasized),
+      border-color var(--motion-duration-base) var(--motion-ease-emphasized);
+  }
+
+  .surface-pastel-interactive:is(:hover, :focus-visible, :focus-within) {
+    --surface-pastel-strength: 22%;
+  }
+
+  .article-prose {
+    color: var(--color-muted-foreground);
+    font-size: 1.125rem;
+    line-height: 2rem;
+  }
+
+  .article-prose > * + * {
+    margin-top: 1.5rem;
+  }
+
+  .article-prose h2 {
+    scroll-margin-top: 6rem;
+    padding-top: 2rem;
+    color: var(--color-foreground);
+    font-size: 1.875rem;
+    font-weight: 600;
+    line-height: 2.25rem;
+  }
+
+  .article-prose h3 {
+    scroll-margin-top: 6rem;
+    padding-top: 0.75rem;
+    color: var(--color-foreground);
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.75rem;
+  }
+
+  .article-prose ul,
+  .article-prose ol {
+    margin-left: 1.25rem;
+  }
+
+  .article-prose ul {
+    list-style: disc;
+  }
+
+  .article-prose ol {
+    list-style: decimal;
+  }
+
+  .article-prose li {
+    padding-left: 0.25rem;
+  }
+
+  .article-prose li + li {
+    margin-top: 0.75rem;
+  }
+
+  .article-prose ::marker {
+    color: var(--color-primary);
+  }
+
+  .article-prose blockquote {
+    border-left: 4px solid var(--color-primary);
+    background: color-mix(in oklch, var(--color-muted) 55%, transparent);
+    padding: 1rem 1.25rem;
+    color: var(--color-foreground);
+    font-weight: 500;
+  }
+
+  .article-prose pre {
+    overflow-x: auto;
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius);
+    background: var(--color-muted);
+    padding: 1rem;
+    color: var(--color-foreground);
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+  }
+
+  .article-prose code {
+    font-family: var(--font-mono);
+  }
+
+  .motion-colors {
+    transition-duration: var(--motion-duration-base);
+    transition-property:
+      color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: var(--motion-ease-emphasized);
+  }
+
+  .motion-interactive {
+    transition-duration: var(--motion-duration-base);
+    transition-property:
+      color, background-color, border-color, opacity, transform, translate,
+      rotate, scale;
+    transition-timing-function: var(--motion-ease-emphasized);
+  }
+
+  .link-underline {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.08em;
+  }
+
+  .link-underline::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: max(1px, var(--border-width));
+    background: currentColor;
+    content: "";
+  }
+
+  .motion-draw-left,
+  .motion-draw-left-active,
+  .motion-draw-left-trigger {
+    --motion-draw-opacity: 1;
+    --motion-draw-opacity-start: 0;
+    --motion-draw-transform: translateZ(0);
+  }
+
+  .motion-draw-left::before,
+  .motion-draw-left::after,
+  .motion-draw-left-active::before,
+  .motion-draw-left-active::after,
+  .motion-draw-left-trigger::before,
+  .motion-draw-left-trigger::after {
+    opacity: var(--motion-draw-state-opacity, var(--motion-draw-opacity-start));
+    transform: scaleX(var(--motion-draw-state-scale-x, 0.001))
+      var(--motion-draw-transform);
+    transform-origin: var(--motion-draw-origin, left center);
+    transition:
+      opacity var(--motion-duration-base) var(--motion-ease-emphasized),
+      transform var(--motion-duration-draw) var(--motion-ease-emphasized);
+    will-change: transform;
+  }
+
+  .motion-draw-left::before,
+  .motion-draw-left::after,
+  .motion-draw-left-active::before,
+  .motion-draw-left-active::after,
+  :where(a, button, [role="button"], [data-underline-trigger]):is(
+      :hover,
+      :focus-visible,
+      :focus-within
+    )
+    .motion-draw-left-trigger::before,
+  :where(a, button, [role="button"], [data-underline-trigger]):is(
+      :hover,
+      :focus-visible,
+      :focus-within
+    )
+    .motion-draw-left-trigger::after {
+    --motion-draw-state-opacity: var(--motion-draw-opacity, 1);
+    --motion-draw-state-scale-x: 1;
+    animation: var(--motion-draw-left-animation);
+  }
+
+  .motion-transform {
+    transition-duration: var(--motion-duration-medium);
+    transition-property: transform, translate, rotate, scale;
+    transition-timing-function: var(--motion-ease-emphasized);
+  }
+
+  .motion-transform-slow {
+    transition-duration: var(--motion-duration-slow);
+    transition-property: transform, translate, rotate, scale;
+    transition-timing-function: var(--motion-ease-emphasized);
+  }
+
+  .motion-progress-fill {
+    transition-duration: var(--motion-duration-medium);
+    transition-property: transform, translate, rotate, scale, stroke-dashoffset;
+    transition-timing-function: var(--motion-ease-emphasized);
+  }
+
+  .motion-opacity {
+    transition-duration: var(--motion-duration-base);
+    transition-property: opacity;
+    transition-timing-function: var(--motion-ease-emphasized);
+  }
+
+  .motion-filter {
+    transition-duration: var(--motion-duration-medium);
+    transition-property: filter, opacity;
+    transition-timing-function: var(--motion-ease-emphasized);
+  }
+
+  .motion-media {
+    transition-duration: var(--motion-duration-slow);
+    transition-property: filter, opacity, transform, translate, rotate, scale;
+    transition-timing-function: var(--motion-ease-emphasized);
+  }
+
+  .motion-size {
+    transition-duration: var(--motion-duration-slow);
+    transition-property: width, height, max-width, max-height, padding, opacity;
+    transition-timing-function: var(--motion-ease-emphasized);
+  }
+
+  .motion-spin-in {
+    animation: varunui-spin-in var(--motion-duration-medium)
+      var(--motion-ease-emphasized) both;
+  }
+
+  .motion-pop-in {
+    animation: varunui-pop-in var(--motion-duration-medium)
+      var(--motion-ease-emphasized) both;
+    transform-origin: center;
+  }
+
+  .motion-star-stagger > * {
+    animation-delay: var(--motion-star-delay, 0ms);
+  }
+
+  .motion-star-stagger > :nth-child(2) {
+    --motion-star-delay: 55ms;
+  }
+
+  .motion-star-stagger > :nth-child(3) {
+    --motion-star-delay: 110ms;
+  }
+
+  .motion-star-stagger > :nth-child(4) {
+    --motion-star-delay: 165ms;
+  }
+
+  .motion-star-stagger > :nth-child(5) {
+    --motion-star-delay: 220ms;
+  }
+
+  .motion-star-stagger > :nth-child(6) {
+    --motion-star-delay: 275ms;
+  }
+
+  .motion-star-stagger > :nth-child(7) {
+    --motion-star-delay: 330ms;
+  }
+
+  .motion-star-stagger > :nth-child(8) {
+    --motion-star-delay: 385ms;
+  }
+
+  .motion-star-stagger > :nth-child(9) {
+    --motion-star-delay: 440ms;
+  }
+
+  .motion-star-stagger > :nth-child(10) {
+    --motion-star-delay: 495ms;
+  }
+
+  .motion-popover {
+    animation: varunui-popover-in var(--motion-duration-base)
+      var(--motion-ease-emphasized) both;
+    transform-origin: var(--transform-origin, center);
+  }
+
+  .motion-popover-out {
+    animation: varunui-popover-out var(--motion-duration-base)
+      var(--motion-ease-emphasized) both;
+    transform-origin: var(--transform-origin, center);
+  }
+
+  .motion-dialog {
+    animation: varunui-dialog-in var(--motion-duration-medium)
+      var(--motion-ease-emphasized) both;
+  }
+
+  .motion-dialog-out {
+    animation: varunui-dialog-out var(--motion-duration-base)
+      var(--motion-ease-emphasized) both;
+  }
+
+  .motion-dialog-overlay {
+    animation: varunui-dialog-overlay-in var(--motion-duration-base)
+      var(--motion-ease-emphasized) both;
+  }
+
+  .motion-dialog-overlay-out {
+    animation: varunui-dialog-overlay-out var(--motion-duration-base)
+      var(--motion-ease-emphasized) both;
+  }
+
+  .motion-chart-bar {
+    animation: varunui-chart-bar-reveal var(--motion-duration-slow)
+      var(--motion-ease-emphasized) both;
+    animation-delay: var(--chart-motion-delay, 0ms);
+    transform-box: fill-box;
+    transform-origin: left center;
+  }
+
+  .motion-chart-column {
+    animation: varunui-chart-column-reveal var(--motion-duration-slow)
+      var(--motion-ease-emphasized) both;
+    animation-delay: var(--chart-motion-delay, 0ms);
+    transform-box: fill-box;
+    transform-origin: center bottom;
+  }
+
+  .motion-chart-line {
+    animation: varunui-chart-line-reveal var(--motion-duration-draw)
+      var(--motion-ease-emphasized) both;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 0;
+  }
+
+  .motion-chart-area {
+    animation: varunui-chart-area-reveal var(--motion-duration-slow)
+      var(--motion-ease-emphasized) both;
+  }
+
+  .motion-chart-tooltip {
+    animation: varunui-chart-tooltip-in var(--motion-duration-base)
+      var(--motion-ease-emphasized) both;
+  }
+
+  .motion-chart-arc {
+    animation: varunui-chart-arc-reveal var(--motion-duration-slow)
+      var(--motion-ease-emphasized) both;
+    animation-delay: var(--chart-motion-delay, 0ms);
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+
+  .motion-character-load {
+    opacity: 0;
+  }
+
+  .motion-character-load[data-ready="true"] {
+    animation: varunui-character-ready var(--motion-duration-slow)
+      var(--motion-ease-emphasized) both;
+    transform-origin: center bottom;
+  }
+
+  .motion-code-ready {
+    opacity: 0;
+    transform: scale(0.99);
+    transition:
+      opacity var(--motion-duration-base) var(--motion-ease-emphasized),
+      transform var(--motion-duration-base) var(--motion-ease-emphasized);
+  }
+
+  .motion-code-ready[data-ready="true"] {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .chart-reveal:not([data-chart-visible="true"])
+    :is(
+      .motion-chart-bar,
+      .motion-chart-column,
+      .motion-chart-line,
+      .motion-chart-area,
+      .motion-chart-arc
+    ) {
+    animation-play-state: paused;
+  }
+
+  .motion-spinner {
+    animation: spin var(--motion-duration-loop) linear infinite;
+  }
+
+  .motion-pulse {
+    animation: varunui-pulse var(--motion-duration-loop)
+      var(--motion-ease-emphasized) infinite;
+  }
+
+  .motion-ping {
+    animation: varunui-ping var(--motion-duration-loop)
+      var(--motion-ease-emphasized) infinite;
+  }
+
+  .motion-caret-blink {
+    animation: caret-blink var(--motion-duration-loop) steps(1, end) infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .motion-colors,
+    .motion-interactive,
+    .motion-transform,
+    .motion-transform-slow,
+    .motion-progress-fill,
+    .motion-opacity,
+    .motion-filter,
+    .motion-media,
+    .motion-size {
+      transition-duration: 0.01ms;
+    }
+
+    .surface-pastel-interactive {
+      transition-duration: 0.01ms;
+    }
+
+    .motion-code-ready,
+    .motion-code-ready[data-ready="true"] {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+
+    .motion-draw-left::before,
+    .motion-draw-left::after,
+    .motion-draw-left-active::before,
+    .motion-draw-left-active::after,
+    .motion-draw-left-trigger::before,
+    .motion-draw-left-trigger::after,
+    :where(a, button, [role="button"], [data-underline-trigger]):is(
+        :hover,
+        :focus-visible,
+        :focus-within
+      )
+      .motion-draw-left-trigger::before,
+    :where(a, button, [role="button"], [data-underline-trigger]):is(
+        :hover,
+        :focus-visible,
+        :focus-within
+      )
+      .motion-draw-left-trigger::after {
+      animation: none;
+      transition: none;
+    }
+
+    .motion-pulse,
+    .motion-ping,
+    .motion-spinner {
+      animation: none;
+    }
+
+    .motion-pop-in,
+    .motion-spin-in {
+      animation: none;
+    }
+
+    .motion-popover,
+    .motion-popover-out,
+    .motion-dialog,
+    .motion-dialog-out,
+    .motion-dialog-overlay,
+    .motion-dialog-overlay-out,
+    .motion-chart-bar,
+    .motion-chart-column,
+    .motion-chart-line,
+    .motion-chart-area,
+    .motion-chart-tooltip,
+    .motion-chart-arc,
+    .motion-character-load[data-ready="true"] {
+      animation: none;
+    }
+
+    .motion-character-load,
+    .motion-character-load[data-ready="true"] {
+      opacity: 1;
+      transform: none;
+    }
+
+    .motion-chart-line {
+      stroke-dasharray: none;
+    }
+
+    .motion-popover {
+      opacity: 1;
+    }
+
+    .motion-popover-out {
+      opacity: 0;
+    }
+
+    .motion-dialog {
+      opacity: 1;
+    }
+
+    .motion-dialog-out,
+    .motion-dialog-overlay-out {
+      opacity: 0;
+    }
+
+    .motion-caret-blink {
+      animation: none;
+      opacity: 1;
+    }
+  }
+
+  .rounded-sm {
+    border-radius: var(--radius-compact);
+  }
+
+  .rounded-md {
+    border-radius: var(--radius-media);
+  }
+
+  .rounded-lg {
+    border-radius: var(--radius-control);
+  }
+
+  .rounded-xl {
+    border-radius: var(--radius-overlay);
+  }
+
+  .rounded-full {
+    border-radius: var(--radius-pill);
+  }
+
+  .border {
+    border-width: var(--border-width);
+  }
+
+  .border-1 {
+    border-width: var(--border-width);
+  }
+
+  .border-x {
+    border-left-width: var(--border-width);
+    border-right-width: var(--border-width);
+  }
+
+  .border-y {
+    border-bottom-width: var(--border-width);
+    border-top-width: var(--border-width);
+  }
+
+  .border-t {
+    border-top-width: var(--border-width);
+  }
+
+  .border-r {
+    border-right-width: var(--border-width);
+  }
+
+  .border-b {
+    border-bottom-width: var(--border-width);
+  }
+
+  .border-l {
+    border-left-width: var(--border-width);
+  }
+}

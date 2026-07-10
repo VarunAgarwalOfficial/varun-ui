@@ -1,0 +1,8 @@
+{
+  "layouts:masonry": {
+    "title": "Masonry",
+    "description": "The Pinterest-popularized variable-height collection pattern, reserved for visual browsing where strict row alignment would waste space.",
+    "category": "Grid",
+    "tags": ["masonry", "grid", "columns", "variable-height", "section"]
+  }
+}

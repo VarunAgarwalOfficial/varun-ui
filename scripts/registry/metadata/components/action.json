@@ -1,0 +1,20 @@
+{
+  "components:link": {
+    "title": "Link",
+    "description": "The canonical inline action with one drawn underline, semantic direction, and restrained arrow feedback.",
+    "category": "Action",
+    "tags": ["action", "link", "underline", "navigation"]
+  },
+  "components:copy-button": {
+    "title": "Copy Button",
+    "description": "A single clipboard action with copied feedback for commands, codes, keys, and short values.",
+    "category": "Action",
+    "tags": ["action", "copy", "clipboard", "feedback"]
+  },
+  "components:hold-to-confirm": {
+    "title": "Hold to Confirm",
+    "description": "A sustained-intent control for rare destructive or costly actions, with cancellation, keyboard support, progress, and confirmation feedback.",
+    "category": "Action",
+    "tags": ["action", "hold", "confirm", "destructive", "intent"]
+  }
+}

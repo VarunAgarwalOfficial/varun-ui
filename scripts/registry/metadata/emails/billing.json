@@ -1,0 +1,38 @@
+{
+  "emails:invoice-ready": {
+    "title": "Invoice Ready",
+    "description": "A calm billing document with the amount, due date, invoice reference, billing period, and one route to the full invoice.",
+    "category": "Billing",
+    "tags": ["billing", "invoice", "amount", "due-date", "transactional"]
+  },
+  "emails:payment-failed": {
+    "title": "Payment Failed",
+    "description": "A red action-required notice that names the failed charge, payment method, next retry, temporary account state, and one repair action.",
+    "category": "Billing",
+    "tags": ["billing", "payment", "failed", "retry", "action-required"]
+  },
+  "emails:plan-changed": {
+    "title": "Plan Changed",
+    "description": "A factual plan confirmation that compares the previous and current plan, effective date, next charge, and billing destination.",
+    "category": "Billing",
+    "tags": ["billing", "plan", "subscription", "confirmation", "account"]
+  },
+  "emails:trial-ending": {
+    "title": "Trial Ending",
+    "description": "A yellow orientation message that states the exact trial end date, what happens next, and one deliberate plan choice without fake urgency.",
+    "category": "Billing",
+    "tags": ["billing", "trial", "subscription", "lifecycle", "plan"]
+  },
+  "emails:card-expiring": {
+    "title": "Card Expiring",
+    "description": "An early payment-method reminder that identifies the card, expiry, affected workspace, and next charge without presenting a failure that has not happened.",
+    "category": "Billing",
+    "tags": ["billing", "card", "expiry", "payment-method", "reminder"]
+  },
+  "emails:refund-issued": {
+    "title": "Refund Issued",
+    "description": "A green proof-of-progress message with refund amount, destination, order reference, realistic arrival window, and one order route.",
+    "category": "Billing",
+    "tags": ["billing", "refund", "commerce", "confirmation", "transactional"]
+  }
+}

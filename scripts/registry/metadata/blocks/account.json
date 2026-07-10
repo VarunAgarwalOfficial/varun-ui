@@ -1,0 +1,104 @@
+{
+  "blocks:onboarding-welcome": {
+    "title": "Onboarding Welcome",
+    "description": "The opening onboarding split: blue character field, bounded step count, one setup promise, and no more than two actions.",
+    "category": "Onboarding",
+    "tags": ["onboarding", "welcome", "hero", "step", "indicator"]
+  },
+  "blocks:role-persona-selector": {
+    "title": "Role Persona Selector",
+    "description": "A five-role onboarding choice with a shared pink people field, explicit setup effect, direct progress, reusable radio behavior, and one gated continuation.",
+    "category": "Onboarding",
+    "tags": ["onboarding", "role", "persona", "selector"]
+  },
+  "blocks:workspace-setup": {
+    "title": "Workspace Setup",
+    "description": "A blue task-first setup step for workspace identity, URL, and optional initial invitations using the shared onboarding rhythm and form controls.",
+    "category": "Onboarding",
+    "tags": ["onboarding", "workspace", "setup", "team", "invite"]
+  },
+  "blocks:integration-selector": {
+    "title": "Integration Connector Grid",
+    "description": "A blue connector step with six real tool objects, clear available, connected, and coming-soon states, direct actions, and a plain connected count.",
+    "category": "Onboarding",
+    "tags": ["onboarding", "integration", "connector", "grid"]
+  },
+  "blocks:interest-tag-picker": {
+    "title": "Interest Tag Picker",
+    "description": "A grouped multi-select for prioritizing product work, system craft, and output examples without introducing AI-specific or unrelated topic filler.",
+    "category": "Onboarding",
+    "tags": ["onboarding", "interest", "tag", "picker"]
+  },
+  "blocks:goal-selector": {
+    "title": "Goal Selector",
+    "description": "A multi-select onboarding decision with one yellow orientation field, neutral selectable objects, explicit progress, visible selection count, and gated continuation.",
+    "category": "Onboarding",
+    "tags": ["onboarding", "goal", "selector", "paths"]
+  },
+  "blocks:notification-preferences": {
+    "title": "Notification Preferences",
+    "description": "A yellow task-first notification step with two ruled groups, shared switch fields, an enabled count, and one save action plus quiet escape route.",
+    "category": "Onboarding",
+    "tags": ["onboarding", "notification", "preferences"]
+  },
+  "blocks:profile-setup": {
+    "title": "Profile Setup",
+    "description": "A pink people-context step with photo upload, identity fields, timezone, shared progress, one save action, and no form-card wrapper.",
+    "category": "Onboarding",
+    "tags": ["onboarding", "profile", "setup"]
+  },
+  "blocks:template-starter-picker": {
+    "title": "Template Starter Picker",
+    "description": "A yellow starting-shape choice using one shared radio grid, five ordinary project templates, one meaningful recommendation status, and gated creation.",
+    "category": "Onboarding",
+    "tags": ["onboarding", "template", "starter", "picker"]
+  },
+  "blocks:onboarding-completion-screen": {
+    "title": "Onboarding Completion Screen",
+    "description": "A restrained completion split with one green character story, rare milestone seal, short setup summary, one primary first task, and one workspace route.",
+    "category": "Onboarding",
+    "tags": ["onboarding", "completion", "screen"]
+  },
+  "blocks:security-setup": {
+    "title": "Security Setup",
+    "description": "A purple protected-access step with a flat safeguard sequence, exact completion count, recovery and two-factor actions, and a quiet defer route.",
+    "category": "Onboarding",
+    "tags": ["onboarding", "security", "setup"]
+  },
+  "blocks:keyboard-shortcuts-cheat-sheet": {
+    "title": "Keyboard Shortcuts Cheat Sheet",
+    "description": "A flat, partitioned shortcut reference for the few commands worth learning during onboarding, with a restrained finish action.",
+    "category": "Onboarding",
+    "tags": ["onboarding", "keyboard", "shortcuts", "cheat", "sheet"]
+  },
+  "blocks:data-import-selector": {
+    "title": "Data Import Selector",
+    "description": "A blue task-first import decision with shared radio options for connected tools, file upload, or a clean workspace and one gated continuation.",
+    "category": "Onboarding",
+    "tags": ["onboarding", "data", "import", "selector"]
+  },
+  "blocks:attribution-survey": {
+    "title": "Attribution Survey",
+    "description": "An optional pink context step with six plain discovery sources, one conditional text field, visible feedback, and no nested channel questionnaire.",
+    "category": "Onboarding",
+    "tags": ["onboarding", "attribution", "survey"]
+  },
+  "blocks:billing-cycle-setup": {
+    "title": "Billing Cycle Setup",
+    "description": "A purple billing-review step with one cycle control, exact recurring amount, payment-method choice, optional coupon feedback, and one confirmation action.",
+    "category": "Onboarding",
+    "tags": ["onboarding", "billing", "setup", "cycle", "toggle"]
+  },
+  "blocks:company-info-form": {
+    "title": "Company Info Form",
+    "description": "A blue task-first context step for team name, size, industry, and role using shared controls and the canonical onboarding progress and action rhythm.",
+    "category": "Onboarding",
+    "tags": ["onboarding", "company", "info", "form"]
+  },
+  "blocks:feature-tour-carousel": {
+    "title": "Feature Tour",
+    "description": "A focused onboarding tour with one Marker-led introduction, one pastel feature surface, a short ruled benefit list, and reusable carousel controls.",
+    "category": "Onboarding",
+    "tags": ["onboarding", "feature", "tour", "carousel"]
+  }
+}

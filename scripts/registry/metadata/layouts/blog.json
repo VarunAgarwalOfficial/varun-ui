@@ -1,0 +1,8 @@
+{
+  "layouts:article": {
+    "title": "Article",
+    "description": "One reading-first article sequence: measured header, optional wide media, then a fixed prose column, drawing on classic Tschichold-style editorial proportion.",
+    "category": "Article",
+    "tags": ["article", "shell", "measure", "sequence", "prose"]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "pages:job-application": {
+    "title": "Job Application",
+    "description": "The complete route after Job Detail: shared careers navigation, one role-aware application form with a summary rail and file upload, then the shared site footer.",
+    "category": "Careers",
+    "tags": ["careers", "job", "application", "form", "upload", "complete"]
+  },
+  "pages:careers": {
+    "title": "Careers",
+    "description": "A complete hiring route with pink character-led orientation, working principles, concrete benefits, open roles, a plain four-part hiring process, job alerts, and the shared varunUI site footer.",
+    "category": "Careers",
+    "tags": ["careers", "hiring", "jobs", "benefits", "character", "complete"]
+  },
+  "pages:contact": {
+    "title": "Contact",
+    "description": "A character-led contact page that sets response expectations, collects only useful project context, and confirms the handoff to a real support person.",
+    "category": "Contact",
+    "tags": ["contact", "support", "form", "character"]
+  },
+  "pages:job-detail": {
+    "title": "Job Detail",
+    "description": "A complete Marker-led role description with plain facts, ruled responsibility and requirement lists, useful experience, and one application action.",
+    "category": "Careers",
+    "tags": ["careers", "job", "detail"]
+  }
+}

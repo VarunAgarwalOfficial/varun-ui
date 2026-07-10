@@ -1,0 +1,230 @@
+{
+  "pages:account-chooser": {
+    "title": "Account Chooser",
+    "description": "Split auth flow pairing a named-pastel character context pane with a selectable saved-account list and another-account route; the task leads on mobile.",
+    "category": "Auth",
+    "tags": ["auth", "account", "chooser"]
+  },
+  "pages:account-locked": {
+    "title": "Account Locked",
+    "description": "Split auth flow pairing a named-pastel character context pane with lockout timing, retry state, and password recovery; the task leads on mobile.",
+    "category": "Auth",
+    "tags": ["auth", "account", "locked"]
+  },
+  "pages:authentication-error": {
+    "title": "Sign-in Error",
+    "description": "Split auth flow pairing a named-pastel character context pane with an authentication error explanation and recovery routes; the task leads on mobile.",
+    "category": "Auth",
+    "tags": ["auth", "sign-in", "error"]
+  },
+  "pages:biometric-sign-in": {
+    "title": "Face ID Sign In",
+    "description": "Split auth flow pairing a named-pastel character context pane with biometric scan states, continuation, and a password fallback; the task leads on mobile.",
+    "category": "Auth",
+    "tags": ["auth", "face", "id", "sign"]
+  },
+  "pages:change-password": {
+    "title": "Change Password",
+    "description": "Split auth flow pairing a named-pastel character context pane with current and replacement password fields, recovery, and cancellation; the task leads on mobile.",
+    "category": "Auth",
+    "tags": ["auth", "change", "password"]
+  },
+  "pages:check-inbox": {
+    "title": "Check Your Inbox",
+    "description": "Split auth flow pairing a named-pastel character context pane with magic-link delivery status, resend timing, and email correction; the task leads on mobile.",
+    "category": "Auth",
+    "tags": ["auth", "check", "inbox"]
+  },
+  "pages:confirm-identity": {
+    "title": "Confirm It's You",
+    "description": "Split auth flow pairing a named-pastel character context pane with step-up password confirmation, account identity, and cancellation; the task leads on mobile.",
+    "category": "Auth",
+    "tags": ["auth", "confirm"]
+  },
+  "pages:email-confirmed": {
+    "title": "Email Confirmed",
+    "description": "Split auth completion flow pairing a named-pastel character context pane with confirmation, continuation, and support actions; the task leads on mobile.",
+    "category": "Auth",
+    "tags": ["auth", "email", "confirmed", "success"]
+  },
+  "pages:email-first-sign-in": {
+    "title": "Email-First Sign In",
+    "description": "Split auth flow pairing a named-pastel character context pane with progressive email-first credentials entry; the task leads on mobile.",
+    "category": "Auth",
+    "tags": ["auth", "email-first", "sign"]
+  },
+  "pages:expired-link": {
+    "title": "Link Expired",
+    "description": "Split auth flow pairing a named-pastel character context pane with expired-link recovery and a sign-in route; the task leads on mobile.",
+    "category": "Auth",
+    "tags": ["auth", "link", "expired"]
+  },
+  "pages:forgot-password": {
+    "title": "Forgot Password",
+    "description": "Split auth flow pairing a named-pastel character context pane with the email request step of password recovery; the task leads on mobile.",
+    "category": "Auth",
+    "tags": ["auth", "forgot", "password", "request"]
+  },
+  "pages:human-verification": {
+    "title": "Human Verification",
+    "description": "Split auth flow pairing a named-pastel character context pane with an interactive human-verification state machine; the task leads on mobile.",
+    "category": "Auth",
+    "tags": ["auth", "human", "verification"]
+  },
+  "pages:invitation": {
+    "title": "Accept Invitation",
+    "description": "Split auth flow pairing a named-pastel character invitation pane with account setup for an invited teammate; the task leads on mobile.",
+    "category": "Auth",
+    "tags": ["auth", "team", "invitation", "accept"]
+  },
+  "pages:invite-code": {
+    "title": "Invite Code Gate",
+    "description": "Split auth flow pairing a named-pastel character context pane with invite-code entry and an access-request route; the task leads on mobile.",
+    "category": "Auth",
+    "tags": ["auth", "invite", "code", "gate"]
+  },
+  "pages:magic-link": {
+    "title": "Magic Link Sign In",
+    "description": "Split auth flow pairing a named-pastel character context pane with magic-link email entry and social fallbacks; the task leads on mobile.",
+    "category": "Auth",
+    "tags": ["auth", "magic", "link", "sign"]
+  },
+  "pages:number-match": {
+    "title": "Number Match Approval",
+    "description": "Split auth flow pairing a named-pastel character context pane with number-match approval, live waiting status, and cancellation; the task leads on mobile.",
+    "category": "Auth",
+    "tags": ["auth", "number", "match", "approval"]
+  },
+  "pages:oauth-consent": {
+    "title": "Authorization Consent",
+    "description": "Split auth flow pairing a named-pastel character context pane with OAuth scope review and consent actions; the task leads on mobile.",
+    "category": "Auth",
+    "tags": ["auth", "oauth", "authorize", "app"]
+  },
+  "pages:passkey": {
+    "title": "Passkey Sign In",
+    "description": "Split auth flow pairing a named-pastel character context pane with passkey access and a password fallback; the task leads on mobile.",
+    "category": "Auth",
+    "tags": ["auth", "passkey", "sign"]
+  },
+  "pages:pattern-unlock": {
+    "title": "Pattern Unlock",
+    "description": "Split auth flow pairing a named-pastel character context pane with interactive pattern entry, clearing, and unlock actions; the task leads on mobile.",
+    "category": "Auth",
+    "tags": ["auth", "pattern", "lock", "unlock"]
+  },
+  "pages:phone-sign-in": {
+    "title": "Phone Sign In",
+    "description": "Split auth flow pairing a named-pastel character context pane with country-aware phone entry and an email fallback; the task leads on mobile.",
+    "category": "Auth",
+    "tags": ["auth", "phone", "number", "sign"]
+  },
+  "pages:pin-unlock": {
+    "title": "PIN Unlock",
+    "description": "Split auth flow pairing a named-pastel character context pane with the reusable PIN Pad, masked progress, and password recovery; the task leads on mobile.",
+    "category": "Auth",
+    "tags": ["auth", "pin", "keypad", "unlock"]
+  },
+  "pages:qr-device-login": {
+    "title": "QR Code Device Login",
+    "description": "Split auth flow pairing a named-pastel character context pane with QR device sign-in, a manual code, and live confirmation status; the task leads on mobile.",
+    "category": "Auth",
+    "tags": ["auth", "qr", "code", "device", "login"]
+  },
+  "pages:reauthentication": {
+    "title": "Reauthentication",
+    "description": "Split auth flow pairing a named-pastel character context pane with returning-account identity, password confirmation, and recovery routes; the task leads on mobile.",
+    "category": "Auth",
+    "tags": ["auth", "welcome", "back", "unlock"]
+  },
+  "pages:recovery-codes": {
+    "title": "Recovery Codes",
+    "description": "Split auth flow pairing a named-pastel character context pane with recovery-code copy, download, warning, and saved-state confirmation; the task leads on mobile.",
+    "category": "Auth",
+    "tags": ["auth", "recovery", "codes"]
+  },
+  "pages:recovery-phrase": {
+    "title": "Recovery Phrase",
+    "description": "Split auth flow pairing a named-pastel character context pane with recovery-phrase entry, paste-to-fill support, and gated restoration; the task leads on mobile.",
+    "category": "Auth",
+    "tags": ["auth", "recovery", "phrase", "entry"]
+  },
+  "pages:reset-password": {
+    "title": "Set New Password",
+    "description": "Split auth flow pairing a named-pastel character context pane with new-password fields and live requirement feedback; the task leads on mobile.",
+    "category": "Auth",
+    "tags": ["auth", "password"]
+  },
+  "pages:sign-in": {
+    "title": "Sign In",
+    "description": "Split auth flow pairing a named-pastel character context pane with a focused credentials and recovery task pane; the task leads on mobile.",
+    "category": "Auth",
+    "tags": ["auth", "sign-in", "login", "split", "credentials", "sign"]
+  },
+  "pages:sign-in-alert": {
+    "title": "Sign-In Alert",
+    "description": "Split auth flow pairing a named-pastel character context pane with sign-in evidence and account-security actions; the task leads on mobile.",
+    "category": "Auth",
+    "tags": ["auth", "sign-in", "security", "alert"]
+  },
+  "pages:sign-up": {
+    "title": "Sign Up",
+    "description": "Split auth flow pairing a named-pastel character context pane with social, profile, password, and terms registration; the task leads on mobile.",
+    "category": "Auth",
+    "tags": ["auth", "split-screen", "sign", "up"]
+  },
+  "pages:sign-up-wizard": {
+    "title": "Sign-Up Wizard",
+    "description": "Split auth flow pairing a named-pastel character context pane with account, profile, and workspace registration steps; the task leads on mobile.",
+    "category": "Auth",
+    "tags": ["auth", "multi-step", "sign", "up", "wizard"]
+  },
+  "pages:signed-out": {
+    "title": "Signed Out",
+    "description": "Split auth flow pairing a named-pastel character context pane with session-end confirmation and return actions; the task leads on mobile.",
+    "category": "Auth",
+    "tags": ["auth", "signed", "out", "confirmation"]
+  },
+  "pages:sso-redirect": {
+    "title": "Redirecting to SSO",
+    "description": "Split auth flow pairing a named-pastel character context pane with SSO redirect status and a manual fallback; the task leads on mobile.",
+    "category": "Auth",
+    "tags": ["auth", "redirecting", "sso"]
+  },
+  "pages:sso-sign-in": {
+    "title": "Enterprise SSO Sign In",
+    "description": "Split auth flow pairing a named-pastel character context pane with work-email SSO and provider fallbacks; the task leads on mobile.",
+    "category": "Auth",
+    "tags": ["auth", "enterprise", "sso", "sign"]
+  },
+  "pages:two-factor-setup": {
+    "title": "Enable Two-Factor",
+    "description": "Split auth flow pairing a named-pastel character context pane with selectable two-factor methods and a skip route; the task leads on mobile.",
+    "category": "Auth",
+    "tags": ["auth", "enable", "two-factor"]
+  },
+  "pages:username-setup": {
+    "title": "Claim Your Username",
+    "description": "Split auth flow pairing a named-pastel character context pane with live username availability, alternatives, and gated submission; the task leads on mobile.",
+    "category": "Auth",
+    "tags": ["auth", "claim", "username"]
+  },
+  "pages:verification-code": {
+    "title": "Verification Code",
+    "description": "Split auth flow pairing a named-pastel character context pane with segmented code verification and a live resend timer; the task leads on mobile.",
+    "category": "Auth",
+    "tags": ["auth", "email", "verification", "code"]
+  },
+  "pages:wallet-sign-in": {
+    "title": "Connect Wallet",
+    "description": "Split auth flow pairing a named-pastel character context pane with selectable wallet providers, detection state, and explanatory help; the task leads on mobile.",
+    "category": "Auth",
+    "tags": ["auth", "connect", "wallet"]
+  },
+  "pages:workspace-chooser": {
+    "title": "Workspace Chooser",
+    "description": "Split auth flow pairing a named-pastel character context pane with workspace selection, creation, and signed-in identity; the task leads on mobile.",
+    "category": "Auth",
+    "tags": ["auth", "workspace", "switcher"]
+  }
+}

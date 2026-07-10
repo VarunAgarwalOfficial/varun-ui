@@ -1,0 +1,8 @@
+{
+  "layouts:rail": {
+    "title": "Rail",
+    "description": "The canonical editorial sidebar: one 288px rail, a 48px desktop gap, a fluid content column, optional sticky behavior, and a spacious stacked flow below 1152px.",
+    "category": "Split",
+    "tags": ["rail", "sticky", "aside", "detail", "columns"]
+  }
+}

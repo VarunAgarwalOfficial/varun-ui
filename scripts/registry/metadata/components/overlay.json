@@ -1,0 +1,8 @@
+{
+  "components:dialog": {
+    "title": "Dialog",
+    "description": "The one modal dialog: caller-composed body and footer, opaque paper surface, focus management, Escape and restore-focus behavior, scroll lock, and tokenized enter and exit motion.",
+    "category": "Overlay",
+    "tags": ["overlay", "dialog", "modal", "focus", "confirmation"]
+  }
+}

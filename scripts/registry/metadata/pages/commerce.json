@@ -1,0 +1,32 @@
+{
+  "pages:checkout": {
+    "title": "Checkout",
+    "description": "A complete checkout flow with account and billing details, a saved payment choice, clear renewal consent, persistent order summary, and inline completion feedback.",
+    "category": "Commerce",
+    "tags": ["commerce", "checkout", "billing", "payment"]
+  },
+  "pages:order-confirmation": {
+    "title": "Order Confirmation",
+    "description": "Post-purchase success screen with order summary, email confirmation, estimated delivery, and order tracking actions.",
+    "category": "Commerce",
+    "tags": ["commerce", "order", "confirmation"]
+  },
+  "pages:loyalty-program-dashboard": {
+    "title": "Loyalty Program Dashboard",
+    "description": "Customer rewards interface showing tier progress, redeemable benefits, points balance, and earning opportunities.",
+    "category": "Commerce",
+    "tags": ["commerce", "loyalty", "program", "dashboard"]
+  },
+  "pages:shopping-cart-with-summary": {
+    "title": "Shopping Cart",
+    "description": "A complete cart page with a flat ruled item list, the shared quantity control, and one pastel order-summary rail.",
+    "category": "Commerce",
+    "tags": ["commerce", "shopping", "cart", "summary"]
+  },
+  "pages:wishlist-manager": {
+    "title": "Saved Items",
+    "description": "A complete saved-items page with a flat comparable list, stock state, cart and remove actions, and the shared empty state.",
+    "category": "Commerce",
+    "tags": ["commerce", "wishlist", "manager"]
+  }
+}

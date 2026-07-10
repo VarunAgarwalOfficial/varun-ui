@@ -1,0 +1,8 @@
+{
+  "pieces:browser-frame": {
+    "title": "Browser Frame",
+    "description": "Stateless browser chrome for composed interface previews, with a secure URL treatment, decorative status dots, an optional end region, and slotted content.",
+    "category": "Media",
+    "tags": ["browser", "frame", "window", "chrome", "shell"]
+  }
+}

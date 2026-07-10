@@ -1,0 +1,20 @@
+{
+  "pages:account-settings": {
+    "title": "Account Settings",
+    "description": "A complete account-settings page with persistent navigation, profile and locale editing, personal notification controls, save feedback, and a sustained destructive confirmation.",
+    "category": "Settings",
+    "tags": ["settings", "account", "profile", "notifications"]
+  },
+  "pages:delete-account": {
+    "title": "Delete Account",
+    "description": "Full-height destructive confirmation screen that lists the consequences and requires the user to type a confirmation word before the delete button enables.",
+    "category": "Settings",
+    "tags": ["settings", "auth", "delete", "account"]
+  },
+  "pages:invoice-detail-view": {
+    "title": "Invoice Detail",
+    "description": "Detailed invoice page with billing address, itemized line items table, subtotal, tax, total, and payment method info with print and download actions.",
+    "category": "Settings",
+    "tags": ["settings", "invoice", "detail", "view"]
+  }
+}

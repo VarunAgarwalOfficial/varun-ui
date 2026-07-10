@@ -1,0 +1,86 @@
+{
+  "blocks:site-header": {
+    "title": "Site Header",
+    "description": "The canonical varunUI marketing header with logo-home behavior, five stable destinations, active route state, sign-in link, one primary action, and the responsive Navbar interaction contract.",
+    "category": "Navigation",
+    "tags": ["navigation", "header", "navbar", "site", "marketing"]
+  },
+  "blocks:decision-log": {
+    "title": "Decision Log",
+    "description": "A specialized diagnostic table for recent decisions, owners, review status, and dates. The Block owns the domain schema while Data Table keeps search, filters, density, export, fullscreen, visibility, and resizing behavior.",
+    "category": "Dashboard",
+    "tags": ["dashboard", "decision", "log", "table", "diagnostic"]
+  },
+  "blocks:services": {
+    "title": "Service Grid",
+    "description": "Centered header, three-column grid of capability cards, and an optional CTA with bottom text. Each card leads with a Phosphor icon.",
+    "category": "Feature",
+    "tags": ["feature", "service", "grid", "icons"]
+  },
+  "blocks:goal-progress": {
+    "title": "Goal Progress",
+    "description": "A flat ruled dashboard sequence with concrete release goals, accessible progress meters, visible counts, and one route to unresolved checks.",
+    "category": "Dashboard",
+    "tags": ["feature", "goals", "progress", "bars"]
+  },
+  "blocks:process-steps": {
+    "title": "Process Steps",
+    "description": "A responsive ruled sequence of numbered steps with one hierarchy and no decorative card containers.",
+    "category": "Feature",
+    "tags": ["feature", "numbered", "steps", "grid"]
+  },
+  "blocks:contact-methods": {
+    "title": "Contact Methods",
+    "description": "Three pink fully linked contact cards for support, a scoped call, and self-service help, with one shared hierarchy and restrained directional motion.",
+    "category": "Feature",
+    "tags": ["feature", "contact", "method", "cards"]
+  },
+  "blocks:command-search-spotlight": {
+    "title": "Global Search",
+    "description": "A split product-search region with one Marker-led promise and a functional search surface showing compact, typed results.",
+    "category": "Feature",
+    "tags": ["feature", "search", "spotlight", "results"]
+  },
+  "blocks:active-sessions-manager": {
+    "title": "Active Sessions Manager",
+    "description": "Security settings card showing active login sessions with device icons, browser info, location, and sign-out controls.",
+    "category": "SaaS",
+    "tags": ["saas", "active", "sessions", "manager"]
+  },
+  "blocks:product-preview": {
+    "title": "Product Preview",
+    "description": "A blue feature split pairing a focused pitch with a real Browser Frame composition of App Shell, Sidebar Nav, Sidebar Profile, Metric Trends, and Line Chart. No fake screenshot geometry.",
+    "category": "SaaS",
+    "tags": ["saas", "interface", "split"]
+  },
+  "blocks:integration-gallery": {
+    "title": "Integration Gallery",
+    "description": "A blue Marker-led integration directory with one partitioned connector grid, concrete handoff descriptions, and no remote logo dependency.",
+    "category": "SaaS",
+    "tags": ["saas", "integrations", "grid"]
+  },
+  "blocks:current-plan-summary": {
+    "title": "Current Plan Summary",
+    "description": "Subscription management card showing current plan details, pricing, included features, renewal date, and status badges with actions to change or cancel.",
+    "category": "Settings",
+    "tags": ["settings", "subscription", "plan"]
+  },
+  "blocks:invoice-history": {
+    "title": "Invoice History Table",
+    "description": "Billing history table showing invoices with date, description, amount, payment status badges, and download buttons.",
+    "category": "Settings",
+    "tags": ["settings", "invoice", "history", "table"]
+  },
+  "blocks:outcome-stats": {
+    "title": "System Facts",
+    "description": "Four stable system constraints shown as static facts in a yellow Marker-led ruled grid. Use for real product facts, not animated vanity counts.",
+    "category": "Stats",
+    "tags": ["stats", "icon", "animated", "counter"]
+  },
+  "blocks:role-use-cases": {
+    "title": "Role Use Cases",
+    "description": "Three blue product-explanation cards under a ruled introduction, each with one role, a concrete outcome, and an Link.",
+    "category": "Use Case",
+    "tags": ["use-case", "role", "use", "case", "cards"]
+  }
+}

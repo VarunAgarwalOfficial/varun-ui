@@ -1,0 +1,38 @@
+{
+  "components:animated-number": {
+    "title": "Animated Number",
+    "description": "A reduced-motion-safe count-up for standalone values with one fixed easing, duration, and in-view behavior.",
+    "category": "Foundation",
+    "tags": ["number", "count", "motion", "data"]
+  },
+  "components:badge": {
+    "title": "Badge",
+    "description": "A compact status or category label with one strong default and restrained neutral, outline, and danger roles.",
+    "category": "Foundation",
+    "tags": ["badge", "label", "status", "category"]
+  },
+  "components:button": {
+    "title": "Button",
+    "description": "The canonical varunUI action with four intent variants, token-sized controls, loading feedback, and link semantics.",
+    "category": "Foundation",
+    "tags": ["button", "action", "control", "loading", "link"]
+  },
+  "components:card": {
+    "title": "Card",
+    "description": "The flat composable surface: one border, no radius, one standard inset, and optional link or selected behavior.",
+    "category": "Foundation",
+    "tags": ["card", "surface", "container", "composition"]
+  },
+  "components:input": {
+    "title": "Input",
+    "description": "The canonical unlabelled text and file control with token-sized heights and native form behavior.",
+    "category": "Foundation",
+    "tags": ["input", "field", "form", "control"]
+  },
+  "components:keyboard-shortcut": {
+    "title": "Keyboard Shortcut",
+    "description": "A compact semantic display for one or more keyboard keys and an optional action label.",
+    "category": "Foundation",
+    "tags": ["keyboard", "shortcut", "keys", "command"]
+  }
+}

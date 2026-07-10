@@ -1,0 +1,134 @@
+{
+  "pieces:label-value": {
+    "title": "Label & Value",
+    "description": "A domain-neutral label, value, and optional supporting note for summaries, settings, receipts, and detail panels.",
+    "category": "General",
+    "tags": ["label", "value", "metadata", "summary"]
+  },
+  "pieces:status-line": {
+    "title": "Status Line",
+    "description": "A compact semantic status row with an optional pulse, supporting description, and trailing metadata.",
+    "category": "General",
+    "tags": ["status", "row", "state", "metadata"]
+  },
+  "pieces:timeline-entry": {
+    "title": "Timeline Entry",
+    "description": "A numbered timeline entry with title, supporting copy, metadata, and an optional continuation rule.",
+    "category": "General",
+    "tags": ["timeline", "step", "history", "process"]
+  },
+  "pieces:media-caption": {
+    "title": "Media Caption",
+    "description": "An editorial figure caption with an optional index, description, and source credit.",
+    "category": "General",
+    "tags": ["media", "caption", "figure", "credit"]
+  },
+  "pieces:story-scene": {
+    "title": "Story Scene",
+    "description": "The shared aspect-aware treatment for characters, places, props, and composed line art on one required named pastel field, with an optional seal reserved for invitations and completion.",
+    "category": "General",
+    "tags": ["character", "scene", "story", "illustration", "seal"]
+  },
+  "pieces:pastel-field": {
+    "title": "Pastel Field",
+    "description": "The one flat named-color content field with fixed strength and padding. It groups related content without pretending every section is a card.",
+    "category": "General",
+    "tags": ["pastel", "field", "color", "surface"]
+  },
+  "pieces:section-header": {
+    "title": "Section Header",
+    "description": "The canonical section introduction: one marker kicker, one clear statement, short support copy, and optional actions.",
+    "category": "General",
+    "tags": ["section", "header", "marker", "intro"]
+  },
+  "pieces:action-row": {
+    "title": "Action Row",
+    "description": "A compact arrangement of one primary action and at most one supporting action, built from the canonical Button.",
+    "category": "General",
+    "tags": ["actions", "buttons", "row", "cta"]
+  },
+  "pieces:empty-state": {
+    "title": "Empty State",
+    "description": "A quiet local empty state with one icon, one explanation, and an optional focused action.",
+    "category": "General",
+    "tags": ["empty", "state", "message", "placeholder"]
+  },
+  "pieces:article-meta": {
+    "title": "Article Meta",
+    "description": "A compact byline and publication-detail row for author, category, date, and reading time.",
+    "category": "Article",
+    "tags": ["article", "meta", "byline", "date"]
+  },
+  "pieces:avatar-stack": {
+    "title": "Avatar Stack",
+    "description": "Overlapping avatar group with accessible image labels, fallback initials, optional member callout, and overflow count for proof rows.",
+    "category": "Person",
+    "tags": ["person", "avatar", "stack"]
+  },
+  "pieces:fact-list": {
+    "title": "Fact List",
+    "description": "One compact wrapping fact row with optional icons for reusable summaries.",
+    "category": "Item",
+    "tags": ["item", "fact", "list", "facts", "details", "meta"]
+  },
+  "pieces:person-meta": {
+    "title": "Person Meta Row",
+    "description": "Compact person attribution row with optional avatar, name, and role for quotes, cards, and proof sections.",
+    "category": "Person",
+    "tags": ["person", "meta", "row", "attribution", "avatar", "byline"]
+  },
+  "pieces:plan-feature-list": {
+    "title": "Plan Feature List",
+    "description": "A semantic checklist for plan inclusions with an optional heading and featured-card tone support.",
+    "category": "Pricing",
+    "tags": ["pricing", "plan", "feature", "list", "features", "checklist"]
+  },
+  "pieces:price-display": {
+    "title": "Price Display",
+    "description": "A compact price lockup for amount, currency, and billing period using semantic color tokens.",
+    "category": "Pricing",
+    "tags": ["pricing", "price", "display", "billing"]
+  },
+  "pieces:process-step": {
+    "title": "Process Step",
+    "description": "A lean process step with one numbered or icon marker, title, description, and optional plain metadata.",
+    "category": "Process",
+    "tags": ["process", "step", "timeline", "marker"]
+  },
+  "pieces:media-frame": {
+    "title": "Media Frame",
+    "description": "An image or video frame with one scrim and a content overlay for hero, feature, and campaign compositions.",
+    "category": "Media",
+    "tags": ["media", "hero", "image", "video", "overlay", "frame"]
+  },
+  "pieces:inline-stat": {
+    "title": "Inline Stat",
+    "description": "The fixed compact value-and-label lockup for proof rows and summaries. Use StatValue directly when the relationship needs different geometry.",
+    "category": "General",
+    "tags": ["stat", "value", "label", "summary"]
+  },
+  "pieces:feature-card": {
+    "title": "Feature Card",
+    "description": "The fixed repeated-capability card. Compose its leading mark and semantic content in markup; the Piece owns only the shared frame and rhythm.",
+    "category": "Feature",
+    "tags": ["feature", "card", "composition", "grid"]
+  },
+  "pieces:metric-trend": {
+    "title": "Metric Trend",
+    "description": "A flat metric lockup with one delta treatment and an optional sparkline. The owning grid decides whether it belongs inside a card.",
+    "category": "Data Display",
+    "tags": ["metric", "trend", "stat", "sparkline"]
+  },
+  "pieces:chart-figure": {
+    "title": "Chart Figure",
+    "description": "The composable figure around a data plot. Callers provide the header, plot, legend, and interpretation; the Piece owns ruled rhythm and delegates caption semantics to Data Caption.",
+    "category": "Data Display",
+    "tags": ["chart", "figure", "caption", "composition"]
+  },
+  "pieces:kanban-board": {
+    "title": "Kanban Board",
+    "description": "One stateless horizontal lane arrangement for grouped work. The Piece owns column rhythm; Blocks or applications own drag, persistence, actions, and business rules.",
+    "category": "Data Display",
+    "tags": ["board", "columns", "kanban", "workflow", "lanes"]
+  }
+}

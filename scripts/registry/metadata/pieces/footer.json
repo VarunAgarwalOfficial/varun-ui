@@ -1,0 +1,20 @@
+{
+  "pieces:footer": {
+    "title": "Footer",
+    "description": "The canonical paper footer with composable lead, navigation, and two metadata regions on one fixed responsive geometry.",
+    "category": "Navigation",
+    "tags": ["navigation", "footer", "composition", "links"]
+  },
+  "pieces:link-columns": {
+    "title": "Link Columns",
+    "description": "A fixed responsive arrangement for grouped navigation links with active and focus states.",
+    "category": "Navigation",
+    "tags": ["navigation", "links", "columns", "footer"]
+  },
+  "pieces:social-links": {
+    "title": "Social Links",
+    "description": "The canonical accessible social-link row with one icon-button treatment.",
+    "category": "Navigation",
+    "tags": ["navigation", "social", "links", "icons"]
+  }
+}

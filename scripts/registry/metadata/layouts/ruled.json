@@ -1,0 +1,8 @@
+{
+  "layouts:ruled": {
+    "title": "Ruled",
+    "description": "A geometry-only ruled composition with an asymmetric lead and disciplined one- or three-column content region, inspired by Vignelli's editorial systems.",
+    "category": "Section",
+    "tags": ["ruled", "marker", "intro"]
+  }
+}

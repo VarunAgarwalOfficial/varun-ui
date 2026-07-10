@@ -1,0 +1,113 @@
+:root {
+  /* Shape */
+  --radius-card: 0;
+  --radius-compact: 0.25rem;
+  --radius-media: 0.5rem;
+  --radius-control: 0.625rem;
+  --radius-overlay: 0.875rem;
+  --radius-pill: 9999px;
+  --radius: var(--radius-control);
+  --border-width: 1px;
+  --paper-fiber-color: oklch(0.35 0.02 70 / 7%);
+  --paper-texture-blend: multiply;
+  --paper-grain-opacity: 0.11;
+  --paper-fiber-opacity: 0.1;
+  --paper-grain-size: 180px;
+  --machine-code-ink: oklch(0.205 0.018 60);
+  --machine-code-paper: oklch(0.985 0.018 88);
+  --machine-code-size-sm: 8rem;
+  --machine-code-size-md: 12rem;
+  --machine-code-size-lg: 16rem;
+  --machine-code-bar-height-sm: 5rem;
+  --machine-code-bar-height-md: 7rem;
+  --machine-code-frame-padding: 0.5rem;
+  --email-paper: oklch(0.985 0.018 88);
+  --email-ink: oklch(0.205 0.018 60);
+  --email-muted-ink: oklch(0.5 0.025 60);
+  --email-border: oklch(0.82 0.025 75);
+  --email-muted-surface: oklch(0.955 0.02 86);
+  --email-primary: oklch(0.65 0.18 48);
+
+  /* Motion */
+  --motion-duration-base: 180ms;
+  --motion-duration-medium: 260ms;
+  --motion-duration-slow: 420ms;
+  --motion-duration-draw: 720ms;
+  --motion-duration-hold: 1200ms;
+  --motion-duration-loop: 1200ms;
+  --motion-ease-emphasized: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-draw-left-animation: varunui-draw-left var(--motion-duration-draw)
+    var(--motion-ease-emphasized) both;
+
+  /* Content measure */
+  --layout-prose: 42rem;
+  --layout-email: 37.5rem;
+  --layout-content-sm: 48rem;
+  --layout-content-md: 64rem;
+  --layout-content-lg: 72rem;
+  --layout-content-max: 80rem;
+
+  /* Page rhythm */
+  --layout-viewport-height: 100dvh;
+  --layout-gutter: clamp(1rem, 3vw, 2rem);
+  --layout-section-space-sm: clamp(3rem, 6vw, 4rem);
+  --layout-section-space: clamp(4rem, 8vw, 6rem);
+  --layout-section-space-lg: clamp(5rem, 10vw, 8rem);
+  --layout-gap-sm: 1rem;
+  --layout-gap-md: 1.5rem;
+  --layout-gap-lg: 2rem;
+  --layout-gap-xl: 3rem;
+  --layout-gap-2xl: 4rem;
+
+  /* Structural widths */
+  --layout-form: 28rem;
+  --layout-rail-sm: 14rem;
+  --layout-rail-md: 18rem;
+  --layout-rail-lg: 22rem;
+  --layout-rail-collapsed: 4rem;
+  --layout-panel-sm: 20rem;
+  --layout-panel-md: 36rem;
+  --layout-panel-lg: 64rem;
+  --layout-panel-preview-sm: 7rem;
+  --layout-panel-preview-md: 10rem;
+  --layout-panel-preview-lg: 14rem;
+  --layout-panel-max-height: 32rem;
+  --layout-media-sm: 20rem;
+  --layout-media-md: 26.25rem;
+  --layout-media-lg: 38.75rem;
+  --layout-sticky-offset: 2rem;
+
+  /* Repeated surfaces */
+  --surface-padding-sm: 1rem;
+  --surface-padding-md: 1.5rem;
+  --surface-padding-lg: 2rem;
+  --surface-padding-xl: 3rem;
+  --canvas-safe-area: 7.5%;
+  --canvas-masthead-padding: 3.5cqi;
+  --canvas-type-kicker: 2.2cqi;
+  --canvas-type-folio: 1.8cqi;
+  --canvas-type-label: 1.7cqi;
+  --canvas-registration-width: 14cqi;
+  --canvas-registration-height: 1.1cqi;
+
+  /* Type details */
+  --tracking-kicker: 0.14em;
+  --tracking-label: 0.1em;
+
+  /* Controls */
+  --control-height-xs: 2rem;
+  --control-height-sm: 2.5rem;
+  --control-height-md: 2.75rem;
+  --control-height-lg: 3rem;
+
+  /* Data visualization */
+  --chart-height-plot: 18rem;
+  --chart-height-compact: 2.5rem;
+}
+
+.dark {
+  --paper-fiber-color: oklch(0.95 0.01 80 / 5%);
+  --paper-texture-blend: soft-light;
+  --paper-grain-opacity: 0.13;
+  --paper-fiber-opacity: 0.08;
+}

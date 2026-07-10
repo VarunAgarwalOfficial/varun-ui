@@ -1,0 +1,8 @@
+{
+  "components:action-list": {
+    "title": "Action List",
+    "description": "One ruled action list with optional icon, description, meta text, badge, and link or button interaction states.",
+    "category": "Item",
+    "tags": ["item", "action", "list", "actions", "links", "navigation"]
+  }
+}

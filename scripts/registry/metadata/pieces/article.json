@@ -1,0 +1,14 @@
+{
+  "pieces:article-card": {
+    "title": "Article Card",
+    "description": "The canonical grid preview for editorial content with media, metadata, tags, and a short summary.",
+    "category": "Article",
+    "tags": ["article", "card", "editorial", "preview"]
+  },
+  "pieces:article-row": {
+    "title": "Article Row",
+    "description": "The canonical editorial row for publication feeds, rails, and archives with optional media, metadata, and summary.",
+    "category": "Article",
+    "tags": ["article", "row", "editorial", "feed"]
+  }
+}

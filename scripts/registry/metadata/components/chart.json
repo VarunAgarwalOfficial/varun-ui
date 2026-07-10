@@ -1,0 +1,68 @@
+{
+  "components:area-chart": {
+    "title": "Area Chart",
+    "description": "A single-series volume chart with a zero baseline, direct axes, one-time reveal, keyboard inspection, crosshair, and bounded paper tooltip.",
+    "category": "Data Visualization",
+    "tags": ["chart", "area", "volume", "trend", "tooltip"]
+  },
+  "components:bar-chart": {
+    "title": "Bar Chart",
+    "description": "The canonical horizontal category comparison with direct labels, shared D3 scales, zero-baseline reveal, and keyboard-accessible tooltips.",
+    "category": "Data Visualization",
+    "tags": ["chart", "bar", "comparison", "data", "tooltip"]
+  },
+  "components:donut-chart": {
+    "title": "Donut Chart",
+    "description": "A restrained part-to-whole chart with a visible total, persistent legend, named data colors, and hover or keyboard inspection.",
+    "category": "Data Visualization",
+    "tags": ["chart", "donut", "allocation", "proportion", "tooltip"]
+  },
+  "components:heatmap-matrix": {
+    "title": "Heatmap Matrix",
+    "description": "A responsive labeled matrix for cohorts and repeated patterns with D3 band scales, intensity mapping, two-axis keyboard navigation, and cell tooltips.",
+    "category": "Data Visualization",
+    "tags": ["chart", "heatmap", "matrix", "cohort", "tooltip"]
+  },
+  "components:histogram-chart": {
+    "title": "Histogram",
+    "description": "A true value-distribution chart with D3 bins, readable frequency axes, bottom-up reveal, generous hit regions, keyboard inspection, and bounded paper tooltips.",
+    "category": "Data Visualization",
+    "tags": ["chart", "histogram", "distribution", "frequency", "tooltip"]
+  },
+  "components:line-chart": {
+    "title": "Line Chart",
+    "description": "A multi-series time comparison with direct axes, an external legend, one-time path drawing, shared crosshair, and keyboard-accessible tooltips.",
+    "category": "Data Visualization",
+    "tags": ["chart", "line", "time-series", "comparison", "tooltip"]
+  },
+  "components:radar-chart": {
+    "title": "Five-Axis Radar Chart",
+    "description": "The opinionated pentagonal profile chart: exactly five directly labeled measures, D3 geometry, one profile polygon, keyboard or hover inspection, paper tooltip, and reduced-motion-safe reveal.",
+    "category": "Data Visualization",
+    "tags": ["chart", "radar", "pentagon", "profile", "comparison", "tooltip"]
+  },
+  "components:scatter-plot": {
+    "title": "Scatter Plot",
+    "description": "A two-measure relationship plot with optional magnitude encoding, explicit axes, generous hit targets, focus inspection, and paper tooltips.",
+    "category": "Data Visualization",
+    "tags": ["chart", "scatter", "correlation", "bubble", "tooltip"]
+  },
+  "components:stacked-bar-chart": {
+    "title": "Stacked Bar Chart",
+    "description": "A composition-over-time comparison with shared D3 scales, persistent series legend, bottom-up segment reveal, group inspection, and keyboard-accessible paper tooltips.",
+    "category": "Data Visualization",
+    "tags": ["chart", "stacked", "bar", "composition", "comparison", "tooltip"]
+  },
+  "components:segmented-bar": {
+    "title": "Segmented Bar",
+    "description": "The compact part-to-whole treatment with one fixed height, named data colors, a persistent legend, and hover or keyboard inspection.",
+    "category": "Data Visualization",
+    "tags": ["chart", "segmented", "allocation", "compact", "tooltip"]
+  },
+  "components:sparkline": {
+    "title": "Sparkline",
+    "description": "The inline trend treatment with D3 curve geometry, a one-time draw, crosshair, compact tooltip, and keyboard inspection.",
+    "category": "Data Visualization",
+    "tags": ["chart", "sparkline", "line", "trend", "tooltip"]
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "pages:error": {
+    "title": "500 Error",
+    "description": "The default server-error response: own the fault, reassure the user about their work, and provide retry and status paths.",
+    "category": "System",
+    "tags": ["system", "500", "error", "character"]
+  },
+  "pages:maintenance": {
+    "title": "Maintenance",
+    "description": "A planned-maintenance page with clear ownership, data reassurance, and update and return paths.",
+    "category": "System",
+    "tags": ["system", "maintenance", "status", "character"]
+  },
+  "pages:not-found": {
+    "title": "404 Not Found",
+    "description": "The default missing-page response: a character acknowledges the wrong turn, then offers a useful route home.",
+    "category": "System",
+    "tags": ["system", "404", "not-found", "character", "not", "found"]
+  },
+  "pages:offline": {
+    "title": "Offline",
+    "description": "A calm offline state that keeps the user's place and distinguishes retry from genuinely available offline work.",
+    "category": "System",
+    "tags": ["system", "offline", "connection", "character"]
+  },
+  "pages:permission": {
+    "title": "Permission Required",
+    "description": "A 403 state that explains the boundary without blame and offers request-access and switch-account actions.",
+    "category": "System",
+    "tags": ["system", "403", "permission", "access", "required"]
+  },
+  "pages:search-empty": {
+    "title": "No Search Results",
+    "description": "A search-empty page that turns a dead end into concrete query and browse options.",
+    "category": "System",
+    "tags": ["system", "search", "empty", "character", "no", "results"]
+  },
+  "pages:search-results": {
+    "title": "Search Results",
+    "description": "A focused search-results flow with persistent query context, meaningful type filters, restrained sorting, result summaries, pagination, and a useful empty state.",
+    "category": "System",
+    "tags": ["system", "search", "results", "filters"]
+  },
+  "pages:status": {
+    "title": "System Status",
+    "description": "A public status page that leads with current health, shows service-level history, and keeps resolved incidents visible with plain-language context.",
+    "category": "System",
+    "tags": ["system", "status", "uptime", "incident"]
+  },
+  "pages:analytics-dashboard": {
+    "title": "Analytics Dashboard",
+    "description": "A decision-first analytics page composed from metric trends, a period control, and canonical line, bar, donut, area, and cohort plots with hover and keyboard inspection.",
+    "category": "SaaS",
+    "tags": ["saas", "analytics", "dashboard"]
+  }
+}

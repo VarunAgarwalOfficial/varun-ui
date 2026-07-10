@@ -1,0 +1,8 @@
+{
+  "components:faq-accordion": {
+    "title": "FAQ Accordion",
+    "description": "The one default disclosure pattern for frequently asked questions: a readable divided list with a single open answer and caller-owned copy.",
+    "category": "FAQ",
+    "tags": ["faq", "accordion", "questions", "disclosure"]
+  }
+}

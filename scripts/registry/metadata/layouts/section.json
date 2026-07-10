@@ -1,0 +1,8 @@
+{
+  "layouts:section": {
+    "title": "Section",
+    "description": "The default page-section frame: one content measure, one gutter, and tokenized vertical rhythm inspired by Swiss grid systems.",
+    "category": "Section",
+    "tags": ["frame", "container", "spacing"]
+  }
+}
