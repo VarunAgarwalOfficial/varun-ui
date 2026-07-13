@@ -22,6 +22,7 @@
     width?: AppShellWidth;
     collapse?: AppShellCollapse;
     height?: AppShellHeight;
+    contentLandmark?: boolean;
     sidebar?: Snippet<[collapsed: boolean]>;
     header?: Snippet;
     footer?: Snippet<[collapsed: boolean]>;
@@ -57,6 +58,7 @@
     width = "sm",
     collapse = "icon",
     height = "screen",
+    contentLandmark = true,
     sidebar,
     header,
     footer,
@@ -78,13 +80,13 @@
   };
 
   const rootHeightClasses: Record<AppShellHeight, string> = {
-    screen: "min-h-[var(--layout-viewport-height)]",
-    fill: "h-full min-h-0",
+    screen: "h-[var(--layout-viewport-height)] overflow-hidden",
+    fill: "h-full min-h-0 overflow-hidden",
   };
 
   const sidebarHeightClasses: Record<AppShellHeight, string> = {
-    screen: "min-h-[var(--layout-viewport-height)]",
-    fill: "h-full min-h-0",
+    screen: "h-[var(--layout-viewport-height)] overflow-hidden",
+    fill: "h-full min-h-0 overflow-hidden",
   };
 
   const mobileSideClasses: Record<AppShellSide, string> = {
@@ -218,10 +220,10 @@
     {@render DesktopSidebar()}
   {/if}
 
-  <div data-slot="app-shell-main" class="min-w-0 flex-1">
+  <div data-slot="app-shell-main" class="flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden">
     <header
       data-slot="app-shell-header"
-      class="sticky top-0 z-20 flex min-h-14 items-center gap-3 border-b border-border bg-background px-[var(--layout-gutter)]"
+      class="z-20 flex min-h-14 shrink-0 items-center gap-3 border-b border-border bg-background px-[var(--layout-gutter)]"
     >
       <Button
         type="button"
@@ -240,9 +242,15 @@
       </div>
     </header>
 
-    <main data-slot="app-shell-content" class="min-w-0">
-      {@render children?.()}
-    </main>
+    {#if contentLandmark}
+      <main data-slot="app-shell-content" class="min-h-0 min-w-0 flex-1 overflow-y-auto">
+        {@render children?.()}
+      </main>
+    {:else}
+      <div data-slot="app-shell-content" class="min-h-0 min-w-0 flex-1 overflow-y-auto">
+        {@render children?.()}
+      </div>
+    {/if}
   </div>
 
   {#if side === "right"}
@@ -258,7 +266,8 @@
   >
       <button
         type="button"
-        aria-label={labels.close}
+        aria-hidden="true"
+        tabindex="-1"
         data-open={mobileOpen}
         onclick={closeMobileSidebar}
         class="motion-opacity fixed inset-0 z-40 bg-foreground/40 data-[open=false]:opacity-0"

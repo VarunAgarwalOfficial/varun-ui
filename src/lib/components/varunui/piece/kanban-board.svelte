@@ -75,7 +75,7 @@
 
 <div
   data-slot="kanban-board"
-  class="flex max-w-full gap-[var(--layout-gap-md)] overflow-x-auto pb-[var(--layout-gap-xs)]"
+  class="flex max-w-full gap-[var(--layout-gap-md)] overflow-x-auto pb-[var(--layout-gap-sm)]"
 >
   {#each columns as column, index (column.id)}
     <section class="w-72 shrink-0 bg-muted/40 p-[var(--surface-padding-sm)]">

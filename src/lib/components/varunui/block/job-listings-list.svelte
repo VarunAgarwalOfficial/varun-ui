@@ -105,7 +105,7 @@
               </span>
 
               {#if job.location || job.type}
-                <span class="mt-2 flex flex-wrap gap-x-[var(--layout-gap-md)] gap-y-[var(--layout-gap-xs)] text-sm text-muted-foreground">
+                <span class="mt-2 flex flex-wrap gap-x-[var(--layout-gap-md)] gap-y-[var(--layout-gap-sm)] text-sm text-muted-foreground">
                   {#if job.location}
                     <span class="inline-flex items-center gap-1.5">
                       <MapPin class="size-4" aria-hidden="true" />

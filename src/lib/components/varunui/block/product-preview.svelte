@@ -185,7 +185,7 @@
     {#if labels && navigation && profile}
       <BrowserFrame title={labels.workspaceTitle} url={labels.windowTitle} secure={true}>
         <div class="h-[34rem] overflow-hidden [&_[data-slot=app-shell-sidebar]]:!min-h-full [&_[data-slot=app-shell]]:!min-h-full">
-          <AppShell labels={labels.sidebar} width="sm" collapse="none">
+          <AppShell labels={labels.sidebar} width="sm" collapse="none" contentLandmark={false}>
             {#snippet sidebar(collapsed)}
               <div class="flex min-h-0 flex-1 flex-col">
                 <SidebarNav

@@ -26,7 +26,7 @@
     max-width: 100%;
     overflow-x: auto;
     overscroll-behavior-inline: contain;
-    padding-block-end: var(--layout-gap-xs);
+    padding-block-end: var(--layout-gap-sm);
     scroll-snap-type: inline mandatory;
     scrollbar-width: thin;
   }
