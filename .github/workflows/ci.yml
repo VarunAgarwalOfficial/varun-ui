@@ -1,9 +1,8 @@
-name: Validate
+name: CI
 
 on:
   pull_request:
   push:
-    branches: [main]
 
 permissions:
   contents: read
@@ -17,5 +16,4 @@ jobs:
         with:
           node-version: 24
           cache: npm
-      - run: npm ci
-      - run: npm run validate
+      - run: make check

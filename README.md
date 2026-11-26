@@ -45,7 +45,7 @@ import { Button, StoryScene, Section } from "varunui";
 import "varunui/styles.css";
 ```
 
-## Work on the Library
+## Run it
 
 ```sh
 npm install
@@ -71,6 +71,10 @@ is intentionally opinionated, so a new variant or layer needs to earn its place.
 - Use fun accents deliberately: normally one character or rotating seal per page region, with Marker as the recurring kicker.
 - Author registry metadata; generate registry artifacts.
 
-## License
+## Status
+
+Working, as of 26 November 2026. See [STATUS.md](STATUS.md).
+
+## Licence
 
 MIT
