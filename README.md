@@ -1,44 +1,22 @@
 # varunUI for Svelte
 
-varunUI is an opinionated Svelte system for building colorful, paper-textured products without rebuilding the same page decisions every time.
+A Svelte 5 component library and design system: warm paper colours, bold type, one colour for the main action and a named pastel palette. It has a light and a dark theme, and a catalogue site that shows every part.
 
-The system has one clear hierarchy:
+## What is in it
 
-- **Components** own behavior, state, accessibility, and a durable product meaning.
-- **Pieces** are small, stateless arrangements of content and components.
-- **Layouts** own geometry only: flow, measure, columns, rails, overlap, and responsive collapse.
-- **Blocks** complete one real page job by composing the public system.
-- **Pages** are complete, ordered flows that show which blocks belong together and why.
-- **Canvases** are ready-to-post square posters for campaigns and social publishing.
-- **Characters** are reusable storytellers for product states and campaign moments.
+The parts go from small to large. Each kind has one job:
 
-The visual language is warm paper, strong typography, one primary action color, and a named pastel palette. Light and dark are the only themes. Markers, characters, and rotating seals are accents—not wallpaper.
+- **Components** hold behaviour, state and keyboard handling. A button, a dialog, a date picker.
+- **Pieces** are small arrangements of content and components, with no state of their own.
+- **Layouts** set geometry only: flow, line length, columns, rails, overlap and how they collapse on small screens.
+- **Blocks** do one job on a page, such as pricing plans or a newsletter sign-up, built from the parts above.
+- **Pages** are whole pages made of blocks, in order.
+- **Canvases** are square posters for social posts.
+- **Characters** are drawn figures for empty states and campaign art.
 
-Read [DESIGN.md](./DESIGN.md) for the complete human-facing design contract:
-color roles, spacing, sizing, borders, layout grammar, motion, poster rules, and
-the review checklist.
+[DESIGN.md](./DESIGN.md) has the full design rules: colour roles, spacing, sizes, borders, layout, motion, posters and a review checklist.
 
-## Project Shape
-
-- `src/lib/components/varunui/internal`: private accessibility adapters, icons, and brand assets; never a catalog tier.
-- `src/lib/components/varunui/component`: public semantic components.
-- `src/lib/components/varunui/piece`: public stateless arrangements.
-- `src/lib/components/varunui/layout`: public composition grammar.
-- `src/lib/components/varunui/character`: character storytellers.
-- `src/lib/components/varunui/canvas`: ready-to-post 1:1 poster compositions.
-- `src/lib/components/varunui/block`: complete block examples.
-- `src/lib/components/varunui/page`: full curated page compositions.
-- `src/showcase`: catalog-only rendering, search, and preview code.
-- `scripts/registry/metadata`: authored catalog intent.
-
-Generated outputs:
-
-- `src/showcase/catalog.generated.ts`
-- `static/registry/*.json`
-
-Do not hand-edit generated outputs. Run the registry scripts instead.
-
-## Use the Library
+## Use it
 
 ```ts
 import { Button, StoryScene, Section } from "varunui";
@@ -47,29 +25,47 @@ import "varunui/styles.css";
 
 ## Run it
 
+You need Node `20.19+` or `22.12+`.
+
 ```sh
 npm install
-npm run dev
-npm run generate
-npm run validate
+npm run dev        # the catalogue site
+npm run generate   # rebuild the catalogue data and the registry files
 ```
 
-`generate` produces both the catalog data and installable registry. `validate` is
-the contributor gate: generation, architecture and token audits, Svelte checks,
-library packaging, and package publication checks.
+`generate` writes `src/showcase/catalog.generated.ts` and `static/registry/*.json`. Do not edit those by hand.
 
-Node `20.19+` or `22.12+` is required. See
-[CONTRIBUTING.md](./CONTRIBUTING.md) before adding a public concept: the catalog
-is intentionally opinionated, so a new variant or layer needs to earn its place.
+## Test
 
-## Architecture Rules
+```sh
+make check
+```
 
-- Prefer one canonical component over cosmetic variants.
-- A component earns its place through behavior or product meaning; a layout earns its place through reusable geometry.
-- Blocks may contain product copy and data, but may not hide a second private design system.
-- Use shared spacing, measure, rail, control, color, and motion tokens.
-- Use fun accents deliberately: normally one character or rotating seal per page region, with Marker as the recurring kicker.
-- Author registry metadata; generate registry artifacts.
+It runs `npm ci`, then `npm run validate`: the Prettier check, generation, the architecture and token audits, `svelte-check`, packaging and `publint`. CI runs the same.
+
+## Layout
+
+- `src/lib/components/varunui/component`: components.
+- `src/lib/components/varunui/piece`: pieces.
+- `src/lib/components/varunui/layout`: layouts.
+- `src/lib/components/varunui/block`: blocks.
+- `src/lib/components/varunui/page`: pages.
+- `src/lib/components/varunui/canvas`: canvases.
+- `src/lib/components/varunui/character`: characters.
+- `src/lib/components/varunui/internal`: private helpers for accessibility, icons and brand assets. Not part of the catalogue.
+- `src/showcase`: the catalogue site: rendering, search and previews.
+- `scripts/registry/metadata`: the hand-written catalogue entries that `generate` reads.
+
+## Adding a part
+
+Read [CONTRIBUTING.md](./CONTRIBUTING.md) first. In short:
+
+- Prefer one component to several that differ only in looks.
+- A component needs its own behaviour or meaning. A layout needs geometry that more than one place uses.
+- A block may hold product copy and data, but not its own private styles.
+- Use the shared tokens for spacing, line length, rails, controls, colour and motion.
+- Use one character or rotating seal per page region at most.
+- Write the catalogue entry in `scripts/registry/metadata`, then run `generate`.
 
 ## Status
 
@@ -77,4 +73,4 @@ Working, as of 26 November 2026. See [STATUS.md](STATUS.md).
 
 ## Licence
 
-MIT
+MIT. See [LICENSE](LICENSE).
