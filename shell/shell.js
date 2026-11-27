@@ -11,7 +11,7 @@
 
 /* The one place to change where the shell points. */
 const CONFIG = {
-  owner: "VarunAgarwalOfficial",
+  owner: "varunswaika",
   name: "Varun Agarwal",
   // The website, once it is live, for example "https://example.com".
   // While it is empty, the name links to GitHub and site links are left out.
