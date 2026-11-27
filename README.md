@@ -41,7 +41,7 @@ npm run generate   # rebuild the catalogue data and the registry files
 make check
 ```
 
-It runs `npm ci`, then `npm run validate`: the Prettier check, generation, the architecture and token audits, `svelte-check`, packaging and `publint`. CI runs the same.
+It runs `npm ci`, then `npm run validate`: the Prettier check, generation, the architecture, token and contrast audits, `svelte-check`, packaging and `publint`. CI runs the same.
 
 ## Layout
 
@@ -67,9 +67,13 @@ Read [CONTRIBUTING.md](./CONTRIBUTING.md) first. In short:
 - Use one character or rotating seal per page region at most.
 - Write the catalogue entry in `scripts/registry/metadata`, then run `generate`.
 
+## Contrast
+
+Text colours read at 4.5:1 or more and borders at 3:1 or more (WCAG 2.2 AA), in the light and dark themes and the email tokens. The lowest text pair is 4.62:1 (primary text on a 10% primary tint). `npm run audit` checks every pair with `scripts/registry/check-contrast.mjs`.
+
 ## Status
 
-Working, as of 26 November 2026. See [STATUS.md](STATUS.md).
+Status: complete (frozen 27 November 2026). See [STATUS.md](STATUS.md).
 
 ## Licence
 

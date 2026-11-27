@@ -24,9 +24,9 @@
   --email-paper: oklch(0.985 0.018 88);
   --email-ink: oklch(0.205 0.018 60);
   --email-muted-ink: oklch(0.5 0.025 60);
-  --email-border: oklch(0.82 0.025 75);
+  --email-border: oklch(0.65 0.025 75);
   --email-muted-surface: oklch(0.955 0.02 86);
-  --email-primary: oklch(0.65 0.18 48);
+  --email-primary: oklch(0.53 0.14 48);
 
   /* Motion */
   --motion-duration-base: 180ms;

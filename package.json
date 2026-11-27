@@ -35,7 +35,7 @@
     "preview": "vite preview",
     "prepare": "npm run generate && svelte-kit sync",
     "generate": "node scripts/registry/generate.mjs",
-    "audit": "node scripts/registry/check-architecture.mjs && node scripts/registry/report-token-drift.mjs --strict",
+    "audit": "node scripts/registry/check-architecture.mjs && node scripts/registry/report-token-drift.mjs --strict && node scripts/registry/check-contrast.mjs",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "format": "prettier --write . --ignore-unknown",
