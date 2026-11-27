@@ -6,8 +6,11 @@ block, component, email, and poster must follow.
 
 The implementation lives in:
 
+- `shell/tokens.css` for the pixel look's colours, frames and fonts. It is the
+  one source; `src/lib/styles/tokens.css` mirrors it, and
+  `scripts/registry/check-shell-tokens.mjs` fails if they drift.
 - `src/lib/styles/tokens.css` for dimensions, radius, measure, and motion.
-- `src/lib/styles.css` for themes, color, texture, and shared utilities.
+- `src/lib/styles.css` for the theme, color, and shared utilities.
 - `.interface-design/system.md` for the expanded internal design contract.
 - `npm run audit` for architecture and token enforcement.
 
@@ -16,15 +19,15 @@ leave design decisions documented but unenforced.
 
 ## 1. What varunUI is
 
-varunUI is an opinionated Svelte system for building complete, colorful,
-paper-textured products. It provides the decisions needed to move from tokens
+varunUI is an opinionated Svelte system for building complete, colourful
+products in the pixel look. It provides the decisions needed to move from tokens
 to controls, compositions, page sections, complete pages, outgoing messages,
 and social posters.
 
 It should feel like a designer's proofing desk:
 
-- warm paper and visible grain;
-- dark ink and deliberate typography;
+- a cream ground, brown ink and square corners;
+- Pixelify Sans for headings and keys, Newsreader for reading text;
 - Swiss editorial structure;
 - simple Bauhaus geometry;
 - pastel annotations and character scenes;
@@ -57,7 +60,8 @@ layout.
 
 ### Flat, not empty
 
-varunUI uses no default visual depth. Hierarchy comes from typography, spacing,
+varunUI uses no default visual depth. Where a shadow utility is used, it is a
+flat drop of whole pixel steps (`--px-u`) in the frame orange, never a blur. Hierarchy comes from typography, spacing,
 rules, solid muted fields, and named pastel fields. Flat does not mean every
 surface looks identical.
 
@@ -107,18 +111,19 @@ management, and cross-browser mechanics are private implementation details in
 Component; a meaningful content relationship such as Keyboard Shortcut belongs
 to Pieces. Consumers should never assemble varunUI from half-styled substrate.
 
-## 4. Themes and paper
+## 4. Theme: the pixel look
 
-There are exactly two themes:
+There is one theme, light only: the pixel look shared with the website and the
+shell. A cream ground, brown ink, orange frame rules, and the pastels. The
+`.dark` class and the theme helpers remain for the API, but dark keeps the
+light values. Do not expose a theme toggle or a theme picker.
 
-1. **Warm paper**: cream paper, dark ink, quiet warm rules.
-2. **Night paper**: charcoal paper, light ink, quiet dark rules.
+Never use purple or lavender. Where a role needs a cool accent, use the deep
+blue, as the site does for "open".
 
-Expose a light/dark paper toggle. Do not expose a theme picker.
-
-Paper grain and fibers cover the application, ignore pointer input, and become
-quieter under increased-contrast preferences. Do not add gradients, glass,
-backdrop blur, glossy treatments, or depth-only shadows.
+There is no paper grain. The texture rules remain, switched off by token. Do
+not add gradients, glass, backdrop blur, glossy treatments, or blurred
+shadows.
 
 ## 5. Color system
 
@@ -128,19 +133,19 @@ quiet Button, or Link.
 
 ### Named expressive colors
 
-| Color   | Meaning                             | Good uses                                                | Avoid                            |
-| ------- | ----------------------------------- | -------------------------------------------------------- | -------------------------------- |
-| Primary | Action, selection, signature        | Primary Button, selected state, poster registration mark | Decorative section backgrounds   |
-| Yellow  | Orientation and annotation          | Marker, captions, templates, upcoming events             | Success or people stories        |
-| Blue    | Product explanation and information | Search, product detail, imports, release information     | Destructive or protected actions |
-| Green   | Proof, success, and progress        | Completion, positive evidence, readiness                 | Unverified claims                |
-| Pink    | People and human context            | Contact, hiring, roles, support, speaker portraits       | Generic decoration               |
-| Purple  | Security and deliberate review      | Verification, protected access, billing review           | Routine navigation               |
-| Red     | Failure, prohibition, and danger    | Destructive actions, failed payment, urgent warning      | Ordinary emphasis                |
+| Color                         | Meaning                             | Good uses                                                | Avoid                            |
+| ----------------------------- | ----------------------------------- | -------------------------------------------------------- | -------------------------------- |
+| Primary                       | Action, selection, signature        | Primary Button, selected state, poster registration mark | Decorative section backgrounds   |
+| Yellow                        | Orientation and annotation          | Marker, captions, templates, upcoming events             | Success or people stories        |
+| Blue                          | Product explanation and information | Search, product detail, imports, release information     | Destructive or protected actions |
+| Green                         | Proof, success, and progress        | Completion, positive evidence, readiness                 | Unverified claims                |
+| Pink                          | People and human context            | Contact, hiring, roles, support, speaker portraits       | Generic decoration               |
+| Deep blue (`purple` tone key) | Security and deliberate review      | Verification, protected access, billing review           | Routine navigation               |
+| Red                           | Failure, prohibition, and danger    | Destructive actions, failed payment, urgent warning      | Ordinary emphasis                |
 
 ### Pastel strengths
 
-Pastels are mixed into the current paper base. Their strength is fixed:
+Pastels are mixed into the cream ground. Their strength is fixed:
 
 - Content field: **15%**.
 - Interactive field on hover or focus: **22%**.
@@ -158,11 +163,14 @@ pair it with labels, shape, position, or text.
 
 ## 6. Typography
 
-| Role             | Typeface          | Use                                           |
-| ---------------- | ----------------- | --------------------------------------------- |
-| Interface        | Geist / sans      | Navigation, headings, body, controls          |
-| Editorial accent | Serif             | Pull quotes and intentional editorial moments |
-| Aligned data     | Geist Mono / mono | Values, dates, code, folios, metadata         |
+| Role         | Typeface                     | Use                                                    |
+| ------------ | ---------------------------- | ------------------------------------------------------ |
+| Display      | Pixelify Sans / `font-pixel` | Headings, labels, buttons and keys; never running text |
+| Text         | Newsreader / `font-sans`     | Body, navigation, controls and editorial moments       |
+| Aligned data | IBM Plex Mono / `font-mono`  | Values, dates, code, folios, metadata                  |
+
+Pixelify Sans has one weight. Headings, labels, buttons, `kbd` and legends use
+it by default, with font synthesis off, so a bold class never fakes a bold.
 
 Build hierarchy with size, weight, line-height, tracking, and measure before
 using color.
@@ -173,7 +181,7 @@ using color.
 - Kicker text uses `--tracking-kicker`.
 - Data uses tabular figures when values need to align.
 
-Do not use mono for long prose. Do not use serif as a generic “premium” signal.
+Do not use mono or the pixel face for long prose.
 
 ## 7. Spacing and measure
 
@@ -232,7 +240,7 @@ Do not simulate a size by overriding a component’s height class.
 - Adjacent structural rules must meet exactly.
 - A parent boundary replaces child-card boundaries where possible.
 - Focus rings are more visible than structural borders.
-- Functional overlays use an opaque paper surface and one border.
+- Functional overlays use an opaque cream surface and one border.
 
 If two regions share a column boundary, derive both from the same grid. Do not
 approximate with nearby percentages.
@@ -242,14 +250,14 @@ approximate with nearby percentages.
 | Role    |      Radius |
 | ------- | ----------: |
 | Card    |         0px |
-| Compact |         4px |
-| Media   |         8px |
-| Control |        10px |
-| Overlay |        14px |
+| Compact |         0px |
+| Media   |         0px |
+| Control |         0px |
+| Overlay |         0px |
 | Pill    | Fully round |
 
-Cards are square. Controls, media, overlays, and pills use their semantic
-radius; they do not inherit card geometry.
+The pixel look is square. Every radius token is 0, and Tailwind's radius scale
+is 0 too. Only pills and round avatars stay round.
 
 ### What earns a card
 
@@ -359,7 +367,7 @@ Use the chart that answers the question:
 Detailed charts require:
 
 - direct axes or persistent labels;
-- an opaque-paper tooltip;
+- an opaque cream tooltip;
 - hover and keyboard inspection;
 - one chart-level tab stop;
 - an `aria-live` reading of the active mark;
@@ -452,7 +460,7 @@ Tone map:
 - Pink: personal details and role.
 - Blue: workspace, import, and integration.
 - Yellow: goals, templates, and notifications.
-- Purple: security and billing.
+- Deep blue (the `purple` tone): security and billing.
 
 Do not center dense forms, add decorative characters to configuration steps, or
 collect information merely to make onboarding feel longer.
@@ -460,14 +468,14 @@ collect information merely to make onboarding feel longer.
 ## 16. Emails and machine codes
 
 Emails are static outgoing messages, not email-client interfaces. They use a
-600px warm-paper frame, meaningful preheader, live text, one primary route back
+600px cream frame, meaningful preheader, live text, one primary route back
 to the product, and a footer explaining why the message was sent.
 
 Emails contain no forms, client-side state, JavaScript, or hover-dependent
 information.
 
 QR codes and barcodes are generated locally. They always use invariant dark ink
-on warm machine-code paper with a real quiet zone. Never add logos, gradients,
+on the cream machine-code ground with a real quiet zone. Never add logos, gradients,
 rounded modules, pastel modules, or decorative damage.
 
 ## 17. Voice and example world

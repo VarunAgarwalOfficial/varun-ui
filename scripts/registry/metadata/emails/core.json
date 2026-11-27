@@ -7,7 +7,7 @@
   },
   "emails:verify-email": {
     "title": "Verify Email",
-    "description": "A purple security message with a readable verification code, matching confirmation action, expiry, and a plain no-action-needed fallback.",
+    "description": "A deep-blue security message with a readable verification code, matching confirmation action, expiry, and a plain no-action-needed fallback.",
     "category": "Security",
     "tags": ["security", "verify", "email", "code", "auth"]
   },

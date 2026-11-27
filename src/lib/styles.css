@@ -7,76 +7,78 @@
 @source "./**/*.{svelte,ts}";
 
 @theme {
-  /* Text colours read at 4.5:1 or more, borders at 3:1 (WCAG AA).
+  /* The pixel look. Every colour and font points at a pixel token mirrored
+     from shell/tokens.css in styles/tokens.css. Light only; never purple or
+     lavender. Text colours read at 4.5:1 or more, borders at 3:1 (WCAG AA):
      scripts/registry/check-contrast.mjs checks this in npm run audit. */
-  --color-background: oklch(0.985 0.018 88);
-  --color-foreground: oklch(0.205 0.018 60);
-  --font-sans:
-    Geist, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", sans-serif;
-  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  --font-mono:
-    "Geist Mono", ui-monospace, SFMono-Regular, "SF Mono", Consolas, monospace;
+  --color-background: var(--site-color-bg);
+  --color-foreground: var(--site-color-fg);
+  --font-sans: var(--site-font-body);
+  --font-serif: var(--site-font-body);
+  --font-mono: var(--site-font-mono);
+  --font-pixel: var(--site-font-pixel);
   --animate-accordion-down: accordion-down var(--motion-duration-medium)
     var(--motion-ease-emphasized);
   --animate-accordion-up: accordion-up var(--motion-duration-medium)
     var(--motion-ease-emphasized);
   --color-surface: var(--color-background);
-  --color-primary: oklch(0.49 0.12 54);
-  --color-red: oklch(0.62 0.18 25);
-  --color-pink: oklch(0.68 0.16 350);
-  --color-yellow: oklch(0.78 0.15 85);
-  --color-green: oklch(0.58 0.13 150);
-  --color-blue: oklch(0.58 0.15 245);
-  --color-purple: oklch(0.58 0.17 295);
-  --color-muted: oklch(0.946 0.022 88);
-  --color-muted-foreground: oklch(0.48 0.026 64);
-  --color-danger: oklch(0.495 0.19 28);
-  --color-success: oklch(0.47 0.12 142);
-  --color-warning: oklch(0.49 0.1 78);
-  --color-info: oklch(0.48 0.12 245);
-  --color-data-purple: oklch(0.74 0.13 294);
-  --color-data-blue: oklch(0.62 0.12 245);
-  --color-data-green: oklch(0.68 0.09 132);
-  --color-data-yellow: oklch(0.74 0.15 78);
-  --color-data-red: oklch(0.66 0.16 35);
-  --color-data-pink: oklch(0.68 0.15 350);
-  --color-data-cyan: oklch(0.62 0.12 185);
-  --color-data-gray: oklch(0.52 0.08 64);
-  --color-border: oklch(0.65 0.02 82);
+  --color-primary: var(--site-color-muted);
+  /* Named tones. The tone key "purple" is kept for the component API; its
+     colour is the deep blue. */
+  --color-red: var(--site-mean-against);
+  --color-pink: var(--px-blush-mid);
+  --color-yellow: var(--px-sunflower-mid);
+  --color-green: var(--px-mint-mid);
+  --color-blue: var(--px-blue-mid);
+  --color-purple: var(--px-blue-deep);
+  --color-muted: var(--site-color-code-bg);
+  --color-muted-foreground: var(--site-color-muted);
+  /* Status. Success and warning use the deep pastels: the site's proved and
+     measured colours miss 4.5:1 on their own 15% and 20% tints. */
+  --color-danger: var(--site-mean-against);
+  --color-success: var(--px-meadow-deep);
+  --color-warning: var(--px-sunflower-deep);
+  --color-info: var(--site-mean-open);
+  --color-data-purple: var(--px-blue-deep);
+  --color-data-blue: var(--px-blue-mid);
+  --color-data-green: var(--px-meadow-deep);
+  --color-data-yellow: var(--px-sunflower-mid);
+  --color-data-red: var(--px-peach-deep);
+  --color-data-pink: var(--px-blush-mid);
+  --color-data-cyan: var(--px-mint-mid);
+  --color-data-gray: var(--site-color-muted);
+  --color-border: var(--px-frame-drop);
+
+  /* Square corners and flat, stepped drops: no blur. */
+  --radius-xs: 0;
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+  --radius-2xl: 0;
+  --radius-3xl: 0;
+  --radius-4xl: 0;
+  --shadow-2xs: var(--px-u) var(--px-u) 0 0 var(--px-frame-drop);
+  --shadow-xs: var(--px-u) var(--px-u) 0 0 var(--px-frame-drop);
+  --shadow-sm: var(--px-u) var(--px-u) 0 0 var(--px-frame-drop);
+  --shadow-md: var(--px-u) var(--px-u) 0 0 var(--px-frame-drop);
+  --shadow-lg: calc(2 * var(--px-u)) calc(2 * var(--px-u)) 0 0
+    var(--px-frame-drop);
+  --shadow-xl: calc(2 * var(--px-u)) calc(2 * var(--px-u)) 0 0
+    var(--px-frame-drop);
+  --shadow-2xl: calc(2 * var(--px-u)) calc(2 * var(--px-u)) 0 0
+    var(--px-frame-drop);
 }
 
 :root {
   --surface-pastel-base: var(--color-background);
 }
 
+/* Light only: dark mode keeps the light values, as shell/tokens.css does.
+   The .dark class and the theme helpers stay for the API. */
 .dark {
   --border-width: 1px;
-  --color-background: oklch(0.18 0.018 60);
-  --color-foreground: oklch(0.965 0.016 88);
-  --color-surface: var(--color-background);
-  --color-primary: oklch(0.82 0.14 78);
-  --color-red: oklch(0.74 0.15 25);
-  --color-pink: oklch(0.75 0.14 350);
-  --color-yellow: oklch(0.84 0.13 85);
-  --color-green: oklch(0.72 0.11 150);
-  --color-blue: oklch(0.72 0.13 245);
-  --color-purple: oklch(0.72 0.14 295);
-  --color-muted: oklch(0.285 0.021 60);
-  --color-muted-foreground: oklch(0.74 0.026 78);
-  --color-danger: oklch(0.72 0.16 28);
-  --color-success: oklch(0.74 0.13 142);
-  --color-warning: oklch(0.86 0.14 78);
-  --color-info: oklch(0.76 0.12 245);
-  --color-data-purple: oklch(0.8 0.12 294);
-  --color-data-blue: oklch(0.74 0.12 245);
-  --color-data-green: oklch(0.76 0.1 132);
-  --color-data-yellow: oklch(0.84 0.13 78);
-  --color-data-red: oklch(0.78 0.15 35);
-  --color-data-pink: oklch(0.78 0.14 350);
-  --color-data-cyan: oklch(0.74 0.11 185);
-  --color-data-gray: oklch(0.76 0.06 64);
-  --color-border: oklch(0.5 0.025 60);
+  color-scheme: light;
 }
 
 @keyframes accordion-down {
@@ -312,8 +314,24 @@
     opacity: var(--paper-fiber-opacity);
   }
 
+  /* Pixel type for headings and keys. Pixelify Sans has one weight, so the
+     browser must not fake bold. */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  kbd,
+  button,
+  label,
+  legend {
+    font-family: var(--font-pixel);
+    font-synthesis: none;
+  }
+
   ::selection {
-    background: color-mix(in oklch, var(--color-yellow) 32%, transparent);
+    background: var(--site-color-selection);
     color: var(--color-foreground);
   }
 

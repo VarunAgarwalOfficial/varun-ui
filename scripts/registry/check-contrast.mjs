@@ -1,12 +1,15 @@
 #!/usr/bin/env node
 // Checks that the colour tokens in src/lib/styles.css read on each other.
 // Text needs 4.5:1 and borders, dots and other non-text marks need 3:1
-// (WCAG 2.2 AA, 1.4.3 and 1.4.11). Checks the light and dark themes and the
-// email tokens. Exits 1 on a fail. Run with --all to see every pair.
+// (WCAG 2.2 AA, 1.4.3 and 1.4.11). Checks the light theme, the .dark class
+// (which keeps the light values) and the email tokens. Tokens may be hex,
+// oklch() or var() pointing at the pixel tokens in src/lib/styles/tokens.css.
+// Exits 1 on a fail. Run with --all to see every pair.
 //
 // Not checked: the named expressive colours (red, pink, yellow, green, blue,
-// purple) and the data-* chart colours when used on their own as icons, stars
-// or chart marks. DESIGN.md says colour never carries meaning alone.
+// and the "purple" tone key, which is deep blue) and the data-* chart colours
+// when used on their own as icons, stars or chart marks. DESIGN.md says colour
+// never carries meaning alone.
 
 import { readFileSync } from "node:fs";
 
@@ -23,26 +26,80 @@ const TINTS = [0.1, 0.15, 0.2];
 const PASTELS = ["red", "pink", "yellow", "green", "blue", "purple"];
 const PASTEL_STRENGTHS = [0.15, 0.22, 0.25];
 
-// Reads one CSS block's oklch() tokens as oklab [L, a, b].
-function block(source, selector, prefix = "--color-") {
+// Every custom property in one CSS block.
+function declarations(source, selector) {
   const start = source.indexOf(`${selector} {`);
   if (start < 0) throw new Error(`No ${selector} block found`);
   const body = source.slice(start, source.indexOf("\n}", start));
-  const tokens = {};
-  const pattern = new RegExp(
-    `${prefix}([\\w-]+):\\s*oklch\\(([\\d.]+)\\s+([\\d.]+)\\s+([\\d.]+)\\)`,
-    "g",
+  return Object.fromEntries(
+    [...body.matchAll(/--([\w-]+):\s*([^;]+);/g)].map(([, name, value]) => [
+      name,
+      value.trim(),
+    ]),
   );
-  for (const [, name, l, c, h] of body.matchAll(pattern)) {
-    const angle = (Number(h) * Math.PI) / 180;
-    tokens[name] = [
-      Number(l),
-      Number(c) * Math.cos(angle),
-      Number(c) * Math.sin(angle),
-    ];
+}
+
+// Every custom property on :root in tokens.css, the pixel mirror included.
+const rootVars = {};
+for (const { index } of tokensCss.matchAll(/^:root \{/gm)) {
+  Object.assign(rootVars, declarations(tokensCss.slice(index), ":root"));
+}
+
+// sRGB hex to oklab [L, a, b].
+function hexLab(hex) {
+  const [r, g, b] = [1, 3, 5].map((i) => {
+    const v = parseInt(hex.slice(i, i + 2), 16) / 255;
+    return v <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4;
+  });
+  const l = Math.cbrt(0.4122214708 * r + 0.5363325363 * g + 0.0514459929 * b);
+  const m = Math.cbrt(0.2119034982 * r + 0.6806995451 * g + 0.1073969566 * b);
+  const s = Math.cbrt(0.0883024619 * r + 0.2817188376 * g + 0.6299787005 * b);
+  return [
+    0.2104542553 * l + 0.793617785 * m - 0.0040720468 * s,
+    1.9779984951 * l - 2.428592205 * m + 0.4505937099 * s,
+    0.0259040371 * l + 0.7827717662 * m - 0.808675766 * s,
+  ];
+}
+
+// One token value as oklab, following var() through the block and :root.
+function lab(value, local) {
+  for (let depth = 0; depth < 10; depth += 1) {
+    const ref = value.match(/^var\(--([\w-]+)\)$/);
+    if (!ref) break;
+    const [, name] = ref;
+    const short = name.startsWith("color-") ? name.slice(6) : null;
+    value = local[name] ?? (short && local[short]) ?? rootVars[name];
+    if (value === undefined) return null;
+  }
+  const hex = value.match(/^#[0-9a-f]{6}$/i);
+  if (hex) return hexLab(value);
+  const oklch = value.match(/^oklch\(([\d.]+)\s+([\d.]+)\s+([\d.]+)\)$/);
+  if (oklch) {
+    const [l, c, h] = oklch.slice(1).map(Number);
+    const angle = (h * Math.PI) / 180;
+    return [l, c * Math.cos(angle), c * Math.sin(angle)];
+  }
+  return null;
+}
+
+// Reads one set of declarations' colour tokens as oklab [L, a, b].
+function colours(all, prefix) {
+  const local = {};
+  for (const [name, value] of Object.entries(all)) {
+    if (name.startsWith(prefix.slice(2))) {
+      local[name.slice(prefix.length - 2)] = value;
+    }
+  }
+  const tokens = {};
+  for (const [name, value] of Object.entries(local)) {
+    const colour = lab(value, local);
+    if (colour) tokens[name] = colour;
   }
   return tokens;
 }
+
+const block = (source, selector, prefix = "--color-") =>
+  colours(declarations(source, selector), prefix);
 
 // Oklab to gamma-encoded sRGB in 0..1, clipped to the sRGB gamut.
 function rgb([l, a, b]) {
@@ -140,10 +197,14 @@ function emailPairs(lab) {
 }
 
 const light = block(css, "@theme");
+const needed = ["background", "foreground", "muted", "muted-foreground"];
+for (const name of [...needed, "border", ...STATUS, ...PASTELS]) {
+  if (!light[name]) throw new Error(`No colour read for --color-${name}`);
+}
 const themes = [
   ["light", pairs(light)],
   [".dark", pairs({ ...light, ...block(css, ".dark") })],
-  ["email", emailPairs(block(tokensCss, ":root", "--email-"))],
+  ["email", emailPairs(colours(rootVars, "--email-"))],
 ];
 
 let failed = 0;

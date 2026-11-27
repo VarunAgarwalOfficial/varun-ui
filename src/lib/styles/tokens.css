@@ -1,32 +1,90 @@
+/*
+ * Pixel tokens: a mirror of shell/tokens.css, the one source for the pixel
+ * look. Copy values from there, never edit them here alone.
+ * scripts/registry/check-shell-tokens.mjs fails if a value drifts.
+ * The fonts load from shell/tokens.css (the showcase imports it). Never
+ * purple or lavender.
+ */
+:root {
+  --site-color-bg: #fffbf0;
+  --site-color-fg: #3b2a1a;
+  --site-color-muted: #6b4a2c;
+  --site-color-rule: #f0e2bd;
+  --site-color-code-bg: #fdf0d0;
+  --site-color-mark: #fff0a0;
+  --site-color-selection: #ffe2a8;
+  --site-color-link: #3b2a1a;
+  --site-color-link-line: #c46f1c;
+  --site-color-focus: #2f6297;
+  --site-mean-proved: #3d6f48;
+  --site-mean-measured: #8a6417;
+  --site-mean-open: #2f6297;
+  --site-mean-against: #9b3f36;
+  --px-ground-2: #fff6df;
+  --px-plate: #fffdf2;
+  --px-sunflower: #ffd23f;
+  --px-sunflower-mid: #f7c234;
+  --px-sunflower-deep: #875306;
+  --px-butter: #fff0b0;
+  --px-blue: #a9d8ef;
+  --px-blue-soft: #e3f3fb;
+  --px-blue-mid: #7fb6e0;
+  --px-blue-deep: #2f6297;
+  --px-mint: #b6f2df;
+  --px-mint-soft: #e4f9f1;
+  --px-mint-mid: #6fcfb5;
+  --px-mint-deep: #2c7064;
+  --px-blush: #ffb8cb;
+  --px-blush-soft: #ffe8ee;
+  --px-blush-mid: #f49ab4;
+  --px-blush-deep: #a8355f;
+  --px-peach: #ffd2b8;
+  --px-peach-soft: #ffeee3;
+  --px-peach-mid: #f7a985;
+  --px-peach-deep: #9c4a2f;
+  --px-meadow: #cfeaa0;
+  --px-meadow-soft: #eef8dc;
+  --px-meadow-deep: #3f6b22;
+  --px-u: 3px;
+  --px-frame-line: #f2a922;
+  --px-frame-drop: #c46f1c;
+  --px-frame-ink: #3b2a1a;
+  --site-font-body: "Newsreader", "CM Web Serif", Georgia, serif;
+  --site-font-pixel: "Pixelify Sans", ui-monospace, monospace;
+  --site-font-mono:
+    "IBM Plex Mono", ui-monospace, Menlo, Consolas, "Liberation Mono", monospace;
+}
+
 :root {
   /* Shape */
   --radius-card: 0;
-  --radius-compact: 0.25rem;
-  --radius-media: 0.5rem;
-  --radius-control: 0.625rem;
-  --radius-overlay: 0.875rem;
+  --radius-compact: 0;
+  --radius-media: 0;
+  --radius-control: 0;
+  --radius-overlay: 0;
   --radius-pill: 9999px;
   --radius: var(--radius-control);
   --border-width: 1px;
-  --paper-fiber-color: oklch(0.35 0.02 70 / 7%);
-  --paper-texture-blend: multiply;
-  --paper-grain-opacity: 0.11;
-  --paper-fiber-opacity: 0.1;
+  /* The pixel look has no paper grain: the texture rules stay, switched off. */
+  --paper-fiber-color: transparent;
+  --paper-texture-blend: normal;
+  --paper-grain-opacity: 0;
+  --paper-fiber-opacity: 0;
   --paper-grain-size: 180px;
-  --machine-code-ink: oklch(0.205 0.018 60);
-  --machine-code-paper: oklch(0.985 0.018 88);
+  --machine-code-ink: var(--site-color-fg);
+  --machine-code-paper: var(--site-color-bg);
   --machine-code-size-sm: 8rem;
   --machine-code-size-md: 12rem;
   --machine-code-size-lg: 16rem;
   --machine-code-bar-height-sm: 5rem;
   --machine-code-bar-height-md: 7rem;
   --machine-code-frame-padding: 0.5rem;
-  --email-paper: oklch(0.985 0.018 88);
-  --email-ink: oklch(0.205 0.018 60);
-  --email-muted-ink: oklch(0.5 0.025 60);
-  --email-border: oklch(0.65 0.025 75);
-  --email-muted-surface: oklch(0.955 0.02 86);
-  --email-primary: oklch(0.53 0.14 48);
+  --email-paper: var(--site-color-bg);
+  --email-ink: var(--site-color-fg);
+  --email-muted-ink: var(--site-color-muted);
+  --email-border: var(--px-frame-drop);
+  --email-muted-surface: var(--px-ground-2);
+  --email-primary: var(--site-color-muted);
 
   /* Motion */
   --motion-duration-base: 180ms;
@@ -105,9 +163,7 @@
   --chart-height-compact: 2.5rem;
 }
 
+/* Light only: .dark keeps the light values, as shell/tokens.css does. */
 .dark {
-  --paper-fiber-color: oklch(0.95 0.01 80 / 5%);
-  --paper-texture-blend: soft-light;
-  --paper-grain-opacity: 0.13;
-  --paper-fiber-opacity: 0.08;
+  color-scheme: light;
 }

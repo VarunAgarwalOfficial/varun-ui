@@ -161,7 +161,7 @@
     </p>
 
     <ul>
-      <li>Color tokens: primary, red, pink, yellow, green, blue, purple, and status colors</li>
+      <li>Color tokens: primary, red, pink, yellow, green, blue, deep blue, and status colors</li>
       <li>Spacing tokens: 4px, 8px, 12px, 16px, 24px, 32px, 48px, 64px</li>
       <li>Typography tokens: font families, sizes, weights, line heights</li>
       <li>Border tokens: widths and structural separation</li>

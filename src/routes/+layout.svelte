@@ -4,7 +4,6 @@
   import { Navbar } from "$lib";
   import favicon from "$lib/assets/favicon.svg";
   import GlobalSearch from "$showcase/components/global-search.svelte";
-  import ThemeToggle from "$showcase/components/theme-toggle.svelte";
   import {
     catalogKindDefinitions,
     catalogKindOrder,
@@ -70,7 +69,6 @@
 
         {#snippet utilities()}
           <GlobalSearch />
-          <ThemeToggle />
         {/snippet}
       </Navbar>
     </div>

@@ -61,7 +61,7 @@
   },
   "blocks:security-setup": {
     "title": "Security Setup",
-    "description": "A purple protected-access step with a flat safeguard sequence, exact completion count, recovery and two-factor actions, and a quiet defer route.",
+    "description": "A deep-blue protected-access step with a flat safeguard sequence, exact completion count, recovery and two-factor actions, and a quiet defer route.",
     "category": "Onboarding",
     "tags": ["onboarding", "security", "setup"]
   },
@@ -85,7 +85,7 @@
   },
   "blocks:billing-cycle-setup": {
     "title": "Billing Cycle Setup",
-    "description": "A purple billing-review step with one cycle control, exact recurring amount, payment-method choice, optional coupon feedback, and one confirmation action.",
+    "description": "A deep-blue billing-review step with one cycle control, exact recurring amount, payment-method choice, optional coupon feedback, and one confirmation action.",
     "category": "Onboarding",
     "tags": ["onboarding", "billing", "setup", "cycle", "toggle"]
   },
