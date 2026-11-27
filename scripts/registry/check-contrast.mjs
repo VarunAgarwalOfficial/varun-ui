@@ -2,7 +2,11 @@
 // Checks that the colour tokens in src/lib/styles.css read on each other.
 // Text needs 4.5:1 and borders, dots and other non-text marks need 3:1
 // (WCAG 2.2 AA, 1.4.3 and 1.4.11). Checks the light and dark themes and the
-// email tokens. Exits 1 on a fail.
+// email tokens. Exits 1 on a fail. Run with --all to see every pair.
+//
+// Not checked: the named expressive colours (red, pink, yellow, green, blue,
+// purple) and the data-* chart colours when used on their own as icons, stars
+// or chart marks. DESIGN.md says colour never carries meaning alone.
 
 import { readFileSync } from "node:fs";
 
@@ -13,8 +17,13 @@ const tokensCss = read("../../src/lib/styles/tokens.css");
 const TEXT = 4.5;
 const MARK = 3;
 const STATUS = ["primary", "danger", "success", "warning", "info"];
-const PASTELS = ["primary", "red", "pink", "yellow", "green", "blue", "purple"];
+// Tinted fields used in components: bg-<status>/10, /15 and /20.
+const TINTS = [0.1, 0.15, 0.2];
+// surface-pastel tones and strengths (content, interactive, art).
+const PASTELS = ["red", "pink", "yellow", "green", "blue", "purple"];
+const PASTEL_STRENGTHS = [0.15, 0.22, 0.25];
 
+// Reads one CSS block's oklch() tokens as oklab [L, a, b].
 function block(source, selector, prefix = "--color-") {
   const start = source.indexOf(`${selector} {`);
   if (start < 0) throw new Error(`No ${selector} block found`);
@@ -25,15 +34,18 @@ function block(source, selector, prefix = "--color-") {
     "g",
   );
   for (const [, name, l, c, h] of body.matchAll(pattern)) {
-    tokens[name] = oklchToRgb(Number(l), Number(c), Number(h));
+    const angle = (Number(h) * Math.PI) / 180;
+    tokens[name] = [
+      Number(l),
+      Number(c) * Math.cos(angle),
+      Number(c) * Math.sin(angle),
+    ];
   }
   return tokens;
 }
 
-// OKLCH to gamma-encoded sRGB in 0..1, clipped to the sRGB gamut.
-export function oklchToRgb(l, c, h) {
-  const a = c * Math.cos((h * Math.PI) / 180);
-  const b = c * Math.sin((h * Math.PI) / 180);
+// Oklab to gamma-encoded sRGB in 0..1, clipped to the sRGB gamut.
+function rgb([l, a, b]) {
   const l_ = (l + 0.3963377774 * a + 0.2158037573 * b) ** 3;
   const m_ = (l - 0.1055613458 * a - 0.0638541728 * b) ** 3;
   const s_ = (l - 0.0894841775 * a - 1.291485548 * b) ** 3;
@@ -48,52 +60,71 @@ export function oklchToRgb(l, c, h) {
   });
 }
 
-function luminance(rgb) {
-  const [r, g, b] = rgb.map((v) =>
+function luminance(colour) {
+  const [r, g, b] = colour.map((v) =>
     v <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4,
   );
   return 0.2126 * r + 0.7152 * g + 0.0722 * b;
 }
 
-export function ratio(x, y) {
+function ratio(x, y) {
   const [a, b] = [luminance(x), luminance(y)].sort((p, q) => q - p);
   return (a + 0.05) / (b + 0.05);
 }
 
-// What the browser shows for a colour at some opacity over the page.
+// bg-<colour>/N: the colour at N opacity, painted over the page in sRGB.
 function over(top, alpha, bottom) {
   return top.map((v, i) => v * alpha + bottom[i] * (1 - alpha));
 }
 
-function pairs(t) {
+// surface-pastel: color-mix(in oklab, colour N%, page).
+function mixOklab(top, share, bottom) {
+  return rgb(top.map((v, i) => v * share + bottom[i] * (1 - share)));
+}
+
+function pairs(lab) {
+  const t = Object.fromEntries(
+    Object.entries(lab).map(([name, value]) => [name, rgb(value)]),
+  );
+  const muted = t["muted-foreground"];
   const list = [
     ["foreground on background", t.foreground, t.background, TEXT],
-    [
-      "muted-foreground on background",
-      t["muted-foreground"],
-      t.background,
-      TEXT,
-    ],
-    ["muted-foreground on muted", t["muted-foreground"], t.muted, TEXT],
+    ["muted-foreground on background", muted, t.background, TEXT],
+    ["muted-foreground on muted", muted, t.muted, TEXT],
     ["border on background", t.border, t.background, MARK],
     ["background on primary (button text)", t.background, t.primary, TEXT],
+    [
+      "background on primary/85 (button hover)",
+      t.background,
+      over(t.primary, 0.85, t.background),
+      TEXT,
+    ],
     ["background on danger (badge text)", t.background, t.danger, TEXT],
   ];
   for (const name of STATUS) {
     list.push([`${name} text on background`, t[name], t.background, TEXT]);
-    const tint = over(t[name], 0.1, t.background);
-    list.push([`${name} text on ${name}/10`, t[name], tint, TEXT]);
     list.push([`${name} mark on background`, t[name], t.background, MARK]);
+    for (const alpha of TINTS) {
+      const tint = over(t[name], alpha, t.background);
+      const label = `${name} text on ${name}/${alpha * 100}`;
+      list.push([label, t[name], tint, TEXT]);
+    }
   }
-  // surface-pastel-art is the strongest pastel field, at 25%.
   for (const name of PASTELS) {
-    const field = over(t[name], 0.25, t.background);
-    list.push([`foreground on ${name} pastel`, t.foreground, field, TEXT]);
+    for (const share of PASTEL_STRENGTHS) {
+      const field = mixOklab(lab[name], share, lab.background);
+      const where = `${name} pastel ${Math.round(share * 100)}%`;
+      list.push([`foreground on ${where}`, t.foreground, field, TEXT]);
+      list.push([`muted-foreground on ${where}`, muted, field, TEXT]);
+    }
   }
   return list;
 }
 
-function emailPairs(e) {
+function emailPairs(lab) {
+  const e = Object.fromEntries(
+    Object.entries(lab).map(([name, value]) => [name, rgb(value)]),
+  );
   return [
     ["email ink on paper", e.ink, e.paper, TEXT],
     ["email muted ink on paper", e["muted-ink"], e.paper, TEXT],

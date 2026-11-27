@@ -69,7 +69,9 @@ Read [CONTRIBUTING.md](./CONTRIBUTING.md) first. In short:
 
 ## Contrast
 
-Text colours read at 4.5:1 or more and borders at 3:1 or more (WCAG 2.2 AA), in the light and dark themes and the email tokens. The lowest text pair is 4.62:1 (primary text on a 10% primary tint). `npm run audit` checks every pair with `scripts/registry/check-contrast.mjs`.
+Text colours read at 4.5:1 or more and borders at 3:1 or more (WCAG 2.2 AA), in the light and dark themes and the email tokens. This includes status text on its own 10 to 20% tint and muted text on every pastel field. The lowest text pair is 4.55:1 (paper text on the primary button's hover colour). `npm run audit` checks these pairs with `scripts/registry/check-contrast.mjs`.
+
+Not covered: the named colours and chart colours when used alone as icons, stars or chart marks. In the light theme, yellow (1.94:1), pink, and the purple, yellow, green and pink chart colours are under 3:1 on the page. Pair them with a label or shape, as DESIGN.md says.
 
 ## Status
 
