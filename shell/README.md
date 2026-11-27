@@ -6,7 +6,7 @@ The shared look and frame for every demo page. A change here reaches every demo 
 - `shell.js`: a small bar on top (name, project, **About**, **Source**), the About panel and a one-line footer. Inside a frame, or with `?embed` in the address, it draws nothing.
 - `fonts/`: Newsreader, IBM Plex Mono, CM Web Serif and Pixelify Sans, with their licences.
 
-It is published at `https://varunagarwalofficial.github.io/varun-ui/shell/`.
+It is published at `https://varunswaika.github.io/varun-ui/shell/`.
 
 ## Use it in a demo page
 
@@ -17,11 +17,11 @@ Put these in the page's `<head>`, before the page's own stylesheet:
 <meta name="project" content="repo-name" />
 <link
   rel="stylesheet"
-  href="https://varunagarwalofficial.github.io/varun-ui/shell/shell.css"
+  href="https://varunswaika.github.io/varun-ui/shell/shell.css"
 />
 <script
   type="module"
-  src="https://varunagarwalofficial.github.io/varun-ui/shell/shell.js"
+  src="https://varunswaika.github.io/varun-ui/shell/shell.js"
 ></script>
 ```
 
