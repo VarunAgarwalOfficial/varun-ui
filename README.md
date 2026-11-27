@@ -1,3 +1,5 @@
+<p align="center"><img src="docs/banner.png" alt="Pixel art: a catalogue page with buttons, a toggle, a slider, a checkbox, a card and pastel colour swatches" width="100%"></p>
+
 # varunUI for Svelte
 
 A Svelte 5 component library and design system: warm paper colours, bold type, one colour for the main action and a named pastel palette. It has a light and a dark theme, and a catalogue site that shows every part.
