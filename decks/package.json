@@ -1,0 +1,20 @@
+{
+  "name": "varun-ui-decks",
+  "private": true,
+  "description": "One reveal.js kit for every deck: the site's pixel look, speaker notes, live tool embeds and a one-command PDF.",
+  "type": "module",
+  "scripts": {
+    "vendor": "node scripts/vendor.mjs",
+    "sync": "node scripts/sync.mjs",
+    "serve": "node scripts/serve.mjs",
+    "pdf": "node scripts/pdf.mjs",
+    "check": "node scripts/check.mjs"
+  },
+  "dependencies": {
+    "reveal.js": "6.0.2"
+  },
+  "devDependencies": {
+    "decktape": "3.17.0",
+    "esbuild": "0.28.2"
+  }
+}

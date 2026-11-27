@@ -1,0 +1,230 @@
+/*
+ * The deck look: the site's pixel palette and fonts on reveal.js.
+ * Newsreader for reading text (the site's body font), Pixelify Sans for
+ * headings and labels, Plex Mono for code. Fonts and colours come only from
+ * the site tokens (vendor/shell/tokens.css, copied by make sync). Never
+ * purple or lavender.
+ *
+ * Decks are 1920 by 1080, the size of a 1080p screen, so a deck shown full
+ * screen there is drawn 1 to 1, and on a 4K screen at exactly 2. The art
+ * pixel (--u) is 6px, so a 320 by 180 scene fills the slide. Pixelify sizes
+ * are multiples of 33px (the shell's 11px rule, times three).
+ */
+@import url("../vendor/shell/tokens.css");
+
+:root {
+  --u: 6px; /* one art pixel */
+  --deck-font-body: var(--site-font-body); /* Newsreader, as on the site */
+  --deck-bg: var(--site-color-bg);
+  --deck-ink: var(--site-color-fg);
+  --deck-muted: var(--site-color-muted);
+  --deck-rule: var(--site-color-rule);
+  --deck-plate: var(--px-plate);
+  --deck-code: var(--site-color-code-bg);
+  --deck-mark: var(--site-color-mark);
+
+  /* Ordered-dither masks, 4 by 4 Bayer at a quarter, a half and three
+     quarters. Things appear through these in steps, never by fading. */
+  --dither-25: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 4 4%27 shape-rendering=%27crispEdges%27%3E%3Crect x=%270%27 y=%270%27 width=%271%27 height=%271%27/%3E%3Crect x=%272%27 y=%270%27 width=%271%27 height=%271%27/%3E%3Crect x=%270%27 y=%272%27 width=%271%27 height=%271%27/%3E%3Crect x=%272%27 y=%272%27 width=%271%27 height=%271%27/%3E%3C/svg%3E");
+  --dither-50: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 4 4%27 shape-rendering=%27crispEdges%27%3E%3Crect x=%270%27 y=%270%27 width=%271%27 height=%271%27/%3E%3Crect x=%272%27 y=%270%27 width=%271%27 height=%271%27/%3E%3Crect x=%271%27 y=%271%27 width=%271%27 height=%271%27/%3E%3Crect x=%273%27 y=%271%27 width=%271%27 height=%271%27/%3E%3Crect x=%270%27 y=%272%27 width=%271%27 height=%271%27/%3E%3Crect x=%272%27 y=%272%27 width=%271%27 height=%271%27/%3E%3Crect x=%271%27 y=%273%27 width=%271%27 height=%271%27/%3E%3Crect x=%273%27 y=%273%27 width=%271%27 height=%271%27/%3E%3C/svg%3E");
+  --dither-75: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 4 4%27 shape-rendering=%27crispEdges%27%3E%3Crect x=%270%27 y=%270%27 width=%271%27 height=%271%27/%3E%3Crect x=%271%27 y=%270%27 width=%271%27 height=%271%27/%3E%3Crect x=%272%27 y=%270%27 width=%271%27 height=%271%27/%3E%3Crect x=%273%27 y=%270%27 width=%271%27 height=%271%27/%3E%3Crect x=%271%27 y=%271%27 width=%271%27 height=%271%27/%3E%3Crect x=%273%27 y=%271%27 width=%271%27 height=%271%27/%3E%3Crect x=%270%27 y=%272%27 width=%271%27 height=%271%27/%3E%3Crect x=%271%27 y=%272%27 width=%271%27 height=%271%27/%3E%3Crect x=%272%27 y=%272%27 width=%271%27 height=%271%27/%3E%3Crect x=%273%27 y=%272%27 width=%271%27 height=%271%27/%3E%3Crect x=%271%27 y=%273%27 width=%271%27 height=%271%27/%3E%3Crect x=%273%27 y=%273%27 width=%271%27 height=%271%27/%3E%3C/svg%3E");
+}
+
+/* Ground, ink and type. */
+html, body, .reveal { background: var(--deck-bg); color: var(--deck-ink); }
+.reveal {
+  font: 400 42px/1.45 var(--deck-font-body);
+  font-variant-numeric: lining-nums proportional-nums;
+}
+.reveal ::selection { background: var(--site-color-selection); color: var(--deck-ink); }
+.reveal .slides { text-align: left; }
+.reveal .slides section { box-sizing: border-box; height: 100%; padding: 84px 108px 72px; }
+
+.reveal h1, .reveal h2 {
+  font-family: var(--site-font-pixel);
+  font-weight: 400;
+  line-height: var(--site-leading-tight);
+  letter-spacing: 0;
+  margin: 0;
+  text-wrap: balance;
+}
+.reveal h1 { font-size: 99px; margin-bottom: 36px; }
+.reveal h2 { font-size: 66px; margin-bottom: 48px; }
+.reveal h3 { font: 600 42px/1.3 var(--deck-font-body); margin: 0 0 18px; }
+
+.reveal p { margin: 0 0 27px; max-width: 36em; }
+.reveal ul, .reveal ol { margin: 0 0 27px 1.2em; padding: 0; }
+.reveal li { margin: 0 0 15px; max-width: 36em; }
+.reveal ul > li { list-style: none; position: relative; }
+.reveal ul > li::before {
+  content: ""; position: absolute; left: -1.05em; top: 0.55em;
+  width: calc(2 * var(--u)); height: calc(2 * var(--u)); background: var(--px-sunflower-deep);
+}
+.reveal ol > li::marker { font-family: var(--site-font-pixel); color: var(--px-sunflower-deep); }
+.reveal strong, .reveal b { font-weight: 600; }
+.reveal em { font-style: italic; }
+.reveal mark { background: var(--deck-mark); color: inherit; padding: 0 6px; margin: 0 -6px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.reveal a { color: var(--site-color-link); text-decoration: underline 3px var(--site-color-link-line); text-underline-offset: 0.2em; }
+.reveal .muted { color: var(--deck-muted); }
+.reveal .small { font-size: 33px; }
+
+.reveal code, .reveal pre, .reveal kbd { font-family: var(--site-font-mono); font-variant-ligatures: none; }
+.reveal code { font-size: 0.86em; }
+.reveal pre {
+  width: fit-content; max-width: 100%; box-sizing: border-box; margin: var(--u) 0 42px var(--u);
+  padding: 24px 36px; font-size: 33px; line-height: 1.5; white-space: pre;
+  background: var(--deck-code); box-shadow: 0 0 0 var(--u) var(--deck-rule);
+}
+.reveal pre code { font-size: inherit; }
+
+.reveal table { border-collapse: collapse; font-size: 36px; margin: 0 0 36px; font-variant-numeric: lining-nums tabular-nums; }
+.reveal th, .reveal td { text-align: left; padding: 12px 48px 12px 0; border-bottom: 3px solid var(--deck-rule); vertical-align: top; }
+.reveal th { font: 400 33px var(--site-font-pixel); color: var(--deck-muted); border-bottom-color: var(--deck-ink); }
+
+/* Chrome: a stepped sunflower progress bar and a pixel slide number. */
+.reveal .progress { height: calc(2 * var(--u)); background: var(--px-butter); color: var(--px-sunflower-mid); }
+.reveal .slide-number {
+  background: none; color: var(--deck-muted); font: 400 33px var(--site-font-pixel);
+  right: 36px; bottom: 24px;
+}
+
+/* Pixel pieces. A frame is a sunflower line one art pixel thick with an
+   orange drop and no blur, as on the site; a plain frame is the line in
+   the rule colour; a key is a button. */
+.reveal .frame, .reveal .embed {
+  margin: var(--u) calc(3 * var(--u)) calc(3 * var(--u)) var(--u);
+  padding: 30px 36px;
+  background: var(--deck-plate);
+  box-shadow:
+    0 calc(-1 * var(--u)) 0 0 var(--px-frame-line),
+    0 var(--u) 0 0 var(--px-frame-line),
+    calc(-1 * var(--u)) 0 0 0 var(--px-frame-line),
+    var(--u) 0 0 0 var(--px-frame-line),
+    var(--u) calc(2 * var(--u)) 0 0 var(--px-frame-drop),
+    calc(2 * var(--u)) var(--u) 0 0 var(--px-frame-drop),
+    calc(2 * var(--u)) calc(2 * var(--u)) 0 0 var(--px-frame-drop);
+}
+.reveal .frame.plain {
+  box-shadow:
+    0 calc(-1 * var(--u)) 0 0 var(--deck-rule),
+    0 var(--u) 0 0 var(--deck-rule),
+    calc(-1 * var(--u)) 0 0 0 var(--deck-rule),
+    var(--u) 0 0 0 var(--deck-rule);
+}
+.reveal .frame > :last-child { margin-bottom: 0; }
+/* Card grounds from the pastels. Text on them stays ink. */
+.reveal .frame.blue { background: var(--px-blue-soft); }
+.reveal .frame.mint { background: var(--px-mint-soft); }
+.reveal .frame.blush { background: var(--px-blush-soft); }
+.reveal .frame.peach { background: var(--px-peach-soft); }
+.reveal .frame.meadow { background: var(--px-meadow-soft); }
+.reveal .frame.butter { background: var(--px-butter); }
+
+.reveal .chip {
+  display: inline-block; margin: var(--u); padding: 3px 18px;
+  background: var(--px-sunflower); color: var(--deck-ink);
+  font: 400 33px/1.4 var(--site-font-pixel);
+  box-shadow:
+    0 calc(-1 * var(--u)) 0 0 var(--deck-ink),
+    0 var(--u) 0 0 var(--deck-ink),
+    calc(-1 * var(--u)) 0 0 0 var(--deck-ink),
+    var(--u) 0 0 0 var(--deck-ink),
+    0 calc(2 * var(--u)) 0 0 var(--deck-ink);
+}
+
+/* Pixel art: show it at a whole-number scale of its art size. */
+.reveal img.px-art, .reveal canvas.px-art { image-rendering: pixelated; }
+
+/* A label tab on any slide: <section data-label="Predict">. It names the
+   step of the lesson, so the class always knows where they are. */
+.reveal .slides section[data-label]::before {
+  content: attr(data-label);
+  display: inline-block; margin: 0 0 30px var(--u); padding: 0 18px;
+  font: 400 33px/1.5 var(--site-font-pixel); color: var(--deck-ink);
+  background: var(--px-butter);
+  box-shadow: 0 0 0 var(--u) var(--px-frame-line);
+}
+.reveal .slides section[data-label="Predict"]::before,
+.reveal .slides section[data-label="Your turn"]::before { background: var(--px-blue); box-shadow: 0 0 0 var(--u) var(--px-blue-mid); }
+.reveal .slides section[data-label="Try it"]::before { background: var(--px-mint); box-shadow: 0 0 0 var(--u) var(--px-mint-mid); }
+
+/* Layouts. */
+.reveal .title-slide { display: flex !important; flex-direction: column; justify-content: center; padding-top: 0; }
+.reveal .title-slide h1 { max-width: 14em; }
+.reveal .say { display: flex !important; flex-direction: column; justify-content: center; }
+.reveal .say p { font-size: 72px; line-height: 1.18; font-weight: 500; max-width: 20em; text-wrap: balance; }
+.reveal .two { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+.reveal .three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; align-items: start; }
+
+/* A live tool on a slide. The iframe loads only near its slide, with
+   ?embed so the site's shell draws nothing. The fallback shot sits behind
+   it, shows while it loads, and is all that prints. */
+.reveal .embed {
+  position: relative; padding: 0; background: var(--deck-plate);
+  aspect-ratio: var(--ratio, 16 / 9); height: var(--embed-h, 780px); width: auto; max-width: calc(100% - 4 * var(--u));
+}
+.reveal .embed iframe, .reveal .embed .fallback {
+  position: absolute; inset: 0; width: 100%; height: 100%; border: 0; margin: 0;
+  object-fit: cover; object-position: top left; background: transparent;
+}
+.reveal .embed figcaption { position: absolute; top: 100%; left: 0; right: 0; margin-top: 30px; font-size: 33px; color: var(--deck-muted); }
+html.static .reveal .embed iframe { display: none; }
+
+/* Fragments appear through an ordered dither in three drawn steps. */
+.reveal .slides section .fragment { transition: none; }
+.reveal .slides section .fragment.visible { animation: deck-dither-in 300ms steps(1, end) both; }
+@keyframes deck-dither-in {
+  0% { -webkit-mask-image: var(--dither-25); mask-image: var(--dither-25); }
+  33% { -webkit-mask-image: var(--dither-50); mask-image: var(--dither-50); }
+  66% { -webkit-mask-image: var(--dither-75); mask-image: var(--dither-75); }
+  100% { -webkit-mask-image: none; mask-image: none; }
+}
+.reveal .slides section .fragment.visible {
+  -webkit-mask-size: calc(4 * var(--u)) calc(4 * var(--u)); mask-size: calc(4 * var(--u)) calc(4 * var(--u));
+  -webkit-mask-repeat: repeat; mask-repeat: repeat;
+}
+html.static .reveal .slides section .fragment.visible { animation: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal .slides section .fragment.visible { animation: none; }
+}
+
+/* Story mode: the scene canvas sits behind every slide at the art size,
+   scaled 6 times with the slide. Slides draw their text on frames over it. */
+.reveal .slides > canvas.story-scene {
+  position: absolute; left: 0; top: 0; width: 100%; height: 100%;
+  image-rendering: pixelated; z-index: 0; pointer-events: none;
+}
+.reveal.story .slides > section { z-index: 1; }
+.reveal.story .slides section .frame { background: var(--px-plate); }
+.reveal.story .slides section[data-label]::before { margin-bottom: 24px; }
+.reveal .story-panel { width: fit-content; max-width: 1230px; }
+.reveal .story-panel p:last-child { margin-bottom: 0; }
+
+/* Parking (park.js): carts with parked questions along the bottom edge,
+   and a breadcrumb of how deep we are in the top corner. Nothing here is
+   for the audience to click. */
+.reveal .slides > .park-layer { position: absolute; inset: 0; z-index: 5; pointer-events: none; }
+.reveal.parking .slides > section { padding-bottom: 168px; }
+.reveal .park-crumbs {
+  position: absolute; top: 24px; right: 36px; display: flex; gap: 0; padding: 0 6px 0 18px;
+  font: 400 33px/48px var(--site-font-pixel); color: var(--deck-muted);
+  background: var(--px-plate); box-shadow: 0 0 0 var(--u) var(--deck-rule);
+}
+.reveal .park-crumbs[hidden] { display: none; }
+.reveal .park-crumbs span + span::before { content: "\203A"; margin: 0 18px; color: var(--px-sunflower-deep); }
+.reveal .park-crumbs [aria-current] { color: var(--deck-ink); }
+.reveal .park-crumbs [aria-current]::after { content: ""; display: inline-block; width: 12px; }
+.reveal .park-cart { position: absolute; display: flex; align-items: flex-end; gap: 18px; max-width: 552px; }
+.reveal .park-cart img { flex: none; }
+.reveal .park-q {
+  font: 400 30px/1.3 var(--deck-font-body); color: var(--deck-ink); background: var(--deck-plate);
+  padding: 6px 15px; margin: var(--u); box-shadow: 0 0 0 var(--u) var(--deck-rule); max-width: 426px;
+}
+.reveal .park-cart[data-level="0"] .park-q { box-shadow: 0 0 0 var(--u) var(--px-frame-line); }
+.reveal .park-cart[data-level="1"] .park-q { box-shadow: 0 0 0 var(--u) var(--px-blue-mid); }
+.reveal .park-cart[data-level="2"] .park-q { box-shadow: 0 0 0 var(--u) var(--px-mint-mid); }
+.reveal .park-cart.home { max-width: 960px; }
+.reveal .park-cart.home .park-q { max-width: 840px; font-size: 36px; }
+.reveal .px-in { animation: deck-dither-in 300ms steps(1, end) both; -webkit-mask-size: calc(4 * var(--u)) calc(4 * var(--u)); mask-size: calc(4 * var(--u)) calc(4 * var(--u)); }
+.reveal .px-out { animation: deck-dither-in 300ms steps(1, end) reverse both; -webkit-mask-size: calc(4 * var(--u)) calc(4 * var(--u)); mask-size: calc(4 * var(--u)) calc(4 * var(--u)); }
+.reveal.story .slide-number { background: var(--px-plate); color: var(--deck-ink); padding: 0 12px; box-shadow: 0 0 0 var(--u) var(--px-frame-line); right: 42px; bottom: 30px; }

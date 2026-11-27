@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<title>Two knights, one valley</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../vendor/reveal/reset.css">
+<link rel="stylesheet" href="../vendor/reveal/reveal.css">
+<link rel="stylesheet" href="../theme/pixel.css">
+</head>
+<body>
+<!-- A story deck: the hook of a networks lecture, told in the valley.
+     data-cast on a slide or fragment moves the cast; see theme/story.js. -->
+<div class="reveal story" data-root="Two knights"><div class="slides">
+
+<section data-phase="night" data-cast="a knight 44 150 flip; b knight 276 150">
+  <div class="frame story-panel">
+    <h1>Two knights, one valley</h1>
+    <p>Can two sides ever be sure they agree?</p>
+  </div>
+  <aside class="notes">The hook for lecture 1. Two knights camp on either side of a valley. Let the scene sit for a moment before you speak.</aside>
+</section>
+
+<section data-label="The plan">
+  <div class="frame story-panel">
+    <p>They win only if both charge at dawn. One alone loses.</p>
+    <p class="fragment" data-cast="m courier 62 138">Knight A writes the plan: <strong>charge at dawn</strong>.</p>
+  </div>
+  <aside class="notes">Ask: what does A need to know before charging? Then click: a bee arrives to carry the plan.</aside>
+</section>
+
+<section data-label="Send a messenger" data-cast="m 258 138">
+  <div class="frame story-panel">
+    <p>A bee carries the plan across. The valley is unsafe: a bee can be lost.</p>
+    <p class="fragment">It arrived. But A can't tell that it did.</p>
+  </div>
+  <aside class="notes">The bee walks across as the slide opens. Pause on the second line: A's uncertainty is the whole problem.</aside>
+</section>
+
+<section data-label="So B replies" data-cast="m 160 128 flip">
+  <div class="frame story-panel">
+    <p>B sends a bee back: <strong>got it</strong>.</p>
+    <p class="fragment" data-cast="m -">Lost on the way. Now B can't tell whether A knows.</p>
+  </div>
+  <aside class="notes">Click once the bee is mid-valley. It goes. Ask who is unsure now, and of what.</aside>
+</section>
+
+<section data-label="A question" data-park="Why can't they just send a confirmation?" data-up="Every message can be lost">
+  <div class="frame story-panel">
+    <p>"Why can't they just send a confirmation?"</p>
+    <p>Good question. Park it: first we need one bigger idea.</p>
+  </div>
+  <aside class="notes">Someone always asks this. Don't answer yet. The cart parks the question; we go up a level and come back to it.</aside>
+</section>
+
+<section data-label="Up a level" data-cast="m courier 120 128; n courier 210 128 flip">
+  <div class="frame story-panel">
+    <h2>Every message can be lost</h2>
+    <p>Any link can drop any message: noise, a full queue, a pulled cable. Silence tells the sender nothing.</p>
+    <p class="fragment" data-cast="n -">A confirmation is a message too. So it can be lost.</p>
+  </div>
+  <aside class="notes">The bigger idea, on its own, away from the knights. Click once both bees are out: one goes.</aside>
+</section>
+
+<section data-label="Back to the question" data-unpark data-cast="m -">
+  <div class="frame story-panel">
+    <p>A confirmation is a message, and every message can be lost. Confirming the confirmation only moves the problem one step on.</p>
+  </div>
+  <aside class="notes">The cart drives back to the middle. Read the question out, then answer it with the idea from the level above.</aside>
+</section>
+
+<section data-label="Predict">
+  <div class="frame story-panel">
+    <p>How many messages until both knights are sure?</p>
+    <p class="fragment">None is enough. The last message can always be lost, and its sender can't tell.</p>
+  </div>
+  <aside class="notes">Give the room thirty seconds. Take two answers, then click. The argument: take the shortest plan that works; drop its last message; it must still work; so a shorter plan works. Contradiction.</aside>
+</section>
+
+<section data-label="Back to the lecture" data-phase="dawn" data-cast="m courier 160 120">
+  <div class="frame story-panel">
+    <p>So no network makes two hosts certain. TCP makes them confident enough: numbered messages, replies and timeouts.</p>
+  </div>
+  <aside class="notes">Dawn breaks. Name the three tools; they are the plan for the next four weeks.</aside>
+</section>
+
+</div></div>
+<script src="../vendor/reveal/reveal.js"></script>
+<script src="../vendor/reveal/plugin/notes.js"></script>
+<script src="../theme/park.js"></script>
+<script src="../theme/deck.js"></script>
+<script type="module">
+import { start } from '../theme/story.js';
+start(await Deck.start());
+</script>
+</body>
+</html>

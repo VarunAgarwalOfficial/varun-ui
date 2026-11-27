@@ -1,0 +1,220 @@
+/* Copied by scripts/sync.mjs from ../shell/tokens.css on 2026-11-27.
+   Do not edit here: change the shell, then run make sync. */
+/*
+ * The pixel look's tokens: every colour, size, space and font as a CSS custom
+ * property. No rule on any element. Tools link shell.css, which imports this.
+ *
+ * Copied from the website's src/styles/tokens/pixel-tokens.css on
+ * 27 November 2026, with the font URLs made relative and Pixelify Sans added.
+ * Change a value there and here together. Never purple or lavender.
+ */
+
+/* Fonts. The URLs are relative to this file, so every tool that links the
+   shell gets the fonts from here and copies none.
+   Newsreader and IBM Plex Mono are SIL OFL 1.1 (Newsreader-OFL.txt,
+   IBM-Plex-OFL.txt); CM Web Serif is a renamed subset of New Computer Modern
+   under the GUST Font License (GUST-FONT-LICENSE.txt, LPPL-1.3c.txt,
+   NewCM-License.txt). Copy the licence texts with the fonts. ---------- */
+
+/* Text: Newsreader, variable in weight and optical size (the browser picks
+   the optical size from the font size). */
+@font-face {
+  font-family: "Newsreader";
+  src: url("fonts/newsreader-latin-opsz-normal.woff2")
+    format("woff2-variations");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Newsreader";
+  src: url("fonts/newsreader-latin-opsz-italic.woff2")
+    format("woff2-variations");
+  font-weight: 200 800;
+  font-style: italic;
+  font-display: swap;
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
+}
+/* Greek, arrows and mathematical symbols outside Newsreader's set, and
+   plain-text maths where KaTeX is not used. */
+@font-face {
+  font-family: "CM Web Serif";
+  src: url("fonts/cmweb-serif-book.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+/* Code, and data that must line up in columns. */
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("fonts/ibm-plex-mono-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("fonts/ibm-plex-mono-latin-600-normal.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Headings, labels and buttons: Pixelify Sans (SIL OFL 1.1,
+   PixelifySans-OFL.txt). Never running text. */
+@font-face {
+  font-family: "Pixelify Sans";
+  src: url("fonts/pixelify-sans-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* One scheme: the pastels are the look, so dark mode keeps them. */
+  color-scheme: light;
+
+  /* Page and ink. */
+  --site-color-bg: #fffbf0;
+  --site-color-fg: #3b2a1a;
+  --site-color-muted: #6b4a2c;
+  --site-color-rule: #f0e2bd;
+  --site-color-code-bg: #fdf0d0;
+  --site-color-mark: #fff0a0;
+  --site-color-selection: #ffe2a8;
+
+  /* Links are set in the ink, with a sunflower-orange rule under them; the
+     focus ring is the deep blue, so it never reads as a link. */
+  --site-color-link: #3b2a1a;
+  --site-color-link-line: #c46f1c;
+  --site-color-focus: #2f6297;
+
+  /* The four meaning colours, for evidence only, always with the word. Open
+     is the deep blue: never purple. */
+  --site-mean-proved: #3d6f48;
+  --site-mean-measured: #8a6417;
+  --site-mean-open: #2f6297;
+  --site-mean-against: #9b3f36;
+
+  /* The pastels, for grounds, card tops and art only, never for text. Each
+     has a -soft (a card ground), a -mid (rules, dots) and a -deep (text or
+     a mark on it). */
+  --px-ground-2: #fff6df;
+  --px-plate: #fffdf2;
+  --px-sunflower: #ffd23f;
+  --px-sunflower-mid: #f7c234;
+  --px-sunflower-deep: #875306;
+  --px-butter: #fff0b0;
+  --px-blue: #a9d8ef;
+  --px-blue-soft: #e3f3fb;
+  --px-blue-mid: #7fb6e0;
+  --px-blue-deep: #2f6297;
+  --px-mint: #b6f2df;
+  --px-mint-soft: #e4f9f1;
+  --px-mint-mid: #6fcfb5;
+  --px-mint-deep: #2c7064;
+  --px-blush: #ffb8cb;
+  --px-blush-soft: #ffe8ee;
+  --px-blush-mid: #f49ab4;
+  --px-blush-deep: #a8355f;
+  --px-peach: #ffd2b8;
+  --px-peach-soft: #ffeee3;
+  --px-peach-mid: #f7a985;
+  --px-peach-deep: #9c4a2f;
+  --px-meadow: #cfeaa0;
+  --px-meadow-soft: #eef8dc;
+  --px-meadow-deep: #3f6b22;
+
+  /* The frame, as on the banners: a sunflower line one art pixel thick,
+     stepped at the corners, and a deeper orange offset with no blur. */
+  --px-u: 3px;
+  --px-frame-line: #f2a922;
+  --px-frame-drop: #c46f1c;
+  --px-frame-ink: #3b2a1a;
+
+  /* Font stacks: reading text, pixel display (headings, labels, buttons;
+     never running text), code, maths. */
+  --site-font-body: "Newsreader", "CM Web Serif", Georgia, serif;
+  --site-font-pixel: "Pixelify Sans", ui-monospace, monospace;
+  --site-font-mono:
+    "IBM Plex Mono", ui-monospace, Menlo, Consolas, "Liberation Mono", monospace;
+  --site-font-math: "KaTeX_Main", "CM Web Serif", "Times New Roman", serif;
+  --site-weight-normal: 400;
+  --site-weight-bold: 600;
+
+  /* Type sizes, with a large body: small (captions, status), text, an entry
+     title, a section heading, the page title, the page title on phones, and
+     the name on the home page. Pixel sizes are whole multiples of 11px, so
+     the font's pixels land on screen pixels. */
+  --site-step--1: 1.0625rem;
+  --site-step-0: 1.3125rem;
+  --site-step-item: 1.375rem;
+  --site-step-heading: 1.71875rem;
+  --site-step-1: 2.75rem;
+  --site-step-title-narrow: 2.0625rem;
+  --site-step-hero: 4.125rem;
+  --site-leading-tight: 1.15;
+  --site-leading-body: 1.6;
+  --site-tracking-caps: 0.04em;
+  --site-tracking-title: 0;
+  --site-math-size: 1.08em;
+
+  /* Spacing steps, smallest to largest. */
+  --site-space-1: 0.25rem;
+  --site-space-2: 0.5rem;
+  --site-space-3: 0.75rem;
+  --site-space-4: 1rem;
+  --site-space-5: 1.5rem;
+  --site-space-6: 2.5rem;
+  --site-space-7: 4.5rem;
+  --site-space-8: 7rem;
+
+  /* The measure for running text, the side margin on small screens, and the
+     page grid's width. */
+  --site-measure: 40rem;
+  --site-gutter: 1.25rem;
+  --site-page: 76rem;
+
+  --site-rule-width: 2px;
+  --site-rule-heavy: 3px;
+  --site-underline-width: 2px;
+  --site-underline-offset: 0.2em;
+  --site-radius-1: 0;
+  --site-mark-size: 0.6em;
+
+  /* Focus ring: a pixel ring outside the element. */
+  --site-focus-width: 3px;
+  --site-focus-offset: 3px;
+
+  --site-duration-fast: 0ms;
+  --site-duration-base: 0ms;
+  --site-ease: linear;
+}
+
+/* Dark: the pastels are the look, so the light values stand. Stated here so
+   a dark-mode reader, and the contrast test, sees them. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --site-color-bg: #fffbf0;
+    --site-color-fg: #3b2a1a;
+    --site-color-muted: #6b4a2c;
+    --site-color-rule: #f0e2bd;
+    --site-color-code-bg: #fdf0d0;
+    --site-color-mark: #fff0a0;
+    --site-color-selection: #ffe2a8;
+    --site-color-link: #3b2a1a;
+    --site-color-link-line: #c46f1c;
+    --site-color-focus: #2f6297;
+    --site-mean-proved: #3d6f48;
+    --site-mean-measured: #8a6417;
+    --site-mean-open: #2f6297;
+    --site-mean-against: #9b3f36;
+  }
+}

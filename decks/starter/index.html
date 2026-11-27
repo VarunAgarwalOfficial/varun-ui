@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<title>How a program picks a move</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../vendor/reveal/reset.css">
+<link rel="stylesheet" href="../vendor/reveal/reveal.css">
+<link rel="stylesheet" href="../theme/pixel.css">
+</head>
+<body>
+<!-- The starter: one lesson, story first. Each slide's notes start with the
+     slot it fills. Copy this folder (make new NAME=week-3) and replace the
+     content; keep the order unless you have a reason. The shape follows
+     ~/.claude/skills/manim-lessons/references/pedagogy.md. -->
+<div class="reveal" data-root="Picking a move"><div class="slides">
+
+<section class="title-slide">
+  <h1>How a program picks a move</h1>
+  <p>By the end you can trace a two-move lookahead by hand and say which move it picks.</p>
+  <aside class="notes">Slot: title and outcome. One sentence the students could check themselves against at the end.</aside>
+</section>
+
+<section class="say">
+  <p>Your friend always beats you at noughts and crosses. They aren't smarter. They look one move further than you.</p>
+  <aside class="notes">Slot: the story. A situation they know, with a puzzle in it. Don't name the idea yet. Ask: what does "one move further" mean?</aside>
+</section>
+
+<section data-label="Words we need">
+  <h2>Four words</h2>
+  <div class="two">
+    <ul>
+      <li><strong>Position</strong>: the board right now.</li>
+      <li><strong>Move</strong>: one change to the board.</li>
+      <li><strong>Tree</strong>: every position you can reach, move by move.</li>
+      <li><strong>Score</strong>: how good a position is for us.</li>
+    </ul>
+    <div class="frame blue">
+      <p>You need: trees from last week (root, children, leaves).</p>
+    </div>
+  </div>
+  <aside class="notes">Slot: names and what they need already. Only the words this lesson uses. Point back to where they met trees.</aside>
+</section>
+
+<section data-label="First try">
+  <h2>Pick the move that looks best now</h2>
+  <p>Score each move by the board it leaves. Take the highest.</p>
+  <p class="fragment frame blush">It takes a free piece, and loses the game on your reply.</p>
+  <aside class="notes">Slot: the obvious first try, and where it breaks. Let them propose it. Then click: the greedy move walks into a trap. The break is the reason for the rest of the lesson.</aside>
+</section>
+
+<section data-label="The idea">
+  <h2>Look at the reply too</h2>
+  <ol>
+    <li class="fragment">For each of my moves, list your replies.</li>
+    <li class="fragment">Score the board after each reply.</li>
+    <li class="fragment">You will pick the reply that is worst for me: take the <strong>minimum</strong>.</li>
+    <li class="fragment">I pick the move whose minimum is highest: take the <strong>maximum</strong>.</li>
+  </ol>
+  <aside class="notes">Slot: build the model in steps. One click per step; say each one before you click. This is minimax at depth two.</aside>
+</section>
+
+<section data-label="Worked example">
+  <h2>Two moves, two replies each</h2>
+  <div class="two">
+<pre><code>me:        A           B
+you:     A1  A2      B1  B2
+score:   +3  -9      +1  +2</code></pre>
+    <div>
+      <p class="fragment">A: you reply A2. Worth <span class="chip">-9</span>.</p>
+      <p class="fragment">B: you reply B1. Worth <span class="chip">+1</span>.</p>
+      <p class="fragment frame mint">Pick B. A has the best leaf, but you would never let me reach it.</p>
+    </div>
+  </div>
+  <aside class="notes">Slot: one worked example, every step shown. Read the tree bottom up. The trap from "first try" is move A.</aside>
+</section>
+
+<section data-label="Predict">
+  <h2>What does it pick?</h2>
+  <pre><code>me:        A           B           C
+you:     A1  A2      B1  B2      C1  C2
+score:   +4  +4      +8  -1      +2  +3</code></pre>
+  <p class="fragment">A. Its minimum is +4; B's is -1 and C's is +2.</p>
+  <aside class="notes">Slot: predict before you show. Thirty seconds, hands up for A, B or C, then click. B is the tempting wrong answer: the same trap as before.</aside>
+</section>
+
+<section data-label="Try it">
+  <figure class="embed">
+    <iframe data-src="https://varunswaika.github.io/chess-engine/" title="Chess against an engine" allow="fullscreen"></iframe>
+    <img class="fallback" src="shots/chess-engine.png" alt="The chess board at the start of a game">
+    <figcaption>This engine looks five or more moves ahead. Play one move and watch its reply.</figcaption>
+  </figure>
+  <aside class="notes">Slot: try it. The live page loads only near this slide. In the PDF the picture shows instead. Ask one student to make an early queen move and see it punished.</aside>
+</section>
+
+<section data-label="Your turn">
+  <h2>Same idea, new place</h2>
+  <div class="frame">
+    <p>A delivery robot picks a route. Then the traffic "replies" with the worst jam it could. Which route should it take?</p>
+  </div>
+  <p class="fragment">The route whose worst case is best: minimax again, against the traffic.</p>
+  <aside class="notes">Slot: transfer. The same structure with no board. Pairs for two minutes. The point: the "opponent" can be anything that might go against you.</aside>
+</section>
+
+<section class="say">
+  <p>Your friend wasn't smarter. They were taking the minimum, then the maximum.</p>
+  <aside class="notes">Slot: back to the story, now explained. Then the check: ask them to say the outcome sentence from the first slide in their own words.</aside>
+</section>
+
+</div></div>
+<script src="../vendor/reveal/reveal.js"></script>
+<script src="../vendor/reveal/plugin/notes.js"></script>
+<script src="../theme/park.js"></script>
+<script src="../theme/deck.js"></script>
+<script>Deck.start();</script>
+</body>
+</html>
