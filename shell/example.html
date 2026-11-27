@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shell example</title>
+    <meta
+      name="description"
+      content="A page that shows the shared shell: the bar, the About panel and the footer."
+    />
+    <meta name="project" content="varun-ui" />
+    <meta name="project-title" content="Shell example" />
+    <meta name="project-kind" content="security" />
+    <meta name="project-terms" content="packet, DNS, TLS" />
+    <link rel="stylesheet" href="shell.css" />
+    <script type="module" src="shell.js"></script>
+  </head>
+  <body>
+    <main
+      style="max-width: 40rem; margin: 0 auto; padding: 2.5rem 1.25rem 4.5rem"
+    >
+      <h1>Shell example</h1>
+      <p>
+        The bar above and the footer below come from <code>shell.js</code>. The
+        colours, fonts and the pieces here come from <code>shell.css</code>.
+      </p>
+      <p>
+        <button class="px-key" type="button">A key</button>
+        <button class="px-key" type="button" aria-pressed="true">
+          Pressed
+        </button>
+        <button class="px-key" type="button" disabled>Disabled</button>
+      </p>
+      <div class="px-frame" style="padding: 1rem 1.5rem">
+        <p style="margin: 0">A frame.</p>
+      </div>
+    </main>
+    <template id="project-help">
+      <p>Press a key. Nothing else happens.</p>
+    </template>
+  </body>
+</html>

@@ -1,0 +1,130 @@
+/*
+ * The shared look for every demo page: the pixel tokens, the page's ground,
+ * ink and type, and the pixel pieces a tool may use by class. Every rule is
+ * wrapped in :where(), so it weighs nothing and a tool's own rules win.
+ * The bar, the About panel and the footer are drawn by shell.js.
+ */
+@import url("tokens.css");
+
+:where(html) {
+  background: var(--site-color-bg);
+  color: var(--site-color-fg);
+  scrollbar-color: var(--px-sunflower-mid) var(--px-ground-2);
+}
+
+:where(body) {
+  margin: 0;
+  font: var(--site-step-0) / var(--site-leading-body) var(--site-font-body);
+  font-variant-numeric: lining-nums proportional-nums;
+}
+
+:where(h1, h2, h3) {
+  font-family: var(--site-font-pixel);
+  font-weight: var(--site-weight-normal);
+  line-height: var(--site-leading-tight);
+}
+
+:where(code, kbd, samp, pre) {
+  font-family: var(--site-font-mono);
+}
+
+:where(table, output, [data-figures]) {
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+:where(a) {
+  color: var(--site-color-link);
+  text-decoration-color: var(--site-color-link-line);
+  text-decoration-thickness: var(--site-underline-width);
+  text-underline-offset: var(--site-underline-offset);
+}
+
+::selection {
+  background: var(--site-color-selection);
+}
+
+:where(:focus-visible) {
+  outline: var(--site-focus-width) solid var(--site-color-focus);
+  outline-offset: var(--site-focus-offset);
+}
+
+/* Pixel pieces, by class. A frame is a stepped sunflower line with an
+   orange drop; a plain frame is the line alone; a key is a button. */
+:where(.px-frame) {
+  margin: var(--px-u) calc(3 * var(--px-u)) calc(3 * var(--px-u)) var(--px-u);
+  background: var(--px-plate);
+  box-shadow:
+    0 calc(-1 * var(--px-u)) 0 0 var(--px-frame-line),
+    0 var(--px-u) 0 0 var(--px-frame-line),
+    calc(-1 * var(--px-u)) 0 0 0 var(--px-frame-line),
+    var(--px-u) 0 0 0 var(--px-frame-line),
+    var(--px-u) calc(2 * var(--px-u)) 0 0 var(--px-frame-drop),
+    calc(2 * var(--px-u)) var(--px-u) 0 0 var(--px-frame-drop),
+    calc(2 * var(--px-u)) calc(2 * var(--px-u)) 0 0 var(--px-frame-drop);
+}
+
+:where(.px-frame-plain) {
+  box-shadow:
+    0 calc(-1 * var(--px-u)) 0 0 var(--site-color-rule),
+    0 var(--px-u) 0 0 var(--site-color-rule),
+    calc(-1 * var(--px-u)) 0 0 0 var(--site-color-rule),
+    var(--px-u) 0 0 0 var(--site-color-rule);
+}
+
+:where(.px-key) {
+  --k: var(--px-sunflower);
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--site-space-2);
+  margin: var(--px-u);
+  padding: var(--site-space-1) var(--site-space-3);
+  border: 0;
+  border-radius: 0;
+  background: var(--k);
+  color: var(--site-color-fg);
+  font-family: var(--site-font-pixel);
+  font-size: var(--site-step--1);
+  line-height: 1.4;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow:
+    0 calc(-1 * var(--px-u)) 0 0 var(--site-color-fg),
+    0 var(--px-u) 0 0 var(--site-color-fg),
+    calc(-1 * var(--px-u)) 0 0 0 var(--site-color-fg),
+    var(--px-u) 0 0 0 var(--site-color-fg),
+    0 calc(2 * var(--px-u)) 0 0 var(--site-color-fg);
+}
+
+:where(.px-key:hover) {
+  --k: var(--px-butter);
+}
+
+:where(.px-key:active) {
+  transform: translateY(var(--px-u));
+  box-shadow:
+    0 calc(-1 * var(--px-u)) 0 0 var(--site-color-fg),
+    0 var(--px-u) 0 0 var(--site-color-fg),
+    calc(-1 * var(--px-u)) 0 0 0 var(--site-color-fg),
+    var(--px-u) 0 0 0 var(--site-color-fg);
+}
+
+:where(.px-key[aria-pressed="true"]) {
+  --k: var(--px-blue);
+}
+
+:where(.px-key:disabled) {
+  --k: var(--px-ground-2);
+  color: var(--site-color-muted);
+  cursor: default;
+}
+
+:where(.px-art) {
+  image-rendering: pixelated;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(.px-key:active) {
+    transform: none;
+  }
+}
