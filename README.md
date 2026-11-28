@@ -16,7 +16,7 @@ The parts go from small to large. Each kind has one job:
 - **Canvases** are square posters for social posts.
 - **Characters** are drawn figures for empty states and campaign art.
 
-[DESIGN.md](./DESIGN.md) has the full design rules: colour roles, spacing, sizes, borders, layout, motion, posters and a review checklist.
+[DESIGN.md](./DESIGN.md) has the full design rules: colour roles, spacing, sizes, borders, layout, motion, posters and a review checklist. [CONTRIBUTING.md](./CONTRIBUTING.md) has the folder layout, how to add a part, and the contrast rules.
 
 ## Use it
 
@@ -44,36 +44,6 @@ make check
 ```
 
 It runs `npm ci`, then `npm run validate`: the Prettier check, generation, the architecture, token and contrast audits, `svelte-check`, packaging and `publint`. CI runs the same.
-
-## Layout
-
-- `src/lib/components/varunui/component`: components.
-- `src/lib/components/varunui/piece`: pieces.
-- `src/lib/components/varunui/layout`: layouts.
-- `src/lib/components/varunui/block`: blocks.
-- `src/lib/components/varunui/page`: pages.
-- `src/lib/components/varunui/canvas`: canvases.
-- `src/lib/components/varunui/character`: characters.
-- `src/lib/components/varunui/internal`: private helpers for accessibility, icons and brand assets. Not part of the catalogue.
-- `src/showcase`: the catalogue site: rendering, search and previews.
-- `scripts/registry/metadata`: the hand-written catalogue entries that `generate` reads.
-
-## Adding a part
-
-Read [CONTRIBUTING.md](./CONTRIBUTING.md) first. In short:
-
-- Prefer one component to several that differ only in looks.
-- A component needs its own behaviour or meaning. A layout needs geometry that more than one place uses.
-- A block may hold product copy and data, but not its own private styles.
-- Use the shared tokens for spacing, line length, rails, controls, colour and motion.
-- Use one character or rotating seal per page region at most.
-- Write the catalogue entry in `scripts/registry/metadata`, then run `generate`.
-
-## Contrast
-
-Text colours read at 4.5:1 or more and borders at 3:1 or more (WCAG 2.2 AA), in the theme and the email tokens. This includes status text on its own 10 to 20% tint and muted text on every pastel field. The lowest text pair is 4.56:1 (success text on its 20% tint). `npm run audit` checks these pairs with `scripts/registry/check-contrast.mjs`, and checks with `scripts/registry/check-shell-tokens.mjs` that the pixel tokens mirrored in `src/lib/styles/tokens.css` match `shell/tokens.css`.
-
-Not covered: the named colours and chart colours when used alone as icons, stars or chart marks. Yellow (1.60:1), green, blue and pink, and the blue, yellow, pink and cyan chart colours are under 3:1 on the page. Pair them with a label or shape, as DESIGN.md says.
 
 ## Status
 

@@ -12,14 +12,27 @@ npm install
 npm run dev
 ```
 
-Before opening a change, run the same gate used in CI:
+Before merging a change, run the same gate used in CI:
 
 ```sh
-npm run validate
+make check
 ```
 
 This checks formatting, generated catalog and registry output, architecture,
 token use, Svelte types, the distributable package, and package metadata.
+
+## Layout
+
+- `src/lib/components/varunui/component`: components.
+- `src/lib/components/varunui/piece`: pieces.
+- `src/lib/components/varunui/layout`: layouts.
+- `src/lib/components/varunui/block`: blocks.
+- `src/lib/components/varunui/page`: pages.
+- `src/lib/components/varunui/canvas`: canvases.
+- `src/lib/components/varunui/character`: characters.
+- `src/lib/components/varunui/internal`: private helpers for accessibility, icons and brand assets. Not part of the catalogue.
+- `src/showcase`: the catalogue site: rendering, search and previews.
+- `scripts/registry/metadata`: the hand-written catalogue entries that `generate` reads.
 
 ## Choose the right layer
 
@@ -58,7 +71,14 @@ Read `DESIGN.md`. In particular:
 - let Layouts control geometry and Components control interaction feedback;
 - treat Marker, characters, pastel fields, and rotating seals as purposeful
   accents, not mandatory decoration;
+- use one character or rotating seal per page region at most;
 - provide reduced-motion behavior and keyboard-visible focus.
 
 Keep example language in the varunUI world. Avoid invented companies, remote
 photo dependencies, or filler copy that obscures the component's job.
+
+## Contrast
+
+Text colours read at 4.5:1 or more and borders at 3:1 or more (WCAG 2.2 AA), in the theme and the email tokens. This includes status text on its own 10 to 20% tint and muted text on every pastel field. The lowest text pair is 4.56:1 (success text on its 20% tint). `npm run audit` checks these pairs with `scripts/registry/check-contrast.mjs`, and checks with `scripts/registry/check-shell-tokens.mjs` that the pixel tokens mirrored in `src/lib/styles/tokens.css` match `shell/tokens.css`.
+
+Not covered: the named colours and chart colours when used alone as icons, stars or chart marks. Yellow (1.60:1), green, blue and pink, and the blue, yellow, pink and cyan chart colours are under 3:1 on the page. Pair them with a label or shape, as DESIGN.md says.
