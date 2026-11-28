@@ -1,11 +1,11 @@
 # Publishes shell/ to GitHub Pages at /varun-ui/shell/, the one copy every
-# demo page links.
+# demo page links. The root page (pages/index.html) points to it.
 name: Deploy to GitHub Pages
 
 on:
   push:
     branches: [main]
-    paths: [shell/**, .github/workflows/pages.yml]
+    paths: [shell/**, pages/**, .github/workflows/pages.yml]
   workflow_dispatch:
 
 permissions:
@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: mkdir _site && cp -r shell _site/shell
+      - run: mkdir _site && cp -r shell _site/shell && cp pages/index.html _site/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
