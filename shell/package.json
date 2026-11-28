@@ -1,0 +1,32 @@
+{
+  "name": "varun-ui-shell",
+  "version": "0.1.0",
+  "private": true,
+  "description": "The shared look and page bar for every demo page: tokens, fonts, the bar and pixel scene helpers.",
+  "license": "MIT AND OFL-1.1",
+  "type": "module",
+  "sideEffects": [
+    "*.css",
+    "./shell.js"
+  ],
+  "exports": {
+    "./shell.css": "./shell.css",
+    "./tokens.css": "./tokens.css",
+    "./shell.js": "./shell.js",
+    "./pixel.js": {
+      "types": "./pixel.d.ts",
+      "default": "./pixel.js"
+    },
+    "./fonts/*": "./fonts/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "shell.css",
+    "tokens.css",
+    "shell.js",
+    "pixel.js",
+    "pixel.d.ts",
+    "fonts",
+    "README.md"
+  ]
+}
