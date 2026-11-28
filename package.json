@@ -41,7 +41,7 @@
     "format": "prettier --write . --ignore-unknown",
     "format:check": "prettier --check . --ignore-unknown",
     "lint:shell": "eslint .",
-    "test:shell": "node --test shell/test/ && tsc -p shell",
+    "test:shell": "node --test shell/test/*.test.js && tsc -p shell",
     "package": "svelte-package",
     "validate": "npm run format:check && npm run lint:shell && npm run test:shell && npm run generate && npm run audit && npm run check && npm run package && publint",
     "prepack": "npm run validate"
