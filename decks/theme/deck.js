@@ -12,6 +12,8 @@
 //   tweens smoothly.
 // - Parking (park.js, if loaded): data-park, data-up and data-unpark on
 //   slides park a question, go up a level and come back. Authored only.
+// - Maths (maths.js, if loaded): $...$, $$...$$, \[...\] and align are
+//   drawn with KaTeX, or in pixels under data-math="pixel".
 // - ?present: the first key or click goes full screen (browsers need a
 //   gesture). F does the same at any time; S opens the speaker notes.
 (function () {
@@ -73,6 +75,8 @@
         if (isStatic) f.removeAttribute('data-src');
         else f.dataset.src = embedUrl(f.dataset.src);
       }
+      // Maths first, so reveal counts fragments inside equations.
+      if (window.DeckMaths) window.DeckMaths.render(document.querySelector('.reveal .slides'));
       // Parking adds its lines to the speaker notes before reveal reads them.
       const parks = window.DeckPark ? window.DeckPark.prepare(document.querySelector('.reveal')) : null;
       const plugins = [window.RevealNotes, ...(options.plugins || [])].filter(Boolean);

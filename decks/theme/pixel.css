@@ -228,3 +228,94 @@ html.static .reveal .slides section .fragment.visible { animation: none; }
 .reveal .px-in { animation: deck-dither-in 300ms steps(1, end) both; -webkit-mask-size: calc(4 * var(--u)) calc(4 * var(--u)); mask-size: calc(4 * var(--u)) calc(4 * var(--u)); }
 .reveal .px-out { animation: deck-dither-in 300ms steps(1, end) reverse both; -webkit-mask-size: calc(4 * var(--u)) calc(4 * var(--u)); mask-size: calc(4 * var(--u)) calc(4 * var(--u)); }
 .reveal.story .slide-number { background: var(--px-plate); color: var(--deck-ink); padding: 0 12px; box-shadow: 0 0 0 var(--u) var(--px-frame-line); right: 42px; bottom: 30px; }
+
+/* Maths (maths.js). KaTeX takes its size and ink from these tokens; pixel
+   maths (crisptex) draws in currentColor, so it is ink too. KaTeX's own
+   1.21em is too big next to Newsreader. Display maths sits flush with the
+   text, as the slides are left aligned. */
+:root {
+  --deck-math-ink: var(--deck-ink);
+  --deck-math-size: 1.1em;
+  --deck-math-gap: 30px;
+}
+.reveal .katex { font-size: var(--deck-math-size); color: var(--deck-math-ink); }
+.reveal .katex-display { margin: var(--deck-math-gap) 0; }
+.reveal .katex-display.fleqn > .katex { padding-left: 0; }
+.reveal .katex-display > .katex > .katex-html { white-space: nowrap; }
+.reveal .katex .hl { background: var(--deck-mark); padding: 0 0.15em; margin: 0 -0.15em; }
+.reveal .katex .fragment { display: inline-block; }
+.reveal .pxm-display { text-align: left !important; margin: var(--deck-math-gap) 0 !important; }
+.reveal h1 .pxm, .reveal h2 .pxm { vertical-align: baseline; }
+
+/* Beamer-style blocks: a frame with a tab on its top edge naming the kind.
+   data-name adds a name in brackets: <div class="theorem" data-name="Sum of odds">. */
+.reveal :is(.definition, .theorem, .lemma, .proof, .example) {
+  position: relative;
+  margin: calc(13 * var(--u)) calc(3 * var(--u)) calc(5 * var(--u)) var(--u);
+  padding: 30px 36px;
+  background: var(--deck-plate);
+  --tab: var(--px-butter);
+  --line: var(--px-frame-line);
+  box-shadow:
+    0 calc(-1 * var(--u)) 0 0 var(--line),
+    0 var(--u) 0 0 var(--line),
+    calc(-1 * var(--u)) 0 0 0 var(--line),
+    var(--u) 0 0 0 var(--line),
+    var(--u) calc(2 * var(--u)) 0 0 var(--px-frame-drop),
+    calc(2 * var(--u)) var(--u) 0 0 var(--px-frame-drop),
+    calc(2 * var(--u)) calc(2 * var(--u)) 0 0 var(--px-frame-drop);
+}
+.reveal :is(.definition, .theorem, .lemma, .proof, .example) > :last-child { margin-bottom: 0; }
+.reveal :is(.definition, .theorem, .lemma, .proof, .example)::before {
+  position: absolute; left: 0; bottom: calc(100% + var(--u));
+  padding: 0 18px; white-space: nowrap;
+  font: 400 33px/48px var(--site-font-pixel); color: var(--deck-ink);
+  background: var(--tab); box-shadow: 0 0 0 var(--u) var(--line);
+}
+.reveal .definition::before { content: "Definition"; }
+.reveal .theorem::before { content: "Theorem"; }
+.reveal .lemma::before { content: "Lemma"; }
+.reveal .proof::before { content: "Proof"; }
+.reveal .example::before { content: "Example"; }
+.reveal .definition[data-name]::before { content: "Definition (" attr(data-name) ")"; }
+.reveal .theorem[data-name]::before { content: "Theorem (" attr(data-name) ")"; }
+.reveal .lemma[data-name]::before { content: "Lemma (" attr(data-name) ")"; }
+.reveal .proof[data-name]::before { content: "Proof (" attr(data-name) ")"; }
+.reveal .example[data-name]::before { content: "Example (" attr(data-name) ")"; }
+.reveal .definition { background: var(--px-blue-soft); --tab: var(--px-blue); --line: var(--px-blue-mid); }
+.reveal .theorem { --tab: var(--px-sunflower); }
+.reveal .example { background: var(--px-mint-soft); --tab: var(--px-mint); --line: var(--px-mint-mid); }
+/* A proof is quieter: the rule line, no drop. */
+.reveal .proof {
+  --tab: var(--deck-plate); --line: var(--deck-rule);
+  box-shadow:
+    0 calc(-1 * var(--u)) 0 0 var(--line),
+    0 var(--u) 0 0 var(--line),
+    calc(-1 * var(--u)) 0 0 0 var(--line),
+    var(--u) 0 0 0 var(--line);
+}
+/* The end of a proof: a solid pixel square. In a stepped proof it belongs
+   to the last step, so it appears with it. */
+.reveal .proof > :last-child:not(.steps)::after,
+.reveal .proof > .steps:last-child > li:last-child > :last-child::after {
+  content: ""; display: inline-block; vertical-align: -0.05em;
+  width: calc(4 * var(--u)); height: calc(4 * var(--u)); margin-left: 24px;
+  background: var(--deck-ink);
+}
+
+/* A stepped proof: one line per step, the maths on the left and the reason
+   beside it. Give each line class="fragment" to reveal it in turn.
+     <ol class="steps">
+       <li class="fragment"><span>$lhs$</span><span>$= rhs$</span><span class="why">reason</span></li>
+     </ol>
+   Two maths cells line up on the relation; one cell spans both. */
+.reveal ol.steps {
+  display: grid; grid-template-columns: max-content max-content 1fr;
+  column-gap: 18px; row-gap: 18px; margin: 0; padding: 0; list-style: none;
+}
+.reveal ol.steps > li {
+  display: grid; grid-template-columns: subgrid; grid-column: 1 / -1;
+  align-items: baseline; margin: 0; max-width: none;
+}
+.reveal ol.steps > li > :first-child:nth-last-child(2) { grid-column: 1 / 3; }
+.reveal ol.steps .why { grid-column: 3; padding-left: 60px; font-size: 33px; font-style: italic; color: var(--deck-muted); }
