@@ -11,6 +11,8 @@
     "check": "node scripts/check.mjs"
   },
   "dependencies": {
+    "crisptex": "file:vendor/crisptex-0.1.0.tgz",
+    "katex": "0.19.1",
     "reveal.js": "6.0.2"
   },
   "devDependencies": {
