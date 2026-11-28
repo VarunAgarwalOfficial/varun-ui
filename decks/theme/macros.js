@@ -34,8 +34,9 @@
     '\\ndivides': '\\nmid',
 
     // Languages and machines (COMP2022): empty string, language of, alphabet star.
+    // \langof, not \lang: KaTeX's \lang is the angle bracket.
     '\\eps': '\\varepsilon',
-    '\\lang': '\\mathcal{L}\\left( #1 \\right)',
+    '\\langof': '\\mathcal{L}\\left( #1 \\right)',
     '\\Sstar': '\\Sigma^{*}',
 
     // Functions.
