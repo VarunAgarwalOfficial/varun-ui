@@ -1,0 +1,3 @@
+# The decks are their own package with their own check (make -C decks check),
+# and keep their hand-set layout. Their vendor files are third-party.
+decks/
