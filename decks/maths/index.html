@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<title>Proof by induction</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../vendor/reveal/reset.css">
+<link rel="stylesheet" href="../vendor/reveal/reveal.css">
+<link rel="stylesheet" href="../vendor/katex/katex.min.css">
+<link rel="stylesheet" href="../theme/pixel.css">
+</head>
+<body>
+<!-- The maths starter: one short lesson on induction, in the same lesson
+     shape as starter/. Copy it with make new NAME=week-3 TEMPLATE=maths.
+     Maths is TeX in the slide: $...$ inline, $$...$$ or \[...\] display,
+     \begin{align}. Macros are in theme/macros.js. Blocks: .definition,
+     .theorem, .lemma, .proof, .example. A stepped proof is ol.steps. -->
+<div class="reveal" data-root="Induction"><div class="slides">
+
+<section class="title-slide">
+  <h1>Proof by induction</h1>
+  <p data-math="pixel" data-math-scale="9">$$\sum_{i=1}^{n} (2i-1) = n^2$$</p>
+  <p>By the end you can prove a statement about every $n \ge 1$ in two steps, and say which step a broken proof skips.</p>
+  <aside class="notes">Slot: title and outcome. The equation is the one we prove today. Read the outcome aloud: two steps, and spotting the missing one.</aside>
+</section>
+
+<section class="say">
+  <p>Stand a row of dominoes as long as you like. You can't push every one. So why are you sure they all fall?</p>
+  <aside class="notes">Slot: the story. Let them answer: the first one falls, and each one knocks the next. Don't say "induction" yet.</aside>
+</section>
+
+<section data-label="Words we need">
+  <h2>Three words</h2>
+  <div class="definition" data-name="Predicate">
+    <p>$P(n)$ is a statement about a number $n \in \N$ that is either true or false.</p>
+  </div>
+  <ul>
+    <li><strong>Base case</strong>: show $P(1)$.</li>
+    <li><strong>Inductive hypothesis</strong> ($\IH$): assume $P(k)$ for one $k \ge 1$.</li>
+    <li><strong>Inductive step</strong>: from $P(k)$, show $P(k+1)$.</li>
+  </ul>
+  <aside class="notes">Slot: names and what they need already. Only these three words. They have seen sigma notation and the implies arrow last week.</aside>
+</section>
+
+<section data-label="First try">
+  <h2>Check a few cases</h2>
+  <p>$1 = 1^2$, $\ 1 + 3 = 2^2$, $\ 1 + 3 + 5 = 3^2$. Looks true.</p>
+  <div class="example fragment" data-name="A pattern that stops">
+    <p>$n^2 + n + 41$ is prime for $n = 0, 1, \ldots, 39$. At $n = 40$ it is $41^2$.</p>
+  </div>
+  <p class="fragment">Forty cases are evidence, not proof.</p>
+  <aside class="notes">Slot: the obvious first try, and where it breaks. Ask them to check two more cases first. Then click: a pattern that holds forty times and then fails. We need an argument that covers every n at once.</aside>
+</section>
+
+<section data-label="The idea">
+  <h2 data-math="pixel">Two steps cover every $n$</h2>
+  <div class="theorem" data-name="Induction">
+    <p>If $P(1)$, and $P(k) \implies P(k+1)$ for every $k \ge 1$, then $P(n)$ for every $n \ge 1$.</p>
+  </div>
+  <ol>
+    <li class="fragment">$P(1)$: the first domino falls.</li>
+    <li class="fragment">$P(k) \implies P(k+1)$: each domino knocks the next.</li>
+    <li class="fragment">So $P(1)$ gives $P(2)$, which gives $P(3)$, and so on, with no gaps.</li>
+  </ol>
+  <aside class="notes">Slot: build the model in steps. One click per line; say each before you click. Map each line back to the dominoes.</aside>
+</section>
+
+<section data-label="Worked example">
+  <div class="theorem" data-name="Sum of odds">
+    <p>For every $n \ge 1$, $\ \sum_{i=1}^{n} (2i-1) = n^2$.</p>
+  </div>
+  <div class="proof">
+    <ol class="steps">
+      <li class="fragment"><span>$\sum_{i=1}^{1} (2i-1)$</span><span>$= 1 = 1^2$</span><span class="why">base case</span></li>
+      <li class="fragment"><span>$\sum_{i=1}^{k} (2i-1)$</span><span>$= k^2$</span><span class="why">assume $P(k)$, the IH</span></li>
+      <li class="fragment"><span>$\sum_{i=1}^{k+1} (2i-1)$</span><span>$= k^2 + (2k+1)$</span><span class="why">split off the last term, then IH</span></li>
+      <li class="fragment"><span></span><span>$= (k+1)^2$</span><span class="why">factorise</span></li>
+      <li class="fragment"><span>So $P(k) \implies P(k+1)$.</span><span class="why">by induction, $P(n)$ for all $n \ge 1$</span></li>
+    </ol>
+  </div>
+  <aside class="notes">Slot: one worked example, every step shown. Click one line at a time. On line three, ask what the last term is before you click. The reason column is what they should write too.</aside>
+</section>
+
+<section data-label="Predict">
+  <h2>Is this claim true?</h2>
+  <p>Claim: $\sum_{i=1}^{n} (2i-1) = n^2 + 1$. Here is its inductive step:</p>
+  \begin{align*}
+    \sum_{i=1}^{k+1} (2i-1) &= (k^2 + 1) + (2k+1) && \text{by the IH} \\
+    &= \class{fragment}{(k+1)^2 + 1} && \class{fragment}{\text{the step works}}
+  \end{align*}
+  <p class="fragment">But $n = 1$ gives $1 \ne 2$. No first domino, so nothing falls.</p>
+  <aside class="notes">Slot: predict before you show. Thirty seconds: true or false? Hands up. Then click through the step: it works, which tempts them to say true. The last click shows the base case fails.</aside>
+</section>
+
+<section data-label="Your turn">
+  <h2>Prove it</h2>
+  <div class="theorem">
+    <p>For every $n \ge 1$, $\ 1 + 2 + \ldots + n = \dfrac{n(n+1)}{2}$.</p>
+  </div>
+  <p>Write the base case, the IH and the step, each with its reason.</p>
+  <p class="fragment">The step: $\dfrac{k(k+1)}{2} + (k+1) = \dfrac{(k+1)(k+2)}{2}$.</p>
+  <aside class="notes">Slot: try it. Pairs, four minutes, on paper. Walk the room and look for a missing base case. Click to show the key line of the step once most pairs have one.</aside>
+</section>
+
+<section data-label="Transfer">
+  <h2>Same idea, with sets</h2>
+  <div class="lemma" data-name="De Morgan">
+    <p>$\comp{A \cup B} = \comp{A} \cap \comp{B}$</p>
+  </div>
+  <p>Prove it for any number of sets:</p>
+  $$\comp{A_1 \cup \cdots \cup A_n} = \comp{A_1} \cap \cdots \cap \comp{A_n}$$
+  <p class="fragment">Base: $n = 2$ is the lemma. Step: treat $A_1 \cup \cdots \cup A_k$ as one set $B$, then use the lemma once.</p>
+  <aside class="notes">Slot: transfer. Same two steps, no numbers being added. The base case here is n = 2, not 1: the base is wherever the claim starts.</aside>
+</section>
+
+<section class="say">
+  <p>The dominoes all fall because the first one does, and each one knocks the next. That is the whole proof.</p>
+  <aside class="notes">Slot: back to the story, now explained. Then the check: ask them to say the two steps in their own words, and which one the false claim skipped.</aside>
+</section>
+
+</div></div>
+<script src="../vendor/reveal/reveal.js"></script>
+<script src="../vendor/reveal/plugin/notes.js"></script>
+<script src="../vendor/katex/katex.min.js"></script>
+<script src="../vendor/crisptex/crisptex.js"></script>
+<script src="../theme/macros.js"></script>
+<script src="../theme/maths.js"></script>
+<script src="../theme/park.js"></script>
+<script src="../theme/deck.js"></script>
+<script>Deck.start();</script>
+</body>
+</html>
