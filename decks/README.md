@@ -1,13 +1,13 @@
 # Decks
 
-The one reveal.js kit for every deck: the site's pixel look, speaker notes, live tool embeds, story scenes and a one-command PDF. Each folder here with an `index.html` is a deck. The decks share `theme/` and `vendor/`. `starter/` is a lesson to copy; `story/` shows story scenes and parking.
+The one reveal.js kit for every deck: the site's pixel look, speaker notes, LaTeX maths, live tool embeds, story scenes and a one-command PDF. Each folder here with an `index.html` is a deck. The decks share `theme/` and `vendor/`. `starter/` is a lesson to copy; `maths/` is a maths lesson to copy; `story/` shows story scenes and parking.
 
 ```
 make dev              serve every deck at http://127.0.0.1:47320/
-make new NAME=week-3  start a deck from the starter
+make new NAME=week-3  start a deck from the starter (TEMPLATE=maths for maths)
 make pdf              every deck to pdf/<deck>.pdf (or make pdf DECK=story)
-make check            vendor files, pinned version, no purple, embed fallbacks, notes
-make build            refresh vendor/ (reveal, site tokens and fonts, the valley)
+make check            vendor files, pins, no purple, embed fallbacks, notes, maths
+make build            refresh vendor/ (reveal, KaTeX, crisptex, site tokens and fonts, the valley)
 ```
 
 `make pdf` needs Chromium at `/usr/bin/chromium` (or set `CHROME`). It prints the page count and fails if that isn't one page per slide.
@@ -31,6 +31,25 @@ Start from `starter/`. Its order is the lesson shape: the outcome, a story, the 
 - Layouts: `.title-slide`, `.say` (one big sentence), `.two` and `.three` (columns).
 - Moving things: give an element the same `data-px-id` on two slides in a row. It walks to its new place in whole art pixels.
 - Scripts that add layers to `.slides` must put them before the first `<section>`. Reveal treats a section with anything after it as not the last slide, and `make pdf` then never ends.
+
+### Maths
+
+Write TeX in the slide: `$...$` inline, `$$...$$` or `\[...\]` display, and `\begin{align}` (or `align*`). KaTeX draws it before reveal starts, offline. Macros (`\N`, `\set{}`, `\abs{}`, `\floor{}`, `\implies` and more) are in `theme/macros.js`; add new ones there. Write `\$` for a plain dollar sign, and `\lt` for `<`.
+
+```html
+<div class="theorem" data-name="Sum of odds"><p>For every $n \ge 1$, $\sum_{i=1}^{n} (2i-1) = n^2$.</p></div>
+<div class="proof"><ol class="steps">
+  <li class="fragment"><span>$\sum_{i=1}^{k+1} (2i-1)$</span><span>$= k^2 + (2k+1)$</span><span class="why">by the IH</span></li>
+  <li class="fragment"><span></span><span>$= (k+1)^2$</span><span class="why">factorise</span></li>
+</ol></div>
+<p data-math="pixel" data-math-scale="9">$$\sum_{i=1}^{n} (2i-1) = n^2$$</p>
+```
+
+- Blocks: `.definition`, `.theorem`, `.lemma`, `.proof` (ends in a square) and `.example`. `data-name` adds a name to the tab.
+- `ol.steps` lays out a proof: the maths, then the reason. Two maths cells line up on the `=`.
+- `\class{fragment}{...}` makes part of an equation a fragment; `\class{hl}{...}` marks it.
+- `data-math="pixel"` on a slide or element draws its maths through crisptex, for titles and hero equations. The scale follows the font size, or set `data-math-scale`. KaTeX stays the default for body maths.
+- `make check` parses every formula with the deck macros and fails on any error or unclosed `$`.
 
 ### Embeds
 
@@ -74,6 +93,8 @@ On the park slide, a cart labelled with the question pulls into a spot at the bo
 Versions are pinned exactly in `package.json`. `make vendor` copies what the decks need into `vendor/`, which is committed. A deck then runs from its folder with no network and no install, and stays the same until someone changes the pin on purpose. `make check` fails if `vendor/` doesn't match the pin.
 
 - reveal.js 6.0.2. The PDF uses decktape 3.17.0. The valley is built with esbuild 0.28.2.
+- KaTeX 0.19.1, with woff2 fonts only.
+- crisptex 0.1.0 comes from `vendor/crisptex-0.1.0.tgz`, the tarball the website uses (`npm pack` in `~/Personal/projects/crisptex`). `make vendor` bundles it to `vendor/crisptex/crisptex.js`, which uses the page's KaTeX.
 - `vendor/shell/` is copied from varun-ui's `shell/` (colours, Newsreader, Pixelify Sans, IBM Plex Mono) by `make sync`. Don't edit it here.
 - `vendor/world/world.js` is the website's pixel valley, built by `make world` from `~/Personal/projects/website` (set `WEBSITE` for another checkout). The built file names the commit it came from.
 
